@@ -1,0 +1,16 @@
+# Explicitly enables paid real-model experiments; scripts call the same core CLI.
+allow_paid_api: true
+activate_strategy: policy_hierarchy
+chunking:
+  window: 300
+  overlap: 60
+  hierarchy_max: 600
+hnsw:
+  m: 16
+  ef_construction: 64
+benchmark_index: true
+benchmark_repeats: 34
+bonus:
+  iceberg: false
+  graph: false
+  judge: false

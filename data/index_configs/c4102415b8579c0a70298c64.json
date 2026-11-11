@@ -1,0 +1,27 @@
+{
+  "build_id": "c4102415b8579c0a70298c64",
+  "chunks": 193,
+  "documents": 150,
+  "generated": 0,
+  "reused": 193,
+  "config": {
+    "schema_version": 1,
+    "chunker_version": "context-policy-v2",
+    "strategy": "fixed_window",
+    "window": 300,
+    "overlap": 60,
+    "hierarchy_max": 600,
+    "models": {
+      "region": "beijing",
+      "embedding": "text-embedding-v4",
+      "dimension": 1024,
+      "reranker": "qwen3-rerank",
+      "llm": "qwen3.5-plus"
+    },
+    "embedding_fingerprint": "61239702c31112b7584a1d03360c258f72e058b00a4e49405c4f95f57ae1c8d9",
+    "dataset_hashes": {
+      "kb_documents.json": "7d230e97cbf76d2ca64382e7c0278c3b24bbe27b8a8904abc9553b45a230057d",
+      "eval_queries.json": "739bd308a90e72437ccbffca658ca950f6a069f2986040cb729694a878d9bbef"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+method_version: qwen-judge-v2.2-anchors
+source_report_id: judge-20261109T142820-9c68f65f
+max_attempts_per_stage: 2
+pilot_ids:
+- Q-004:dense
+- Q-012:dense
+- Q-015:dense
+- Q-025:hybrid_rerank
+- Q-006:hybrid_rerank
+budget:
+  tariffs_verified: true
+  region: beijing
+  verified_at: '2026-11-09'
+  source: https://help.aliyun.com/zh/model-studio/model-pricing
+  tariffs:
+    qwen3.5-plus:
+      input_per_million: 0.8
+      output_per_million: 4.8
+  currency: CNY
+  max_cost: 76
+  max_tasks: 252
+  cost_ceiling_per_task:
+    inventory: 0.3
+    assessment: 0.3
+max_output_tokens: 8192

@@ -1,0 +1,63 @@
+{
+  "build_id": "60d4f863faa777c5c522bc1b",
+  "strategy": "policy_hierarchy",
+  "mode": "dense",
+  "candidate_depth": 100,
+  "rerank_depth": 100,
+  "job_id": "5f705d27-2c2b-496a-9175-1dae6020fa30",
+  "models": {
+    "region": "beijing",
+    "embedding": "text-embedding-v4",
+    "dimension": 1024,
+    "reranker": "qwen3-rerank",
+    "llm": "qwen3.5-plus"
+  },
+  "rrf_k": 60,
+  "top_k": 20,
+  "dataset_hashes": {
+    "kb_documents.json": "7d230e97cbf76d2ca64382e7c0278c3b24bbe27b8a8904abc9553b45a230057d",
+    "eval_queries.json": "739bd308a90e72437ccbffca658ca950f6a069f2986040cb729694a878d9bbef"
+  },
+  "build_config": {
+    "models": {
+      "llm": "qwen3.5-plus",
+      "region": "beijing",
+      "reranker": "qwen3-rerank",
+      "dimension": 1024,
+      "embedding": "text-embedding-v4"
+    },
+    "window": 300,
+    "overlap": 60,
+    "strategy": "policy_hierarchy",
+    "hierarchy_max": 600,
+    "dataset_hashes": {
+      "eval_queries.json": "739bd308a90e72437ccbffca658ca950f6a069f2986040cb729694a878d9bbef",
+      "kb_documents.json": "7d230e97cbf76d2ca64382e7c0278c3b24bbe27b8a8904abc9553b45a230057d"
+    },
+    "schema_version": 1,
+    "chunker_version": "context-policy-v2",
+    "embedding_fingerprint": "61239702c31112b7584a1d03360c258f72e058b00a4e49405c4f95f57ae1c8d9"
+  },
+  "index_stats": {
+    "m": 16,
+    "reused": 0,
+    "generated": 150,
+    "index_bytes": 1236992,
+    "index_reused": false,
+    "ingestion_ms": 6679.730584997742,
+    "index_build_ms": 50.592403997143265,
+    "index_check_ms": 50.594145999639295,
+    "ef_construction": 64
+  },
+  "code_version": "unversioned-workspace",
+  "python": "3.12.10",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "concurrency": 1,
+  "retries": 2,
+  "query_cache": false,
+  "quantile_method": "numpy linear",
+  "failure_quality": "zero, included in denominator",
+  "latency_scope": "successful samples only; failures persist separately; database=dense+sparse sequential roundtrips",
+  "p99_caveat": "30 samples: exploratory, not capacity evidence",
+  "started_at": "2026-11-11T04:20:28.640675+00:00"
+}

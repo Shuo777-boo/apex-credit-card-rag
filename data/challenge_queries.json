@@ -1,0 +1,168 @@
+[
+  {
+    "query_id": "CH-001",
+    "kind": "cross_product",
+    "query": "Compare Apex Platinum and Apex Preferred Travel airport lounge access, enrollment or app steps, guest allowance and extra visit costs.",
+    "support_doc_ids": [
+      "DOC-0046",
+      "DOC-0047"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "membership and enrollment",
+      "annual passes and purchase channel",
+      "guest/additional-pass costs"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0046",
+        "quote": "Apex Platinum cardholders receive complimentary Priority Pass Select membership. Enrollment is required via the benefits portal. Membership grants access to over 1,300 airport lounges worldwide for the primary cardholder and up to 2 guests. Additional guests are charged $35 per visit."
+      },
+      {
+        "doc_id": "DOC-0047",
+        "quote": "Cardholders receive 2 complimentary airport lounge passes per calendar year via the Apex Travel App. Additional passes available at $32 per person."
+      }
+    ]
+  },
+  {
+    "query_id": "CH-002",
+    "kind": "cross_product",
+    "query": "Compare Apex Platinum and Apex Preferred Travel cell phone protection limits, deductible, payment condition and claims frequency.",
+    "support_doc_ids": [
+      "DOC-0054",
+      "DOC-0055"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "claim cap and deductible",
+      "bill payment condition",
+      "claims frequency and known exclusions"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0054",
+        "quote": "Cardholders paying their monthly cellular telephone bill with an eligible Apex card receive up to $800 per claim ($50 deductible) against theft or damage. Maximum 2 claims per 12-month period. Coverage does not include cosmetic damage or lost phones."
+      },
+      {
+        "doc_id": "DOC-0055",
+        "quote": "Wireless phone protection provides up to $600 per claim ($50 deductible) when bill is paid using the card. Max 2 claims per 12 months."
+      }
+    ]
+  },
+  {
+    "query_id": "CH-003",
+    "kind": "same_product_multiple_rules",
+    "query": "For Apex Platinum compare lounge enrollment and guest rules with the annual travel credit amount, eligible purchases and expiration.",
+    "support_doc_ids": [
+      "DOC-0046",
+      "DOC-0058"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "lounge enrollment/guests",
+      "travel credit amount/eligible purchases/expiration"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0046",
+        "quote": "Apex Platinum cardholders receive complimentary Priority Pass Select membership. Enrollment is required via the benefits portal. Membership grants access to over 1,300 airport lounges worldwide for the primary cardholder and up to 2 guests. Additional guests are charged $35 per visit."
+      },
+      {
+        "doc_id": "DOC-0058",
+        "quote": "Cardholders receive $300 automatic statement credit per calendar year for eligible flight, hotel, and transit purchases. Unused credits expire December 31."
+      }
+    ]
+  },
+  {
+    "query_id": "CH-004",
+    "kind": "conditions_and_operations",
+    "query": "For an Apex Platinum balance transfer, explain the introductory offer and fee conditions, processing time and responsibility for old account payments.",
+    "support_doc_ids": [
+      "DOC-0001",
+      "DOC-0005"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "intro period and request deadline",
+      "fee and transfer exclusions",
+      "processing time and old account payments"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0001",
+        "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+      },
+      {
+        "doc_id": "DOC-0005",
+        "quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+      }
+    ]
+  },
+  {
+    "query_id": "CH-005",
+    "kind": "conditions_and_operations",
+    "query": "For an Apex Platinum billing dispute, what deadline and documentation apply and when is provisional credit issued or revoked?",
+    "support_doc_ids": [
+      "DOC-0020",
+      "DOC-0024"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "dispute deadline/documents",
+      "credit threshold and timing",
+      "revocation and advance notice"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0020",
+        "quote": "Cardholders may dispute a merchant transaction for billing errors, non-delivery of goods, or defective merchandise within 120 calendar days from the transaction date. Documentation including receipts, cancellation confirmation, and merchant communication logs must be submitted."
+      },
+      {
+        "doc_id": "DOC-0024",
+        "quote": "A provisional credit will be credited to the customer account within 10 business days for disputed billing amounts greater than $25. If the investigation resolves in favor of the merchant, the provisional credit will be revoked with a 10-day advance notification to the cardholder."
+      }
+    ]
+  },
+  {
+    "query_id": "CH-006",
+    "kind": "same_product_multiple_rules",
+    "query": "For Apex Platinum, explain emergency replacement and emergency cash abroad, and whether freezing the card stops AutoPay and which AutoPay options are available.",
+    "support_doc_ids": [
+      "DOC-0061",
+      "DOC-0069",
+      "DOC-0144"
+    ],
+    "annotation_method": "source-reviewed by Apex-03; independent challenge set, no gold_response used",
+    "annotator": "Apex-03 AI source review (human confirmation pending)",
+    "human_confirmed": false,
+    "completeness_checklist": [
+      "replacement and cash limits/timing",
+      "freeze exception for recurring payments",
+      "AutoPay choices"
+    ],
+    "support": [
+      {
+        "doc_id": "DOC-0061",
+        "quote": "In the event of a lost or stolen card while traveling abroad, Apex Platinum cardholders can request emergency replacement card delivery within 24–48 hours globally. Emergency cash disbursements up to $1,000 USD can be arranged via Western Union within 4 hours."
+      },
+      {
+        "doc_id": "DOC-0069",
+        "quote": "Instant toggle freeze via mobile app blocks new purchases while allowing recurring subscriptions and automated monthly payments to process uninterrupted."
+      },
+      {
+        "doc_id": "DOC-0144",
+        "quote": "Configure AutoPay for minimum due, full statement balance, or fixed dollar amount on payment due date."
+      }
+    ]
+  }
+]

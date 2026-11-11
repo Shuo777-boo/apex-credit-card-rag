@@ -1,0 +1,63 @@
+{
+  "builds": [
+    {
+      "build_id": "60d4f863faa777c5c522bc1b",
+      "strategy": "policy_hierarchy",
+      "documents": 150,
+      "chunks": 150,
+      "models": {
+        "region": "beijing",
+        "embedding": "text-embedding-v4",
+        "dimension": 1024,
+        "reranker": "qwen3-rerank",
+        "llm": "qwen3.5-plus"
+      }
+    },
+    {
+      "build_id": "c4102415b8579c0a70298c64",
+      "strategy": "fixed_window",
+      "documents": 150,
+      "chunks": 193,
+      "models": {
+        "region": "beijing",
+        "embedding": "text-embedding-v4",
+        "dimension": 1024,
+        "reranker": "qwen3-rerank",
+        "llm": "qwen3.5-plus"
+      }
+    }
+  ],
+  "profiles": [
+    "single",
+    "six"
+  ],
+  "modes": [
+    "dense",
+    "hybrid",
+    "hybrid_rerank"
+  ],
+  "candidate_depth": 100,
+  "rerank_depth": 100,
+  "top_k": 20,
+  "questions_per_run": 30,
+  "limits": {
+    "concurrent_jobs": 1,
+    "single_http_attempts": 180,
+    "six_http_attempts": 720,
+    "single_cost_cny": 3.0,
+    "six_cost_cny": 12.0,
+    "single_timeout_seconds": 900,
+    "six_timeout_seconds": 3600
+  },
+  "prices_cny_per_million": {
+    "text-embedding-v4": 0.5,
+    "qwen3-rerank": 0.5
+  },
+  "conversation": {
+    "max_messages": 6,
+    "max_message_chars": 4000,
+    "max_total_chars": 12000,
+    "context_mode": "bounded_history_rewrite",
+    "history_is_policy_evidence": false
+  }
+}

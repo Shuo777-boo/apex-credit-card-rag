@@ -1,0 +1,2362 @@
+{
+  "run_id": "core-20261109T183355Z-a778d591",
+  "status": "completed",
+  "config": {
+    "mode": "hybrid_rerank",
+    "rrf_k": 60,
+    "top_k": 20,
+    "job_id": "651c4653-81e0-42c1-a94e-5b790694915f",
+    "models": {
+      "llm": "qwen3.5-plus",
+      "region": "beijing",
+      "reranker": "qwen3-rerank",
+      "dimension": 1024,
+      "embedding": "text-embedding-v4"
+    },
+    "python": "3.12.10",
+    "retries": 2,
+    "build_id": "60d4f863faa777c5c522bc1b",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+    "strategy": "policy_hierarchy",
+    "p99_caveat": "30 samples: exploratory, not capacity evidence",
+    "started_at": "2026-11-10T02:33:55.041334+08:00",
+    "concurrency": 1,
+    "index_stats": {
+      "m": 16,
+      "reused": 150,
+      "generated": 0,
+      "index_bytes": 1236992,
+      "index_reused": true,
+      "ingestion_ms": 159.55412600033014,
+      "index_build_ms": 51.79339999995136,
+      "index_check_ms": 6.305554999926244,
+      "ef_construction": 64
+    },
+    "query_cache": false,
+    "build_config": {
+      "models": {
+        "llm": "qwen3.5-plus",
+        "region": "beijing",
+        "reranker": "qwen3-rerank",
+        "dimension": 1024,
+        "embedding": "text-embedding-v4"
+      },
+      "window": 300,
+      "overlap": 60,
+      "strategy": "policy_hierarchy",
+      "hierarchy_max": 600,
+      "dataset_hashes": {
+        "eval_queries.json": "739bd308a90e72437ccbffca658ca950f6a069f2986040cb729694a878d9bbef",
+        "kb_documents.json": "7d230e97cbf76d2ca64382e7c0278c3b24bbe27b8a8904abc9553b45a230057d"
+      },
+      "schema_version": 1,
+      "chunker_version": "context-policy-v2",
+      "embedding_fingerprint": "61239702c31112b7584a1d03360c258f72e058b00a4e49405c4f95f57ae1c8d9"
+    },
+    "code_version": "unversioned-workspace",
+    "rerank_depth": 100,
+    "latency_scope": "successful samples only; failures persist separately; database=dense+sparse sequential roundtrips",
+    "dataset_hashes": {
+      "eval_queries.json": "739bd308a90e72437ccbffca658ca950f6a069f2986040cb729694a878d9bbef",
+      "kb_documents.json": "7d230e97cbf76d2ca64382e7c0278c3b24bbe27b8a8904abc9553b45a230057d"
+    },
+    "candidate_depth": 100,
+    "failure_quality": "zero, included in denominator",
+    "quantile_method": "numpy linear"
+  },
+  "metrics": {
+    "recall@1": 0.8388888888888889,
+    "recall@3": 0.9555555555555556,
+    "recall@5": 1.0,
+    "precision@1": 0.9666666666666667,
+    "precision@3": 0.43333333333333335,
+    "precision@5": 0.2866666666666667,
+    "ndcg@1": 0.9666666666666667,
+    "ndcg@3": 0.9567972696344711,
+    "ndcg@5": 0.9823738789036646,
+    "mrr@20": 0.9833333333333333,
+    "counts": {
+      "total": 30,
+      "succeeded": 30,
+      "failed": 0
+    },
+    "latency_ms": {
+      "database": {
+        "p50": 4.395205496621202,
+        "p99": 9.176162409276003,
+        "samples": 30
+      },
+      "retrieval_total": {
+        "p50": 626.7924255007529,
+        "p99": 1720.328152580187,
+        "samples": 30
+      }
+    },
+    "execution": {
+      "partial": false,
+      "planned_questions": 30,
+      "attempted_questions": 30
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "Q-001",
+      "query": "How many days do I have to request a 0% intro balance transfer on Apex Platinum?",
+      "relevant_doc_ids": [
+        "DOC-0001",
+        "DOC-0005"
+      ],
+      "gold_response": "Apex Platinum cardholders have 60 days from account opening to request a 0% intro balance transfer. The intro rate lasts for 15 billing cycles, and a fee of 3% or $10 applies.",
+      "ranked_doc_ids": [
+        "DOC-0001",
+        "DOC-0005",
+        "DOC-0150",
+        "DOC-0002",
+        "DOC-0004",
+        "DOC-0003",
+        "DOC-0006",
+        "DOC-0020",
+        "DOC-0136",
+        "DOC-0009",
+        "DOC-0031",
+        "DOC-0013",
+        "DOC-0024",
+        "DOC-0147",
+        "DOC-0071",
+        "DOC-0110",
+        "DOC-0014",
+        "DOC-0016",
+        "DOC-0008",
+        "DOC-0007"
+      ],
+      "metrics": {
+        "mrr@20": 1.0,
+        "ndcg@1": 1.0,
+        "ndcg@3": 1.0,
+        "ndcg@5": 1.0,
+        "recall@1": 0.5,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "precision@1": 1.0,
+        "precision@3": 0.6666666666666666,
+        "precision@5": 0.4
+      },
+      "timings_ms": {
+        "dense": 6.707871998514747,
+        "fusion": 0.13772799866274,
+        "rerank": 370.24033299894654,
+        "sparse": 2.742680000665132,
+        "embedding": 422.46936000083224,
+        "generation": null,
+        "answer_total": null,
+        "query_rewrite": null,
+        "recall_fusion": 10.155506999581121,
+        "retrieval_total": 804.7161709982902
+      },
+      "error": null,
+      "retrieval": {
+        "request_id": "4cd3bc0f-2441-4db2-a2e0-dd116c1815db",
+        "build_id": "60d4f863faa777c5c522bc1b",
+        "mode": "hybrid_rerank",
+        "results": [
+          {
+            "doc_id": "DOC-0001",
+            "title": "Apex Platinum - 0% Intro APR Balance Transfer Rules (2024)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 1,
+            "score": 0.9647918322234283,
+            "evidence": [
+              {
+                "chunk_id": "2fb88d60ca94ba92661b09bd",
+                "text": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts.",
+                "parent_id": "DOC-0001:policy",
+                "start_char": 133,
+                "end_char": 540
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0005",
+            "title": "Apex Platinum - Balance Transfer Processing Timelines (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 2,
+            "score": 0.8961852844808197,
+            "evidence": [
+              {
+                "chunk_id": "5b217fa602bc478808660085",
+                "text": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement.",
+                "parent_id": "DOC-0005:policy",
+                "start_char": 133,
+                "end_char": 425
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0150",
+            "title": "Apex Platinum - Credit Balance Refund Requests (2025)",
+            "category": "Billing Statements & Grace Periods",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 3,
+            "score": 0.8372935425333077,
+            "evidence": [
+              {
+                "chunk_id": "afe69a0eb51ebafc189b64fd",
+                "text": "Negative balance (credit balance) over $1.00 automatically refunded via direct deposit or check within 30 days of request.",
+                "parent_id": "DOC-0150:policy",
+                "start_char": 151,
+                "end_char": 273
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0002",
+            "title": "Apex Preferred Travel - Balance Transfer Intro Rates (2024)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Preferred Travel",
+            "effective_year": 2024,
+            "rank": 4,
+            "score": 0.7831537448297727,
+            "evidence": [
+              {
+                "chunk_id": "07558a24dfec359c944e2d63",
+                "text": "Promotional 0% intro APR applies for 12 billing cycles on transfers made within 45 days. A balance transfer fee of 4% or $10 applies. Regular APR ranges from 19.99% to 27.99% variable.",
+                "parent_id": "DOC-0002:policy",
+                "start_char": 141,
+                "end_char": 325
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0004",
+            "title": "Apex Business Select - Corporate Balance Transfer Guidelines (2024)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Business Select",
+            "effective_year": 2024,
+            "rank": 5,
+            "score": 0.7630125960858415,
+            "evidence": [
+              {
+                "chunk_id": "3047e4bbe909e85319e83e87",
+                "text": "Promotional 0% intro APR for 9 billing cycles on transfers submitted within 30 days. Transfer fee is 3% across all transaction sizes. Regular balance transfer APR is 16.99% to 24.99%.",
+                "parent_id": "DOC-0004:policy",
+                "start_char": 140,
+                "end_char": 323
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0003",
+            "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "rank": 6,
+            "score": 0.7362576206793119,
+            "evidence": [
+              {
+                "chunk_id": "bc255b5372af6f0b1188df9d",
+                "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable.",
+                "parent_id": "DOC-0003:policy",
+                "start_char": 141,
+                "end_char": 338
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0006",
+            "title": "Apex Everyday Freedom - Balance Transfer Delivery Speed (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2025,
+            "rank": 7,
+            "score": 0.6817590814899148,
+            "evidence": [
+              {
+                "chunk_id": "c36ed936d7fca506a7541004",
+                "text": "Balance transfers require 7 to 10 business days for electronic fund arrival to competitive financial institutions. Cardholders must maintain minimum payments on existing accounts until verified.",
+                "parent_id": "DOC-0006:policy",
+                "start_char": 141,
+                "end_char": 335
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0020",
+            "title": "Apex Platinum - Merchant Chargeback Dispute Timeline (2024)",
+            "category": "Disputes & Zero Liability Fraud",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 8,
+            "score": 0.6520698680497472,
+            "evidence": [
+              {
+                "chunk_id": "78fd68e4f682d79c5eb41480",
+                "text": "Cardholders may dispute a merchant transaction for billing errors, non-delivery of goods, or defective merchandise within 120 calendar days from the transaction date. Documentation including receipts, cancellation confirmation, and merchant communication logs must be submitted.",
+                "parent_id": "DOC-0020:policy",
+                "start_char": 148,
+                "end_char": 426
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0136",
+            "title": "Apex Platinum - Statement Generation & Billing Cycles (2024)",
+            "category": "Billing Statements & Grace Periods",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 9,
+            "score": 0.5577154474474004,
+            "evidence": [
+              {
+                "chunk_id": "1846799b249d910af06ebab6",
+                "text": "Statements generate monthly on 28th calendar day. Payment grace period is 25 days post statement closing date.",
+                "parent_id": "DOC-0136:policy",
+                "start_char": 151,
+                "end_char": 261
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0009",
+            "title": "Apex Platinum - Interest Allocation & Payment Prioritization (2024)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 10,
+            "score": 0.5348284479954774,
+            "evidence": [
+              {
+                "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                "text": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first.",
+                "parent_id": "DOC-0009:policy",
+                "start_char": 133,
+                "end_char": 409
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0031",
+            "title": "Apex Platinum - Annual Fee Billing and Refund Waiver Rules (2024)",
+            "category": "Fees & Interest (APR)",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 11,
+            "score": 0.5325684319523731,
+            "evidence": [
+              {
+                "chunk_id": "b1576ccb0254a9696045d3ed",
+                "text": "Apex Platinum card annual fee is $495 billed on the anniversary month of account opening. The annual fee is fully refundable if the account is closed within 30 days of the fee posting date. Fee waivers cannot be authorized by Tier 1 agents unless a retention offer promotion code is active in CRM.",
+                "parent_id": "DOC-0031:policy",
+                "start_char": 138,
+                "end_char": 435
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0013",
+            "title": "Apex Platinum - Balance Transfer Limits & Caps (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 12,
+            "score": 0.5180895460078021,
+            "evidence": [
+              {
+                "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                "text": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited.",
+                "parent_id": "DOC-0013:policy",
+                "start_char": 133,
+                "end_char": 328
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0024",
+            "title": "Apex Platinum - Provisional Credit Allocation Rules (2025)",
+            "category": "Disputes & Zero Liability Fraud",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 13,
+            "score": 0.5143822487524112,
+            "evidence": [
+              {
+                "chunk_id": "023e9de4be46fb9054950f73",
+                "text": "A provisional credit will be credited to the customer account within 10 business days for disputed billing amounts greater than $25. If the investigation resolves in favor of the merchant, the provisional credit will be revoked with a 10-day advance notification to the cardholder.",
+                "parent_id": "DOC-0024:policy",
+                "start_char": 148,
+                "end_char": 429
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0147",
+            "title": "Apex Platinum - Payment Credit Posting Rules (2025)",
+            "category": "Billing Statements & Grace Periods",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 14,
+            "score": 0.5119690842631083,
+            "evidence": [
+              {
+                "chunk_id": "ff4ddd7d7c8ef5ae18680b94",
+                "text": "Online payments submitted before 5:00 PM EST post same business day. Credit line replenishes immediately.",
+                "parent_id": "DOC-0147:policy",
+                "start_char": 151,
+                "end_char": 256
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0071",
+            "title": "Apex Platinum - Travel Notification & Security Overrides (2025)",
+            "category": "Emergency Services & Card Management",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 15,
+            "score": 0.49351323650461665,
+            "evidence": [
+              {
+                "chunk_id": "7832593609405b0f7d623fb6",
+                "text": "Travel notifications are recommended but optional due to real-time chip and tokenization fraud monitoring. Travel plans can be set up to 90 days in advance.",
+                "parent_id": "DOC-0071:policy",
+                "start_char": 153,
+                "end_char": 309
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0110",
+            "title": "Apex Platinum - Proactive Credit Limit Reduction Policy (2025)",
+            "category": "Credit Limits & Underwriting",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "rank": 16,
+            "score": 0.4821454328178621,
+            "evidence": [
+              {
+                "chunk_id": "0e8a0d4f9d5ae119334c097d",
+                "text": "Apex reserves right to lower credit lines if significant score drops or missed payments on external accounts occur. Written notice issued within 5 days.",
+                "parent_id": "DOC-0110:policy",
+                "start_char": 144,
+                "end_char": 296
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0014",
+            "title": "Apex Everyday Freedom - Balance Transfer Cap Guidelines (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2025,
+            "rank": 17,
+            "score": 0.47679337481401773,
+            "evidence": [
+              {
+                "chunk_id": "773a70f24b1c618c9efb4688",
+                "text": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing.",
+                "parent_id": "DOC-0014:policy",
+                "start_char": 141,
+                "end_char": 303
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0016",
+            "title": "Apex Platinum - Zero Liability Fraud Protection Policy (2024)",
+            "category": "Disputes & Zero Liability Fraud",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "rank": 18,
+            "score": 0.4695270138599379,
+            "evidence": [
+              {
+                "chunk_id": "c327b5f14509fbec765d6ede",
+                "text": "Apex cardholders incur $0 liability for unauthorized transactions reported within 60 days of the statement date. Unauthorized transactions must be reported immediately via online banking or call center. Temporary credits are issued within 2 business days during investigation.",
+                "parent_id": "DOC-0016:policy",
+                "start_char": 148,
+                "end_char": 424
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0008",
+            "title": "Apex Business Select - Commercial Transfer Settlement (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Business Select",
+            "effective_year": 2025,
+            "rank": 19,
+            "score": 0.4656583233084568,
+            "evidence": [
+              {
+                "chunk_id": "d908fd6f05b8351c9e367321",
+                "text": "Business balance transfers are processed via automated clearing house (ACH) within 3 to 5 business days. Maximum transfer limit per rolling 30-day window is $50,000.",
+                "parent_id": "DOC-0008:policy",
+                "start_char": 140,
+                "end_char": 305
+              }
+            ]
+          },
+          {
+            "doc_id": "DOC-0007",
+            "title": "Apex Preferred Travel - Processing Timelines & Confirmations (2025)",
+            "category": "Balance Transfers",
+            "card_tier": "Apex Preferred Travel",
+            "effective_year": 2025,
+            "rank": 20,
+            "score": 0.4502212149718866,
+            "evidence": [
+              {
+                "chunk_id": "08d8dd56eb33f231f34324a0",
+                "text": "Processing times average 5 business days for major US bank payees and up to 10 business days for credit unions. Email notification is dispatched upon disbursement.",
+                "parent_id": "DOC-0007:policy",
+                "start_char": 141,
+                "end_char": 304
+              }
+            ]
+          }
+        ],
+        "timings_ms": {
+          "embedding": 422.46936000083224,
+          "dense": 6.707871998514747,
+          "sparse": 2.742680000665132,
+          "fusion": 0.13772799866274,
+          "rerank": 370.24033299894654,
+          "retrieval_total": 804.7161709982902,
+          "recall_fusion": 10.155506999581121,
+          "generation": null,
+          "answer_total": null,
+          "query_rewrite": null
+        },
+        "trace": {
+          "dense": [
+            {
+              "chunk_id": "2fb88d60ca94ba92661b09bd",
+              "doc_id": "DOC-0001",
+              "rank": 1,
+              "score": 0.8793231916831037
+            },
+            {
+              "chunk_id": "5b217fa602bc478808660085",
+              "doc_id": "DOC-0005",
+              "rank": 2,
+              "score": 0.8433973789215148
+            },
+            {
+              "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+              "doc_id": "DOC-0009",
+              "rank": 3,
+              "score": 0.8144060130594402
+            },
+            {
+              "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+              "doc_id": "DOC-0013",
+              "rank": 4,
+              "score": 0.7917964582564572
+            },
+            {
+              "chunk_id": "bc255b5372af6f0b1188df9d",
+              "doc_id": "DOC-0003",
+              "rank": 5,
+              "score": 0.7762881321391837
+            },
+            {
+              "chunk_id": "07558a24dfec359c944e2d63",
+              "doc_id": "DOC-0002",
+              "rank": 6,
+              "score": 0.7651698869264261
+            },
+            {
+              "chunk_id": "c36ed936d7fca506a7541004",
+              "doc_id": "DOC-0006",
+              "rank": 7,
+              "score": 0.7601687538674187
+            },
+            {
+              "chunk_id": "afe69a0eb51ebafc189b64fd",
+              "doc_id": "DOC-0150",
+              "rank": 8,
+              "score": 0.7584666609764154
+            },
+            {
+              "chunk_id": "3047e4bbe909e85319e83e87",
+              "doc_id": "DOC-0004",
+              "rank": 9,
+              "score": 0.7523988113522259
+            },
+            {
+              "chunk_id": "773a70f24b1c618c9efb4688",
+              "doc_id": "DOC-0014",
+              "rank": 10,
+              "score": 0.7338601509416026
+            },
+            {
+              "chunk_id": "4af545e37b200e7755bb5df1",
+              "doc_id": "DOC-0065",
+              "rank": 11,
+              "score": 0.7306908690105833
+            },
+            {
+              "chunk_id": "8c8bb479420ec4187498985e",
+              "doc_id": "DOC-0011",
+              "rank": 12,
+              "score": 0.7282536949808961
+            },
+            {
+              "chunk_id": "b1576ccb0254a9696045d3ed",
+              "doc_id": "DOC-0031",
+              "rank": 13,
+              "score": 0.7270453301614129
+            },
+            {
+              "chunk_id": "268446c4429bf1e0ec50d24c",
+              "doc_id": "DOC-0039",
+              "rank": 14,
+              "score": 0.725186271976618
+            },
+            {
+              "chunk_id": "78fd68e4f682d79c5eb41480",
+              "doc_id": "DOC-0020",
+              "rank": 15,
+              "score": 0.721693797212481
+            },
+            {
+              "chunk_id": "3ca5cc7772da0b2be9c1a284",
+              "doc_id": "DOC-0061",
+              "rank": 16,
+              "score": 0.7212001417636702
+            },
+            {
+              "chunk_id": "d908fd6f05b8351c9e367321",
+              "doc_id": "DOC-0008",
+              "rank": 17,
+              "score": 0.7096722895102341
+            },
+            {
+              "chunk_id": "ff4ddd7d7c8ef5ae18680b94",
+              "doc_id": "DOC-0147",
+              "rank": 18,
+              "score": 0.7081946482426348
+            },
+            {
+              "chunk_id": "08d8dd56eb33f231f34324a0",
+              "doc_id": "DOC-0007",
+              "rank": 19,
+              "score": 0.7053270270835721
+            },
+            {
+              "chunk_id": "c327b5f14509fbec765d6ede",
+              "doc_id": "DOC-0016",
+              "rank": 20,
+              "score": 0.7045055207904876
+            },
+            {
+              "chunk_id": "e74dc5c34c313fd184eec40f",
+              "doc_id": "DOC-0140",
+              "rank": 21,
+              "score": 0.7027918454656785
+            },
+            {
+              "chunk_id": "1846799b249d910af06ebab6",
+              "doc_id": "DOC-0136",
+              "rank": 22,
+              "score": 0.7019859133967226
+            },
+            {
+              "chunk_id": "81e96a4f77676b03dee7116a",
+              "doc_id": "DOC-0028",
+              "rank": 23,
+              "score": 0.6969344796577418
+            },
+            {
+              "chunk_id": "023e9de4be46fb9054950f73",
+              "doc_id": "DOC-0024",
+              "rank": 24,
+              "score": 0.6967677420197007
+            },
+            {
+              "chunk_id": "b967194f44b3aac0db009e06",
+              "doc_id": "DOC-0015",
+              "rank": 25,
+              "score": 0.6938708607035374
+            },
+            {
+              "chunk_id": "90c56f0ff2250dad721ecd80",
+              "doc_id": "DOC-0010",
+              "rank": 26,
+              "score": 0.6920516674487801
+            },
+            {
+              "chunk_id": "2e67890edf23cd2b636a5256",
+              "doc_id": "DOC-0086",
+              "rank": 27,
+              "score": 0.6896098811131941
+            },
+            {
+              "chunk_id": "0e8a0d4f9d5ae119334c097d",
+              "doc_id": "DOC-0110",
+              "rank": 28,
+              "score": 0.6882985029131647
+            },
+            {
+              "chunk_id": "c62cc2183829070ff7262331",
+              "doc_id": "DOC-0043",
+              "rank": 29,
+              "score": 0.6877086162567188
+            },
+            {
+              "chunk_id": "6b83c0466aa953dd82006aae",
+              "doc_id": "DOC-0060",
+              "rank": 30,
+              "score": 0.682250142097478
+            },
+            {
+              "chunk_id": "d78be5e9b09d1ee5b70dc305",
+              "doc_id": "DOC-0035",
+              "rank": 31,
+              "score": 0.6819647550582935
+            },
+            {
+              "chunk_id": "3740f08067dfcff2f220f5f5",
+              "doc_id": "DOC-0050",
+              "rank": 32,
+              "score": 0.6819196749877845
+            },
+            {
+              "chunk_id": "7832593609405b0f7d623fb6",
+              "doc_id": "DOC-0071",
+              "rank": 33,
+              "score": 0.6813945364120891
+            },
+            {
+              "chunk_id": "a718b0c4e55e006e5c0ca1c6",
+              "doc_id": "DOC-0069",
+              "rank": 34,
+              "score": 0.6805101608317815
+            },
+            {
+              "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+              "doc_id": "DOC-0058",
+              "rank": 35,
+              "score": 0.6751642614407227
+            },
+            {
+              "chunk_id": "d76e1bf25824c9203df9b6e1",
+              "doc_id": "DOC-0012",
+              "rank": 36,
+              "score": 0.6748489543705664
+            },
+            {
+              "chunk_id": "6fb7265dfe15f2d939fecd13",
+              "doc_id": "DOC-0138",
+              "rank": 37,
+              "score": 0.6724570383208337
+            },
+            {
+              "chunk_id": "75aac290f1e7b432aa99e65d",
+              "doc_id": "DOC-0144",
+              "rank": 38,
+              "score": 0.6661018531201061
+            },
+            {
+              "chunk_id": "49296c7bbf2cabded10ed747",
+              "doc_id": "DOC-0054",
+              "rank": 39,
+              "score": 0.6613606017422523
+            },
+            {
+              "chunk_id": "371dbd52198b93257d7c21fd",
+              "doc_id": "DOC-0076",
+              "rank": 40,
+              "score": 0.6581795027042028
+            },
+            {
+              "chunk_id": "7b8c9117e8fa3cfafb73abf5",
+              "doc_id": "DOC-0090",
+              "rank": 41,
+              "score": 0.6536532445653332
+            },
+            {
+              "chunk_id": "ba5f0f32e166368aedc683b6",
+              "doc_id": "DOC-0041",
+              "rank": 42,
+              "score": 0.6529447643193754
+            },
+            {
+              "chunk_id": "42cbc85b3ebc0fab2e103a32",
+              "doc_id": "DOC-0104",
+              "rank": 43,
+              "score": 0.6491351530213635
+            },
+            {
+              "chunk_id": "a3dfffcd6e92838c81c6c525",
+              "doc_id": "DOC-0026",
+              "rank": 44,
+              "score": 0.6483667686094943
+            },
+            {
+              "chunk_id": "123808e33f8d2a1dd955572e",
+              "doc_id": "DOC-0119",
+              "rank": 45,
+              "score": 0.6474710702896164
+            },
+            {
+              "chunk_id": "980d72e06567fafa66b4384c",
+              "doc_id": "DOC-0114",
+              "rank": 46,
+              "score": 0.6457083647598786
+            },
+            {
+              "chunk_id": "94ff52fef68a4e9d27fe00d8",
+              "doc_id": "DOC-0091",
+              "rank": 47,
+              "score": 0.645259759112612
+            },
+            {
+              "chunk_id": "61bae330870dea88a1f66da3",
+              "doc_id": "DOC-0025",
+              "rank": 48,
+              "score": 0.6444335791806245
+            },
+            {
+              "chunk_id": "c9d75fe13852c7adcc63a7e7",
+              "doc_id": "DOC-0149",
+              "rank": 49,
+              "score": 0.6443327281276757
+            },
+            {
+              "chunk_id": "2560ffa5426c12f5f4fe1275",
+              "doc_id": "DOC-0067",
+              "rank": 50,
+              "score": 0.6437621541306788
+            },
+            {
+              "chunk_id": "11d3c030f1eb3cba3e0826a2",
+              "doc_id": "DOC-0066",
+              "rank": 51,
+              "score": 0.6370745517567079
+            },
+            {
+              "chunk_id": "43101afede1e0d8bf3ced31d",
+              "doc_id": "DOC-0046",
+              "rank": 52,
+              "score": 0.6363025741216451
+            },
+            {
+              "chunk_id": "b7c8fc5b5c564bc3c9ba709d",
+              "doc_id": "DOC-0106",
+              "rank": 53,
+              "score": 0.6331921438460275
+            },
+            {
+              "chunk_id": "4ffa05f6b7528c0549354375",
+              "doc_id": "DOC-0145",
+              "rank": 54,
+              "score": 0.6330965757370041
+            },
+            {
+              "chunk_id": "4baa9a08702b5caf14d5fb4b",
+              "doc_id": "DOC-0120",
+              "rank": 55,
+              "score": 0.6320458650589034
+            },
+            {
+              "chunk_id": "1bdbc33f72f02d6b67c833ae",
+              "doc_id": "DOC-0080",
+              "rank": 56,
+              "score": 0.6284036108725778
+            },
+            {
+              "chunk_id": "3664ad0e26520a3e1f078d5d",
+              "doc_id": "DOC-0099",
+              "rank": 57,
+              "score": 0.6271510942488268
+            },
+            {
+              "chunk_id": "aec55849ceaf397dc0308db5",
+              "doc_id": "DOC-0111",
+              "rank": 58,
+              "score": 0.6260304450988814
+            },
+            {
+              "chunk_id": "d6b5116b56e6b085039f6650",
+              "doc_id": "DOC-0045",
+              "rank": 59,
+              "score": 0.6259193047333189
+            },
+            {
+              "chunk_id": "b34999d4fde8aae406be3c9e",
+              "doc_id": "DOC-0142",
+              "rank": 60,
+              "score": 0.6256483160539092
+            },
+            {
+              "chunk_id": "ad7f824324cff994ecd0f6c1",
+              "doc_id": "DOC-0143",
+              "rank": 61,
+              "score": 0.6252189501989525
+            },
+            {
+              "chunk_id": "04914d61e9949f0e9d805b44",
+              "doc_id": "DOC-0073",
+              "rank": 62,
+              "score": 0.6250913962667359
+            },
+            {
+              "chunk_id": "704832e2bb86de1d94e58466",
+              "doc_id": "DOC-0117",
+              "rank": 63,
+              "score": 0.6236303262820767
+            },
+            {
+              "chunk_id": "080e7d0c9238901814d10d05",
+              "doc_id": "DOC-0040",
+              "rank": 64,
+              "score": 0.6214298831564269
+            },
+            {
+              "chunk_id": "34073b1694d80094c41f9383",
+              "doc_id": "DOC-0094",
+              "rank": 65,
+              "score": 0.6213975404027057
+            },
+            {
+              "chunk_id": "91dc6797efbe166636926ce2",
+              "doc_id": "DOC-0141",
+              "rank": 66,
+              "score": 0.6200757026672408
+            },
+            {
+              "chunk_id": "9bce8c59cef936d3cfa89388",
+              "doc_id": "DOC-0044",
+              "rank": 67,
+              "score": 0.6174969305099898
+            },
+            {
+              "chunk_id": "580e111e23632b8c64ea09cd",
+              "doc_id": "DOC-0021",
+              "rank": 68,
+              "score": 0.6144511699676557
+            },
+            {
+              "chunk_id": "3e9ffb2293ec51e20bb4850f",
+              "doc_id": "DOC-0084",
+              "rank": 69,
+              "score": 0.6127765640286726
+            },
+            {
+              "chunk_id": "4211560897a75d45deaf61cd",
+              "doc_id": "DOC-0101",
+              "rank": 70,
+              "score": 0.6117300987243696
+            },
+            {
+              "chunk_id": "d2bd15fed5d66e76f0585820",
+              "doc_id": "DOC-0062",
+              "rank": 71,
+              "score": 0.6107743614450488
+            },
+            {
+              "chunk_id": "0dc1b171ced287a65e45896c",
+              "doc_id": "DOC-0097",
+              "rank": 72,
+              "score": 0.6092283595528174
+            },
+            {
+              "chunk_id": "fdbd7511393553750bd1a7ca",
+              "doc_id": "DOC-0022",
+              "rank": 73,
+              "score": 0.6078341784427883
+            },
+            {
+              "chunk_id": "0c0279810a88a52a8d7bee15",
+              "doc_id": "DOC-0103",
+              "rank": 74,
+              "score": 0.6072380904697331
+            },
+            {
+              "chunk_id": "3c979a30ba09ddb22e41c363",
+              "doc_id": "DOC-0137",
+              "rank": 75,
+              "score": 0.6054254589848108
+            },
+            {
+              "chunk_id": "ec9e4dc05f5d2d0dbefd81cc",
+              "doc_id": "DOC-0068",
+              "rank": 76,
+              "score": 0.6050651183607973
+            },
+            {
+              "chunk_id": "58c24c76ee779c0731521099",
+              "doc_id": "DOC-0146",
+              "rank": 77,
+              "score": 0.6042590501462943
+            },
+            {
+              "chunk_id": "026fa73e1d167053885740ce",
+              "doc_id": "DOC-0032",
+              "rank": 78,
+              "score": 0.6034638521990875
+            },
+            {
+              "chunk_id": "11fb10c808fec24a220aebe9",
+              "doc_id": "DOC-0116",
+              "rank": 79,
+              "score": 0.599519813089383
+            },
+            {
+              "chunk_id": "1ba16d9010233877c8e1764c",
+              "doc_id": "DOC-0037",
+              "rank": 80,
+              "score": 0.599208796071483
+            },
+            {
+              "chunk_id": "f0e0b2b9f24869b9b6e4079f",
+              "doc_id": "DOC-0042",
+              "rank": 81,
+              "score": 0.5978709342633565
+            },
+            {
+              "chunk_id": "e7a29702d9334ee352b32828",
+              "doc_id": "DOC-0112",
+              "rank": 82,
+              "score": 0.5964402796959721
+            },
+            {
+              "chunk_id": "17c70bee97c8fc954a1a96ce",
+              "doc_id": "DOC-0033",
+              "rank": 83,
+              "score": 0.5962908090266368
+            },
+            {
+              "chunk_id": "dfc8cd6caca23611906d121c",
+              "doc_id": "DOC-0036",
+              "rank": 84,
+              "score": 0.5934543721025602
+            },
+            {
+              "chunk_id": "987fc8ac9652ac9e83197ba1",
+              "doc_id": "DOC-0070",
+              "rank": 85,
+              "score": 0.591770410537724
+            },
+            {
+              "chunk_id": "68cbe75105b97dd4ab8f7ef2",
+              "doc_id": "DOC-0063",
+              "rank": 86,
+              "score": 0.5903970843316872
+            },
+            {
+              "chunk_id": "f5471f6813514adaaa890bab",
+              "doc_id": "DOC-0072",
+              "rank": 87,
+              "score": 0.5883331298828167
+            },
+            {
+              "chunk_id": "e6a7e3fde72a0a48cf178ab7",
+              "doc_id": "DOC-0018",
+              "rank": 88,
+              "score": 0.5874487057389371
+            },
+            {
+              "chunk_id": "168c738cbf156a76cce4f483",
+              "doc_id": "DOC-0052",
+              "rank": 89,
+              "score": 0.5857225307391576
+            },
+            {
+              "chunk_id": "0a412c3c3ef1b8099c3fae0b",
+              "doc_id": "DOC-0027",
+              "rank": 90,
+              "score": 0.5848493722350538
+            },
+            {
+              "chunk_id": "1b453ab6602ae8105247144a",
+              "doc_id": "DOC-0029",
+              "rank": 91,
+              "score": 0.581120123729691
+            },
+            {
+              "chunk_id": "9d8b1cbd96600ca7dbe32a5b",
+              "doc_id": "DOC-0038",
+              "rank": 92,
+              "score": 0.5751145392519785
+            },
+            {
+              "chunk_id": "eacd5de65db80f6abae573e7",
+              "doc_id": "DOC-0077",
+              "rank": 93,
+              "score": 0.5727490612045233
+            },
+            {
+              "chunk_id": "7f34d36808d2e92756895a21",
+              "doc_id": "DOC-0034",
+              "rank": 94,
+              "score": 0.5721764564514201
+            },
+            {
+              "chunk_id": "1ddfdca2ccb30105d54cbacf",
+              "doc_id": "DOC-0135",
+              "rank": 95,
+              "score": 0.5721553733071028
+            },
+            {
+              "chunk_id": "c35c936f70a02d2f5ff1bbc5",
+              "doc_id": "DOC-0075",
+              "rank": 96,
+              "score": 0.5712310927372529
+            },
+            {
+              "chunk_id": "655dcf9166b01869a2f662e3",
+              "doc_id": "DOC-0064",
+              "rank": 97,
+              "score": 0.5711017506657997
+            },
+            {
+              "chunk_id": "e39a9dbf333f929520248e3d",
+              "doc_id": "DOC-0124",
+              "rank": 98,
+              "score": 0.5701350825944503
+            },
+            {
+              "chunk_id": "09f547defad301a072bdb23b",
+              "doc_id": "DOC-0115",
+              "rank": 99,
+              "score": 0.5690788883519845
+            },
+            {
+              "chunk_id": "74dca38f136209cb01a85e18",
+              "doc_id": "DOC-0017",
+              "rank": 100,
+              "score": 0.5682622790336649
+            }
+          ],
+          "sparse": [],
+          "fusion": [
+            {
+              "chunk_id": "2fb88d60ca94ba92661b09bd",
+              "doc_id": "DOC-0001",
+              "rank": 1,
+              "score": 0.01639344262295082
+            },
+            {
+              "chunk_id": "5b217fa602bc478808660085",
+              "doc_id": "DOC-0005",
+              "rank": 2,
+              "score": 0.016129032258064516
+            },
+            {
+              "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+              "doc_id": "DOC-0009",
+              "rank": 3,
+              "score": 0.015873015873015872
+            },
+            {
+              "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+              "doc_id": "DOC-0013",
+              "rank": 4,
+              "score": 0.015625
+            },
+            {
+              "chunk_id": "bc255b5372af6f0b1188df9d",
+              "doc_id": "DOC-0003",
+              "rank": 5,
+              "score": 0.015384615384615385
+            },
+            {
+              "chunk_id": "07558a24dfec359c944e2d63",
+              "doc_id": "DOC-0002",
+              "rank": 6,
+              "score": 0.015151515151515152
+            },
+            {
+              "chunk_id": "c36ed936d7fca506a7541004",
+              "doc_id": "DOC-0006",
+              "rank": 7,
+              "score": 0.014925373134328358
+            },
+            {
+              "chunk_id": "afe69a0eb51ebafc189b64fd",
+              "doc_id": "DOC-0150",
+              "rank": 8,
+              "score": 0.014705882352941176
+            },
+            {
+              "chunk_id": "3047e4bbe909e85319e83e87",
+              "doc_id": "DOC-0004",
+              "rank": 9,
+              "score": 0.014492753623188406
+            },
+            {
+              "chunk_id": "773a70f24b1c618c9efb4688",
+              "doc_id": "DOC-0014",
+              "rank": 10,
+              "score": 0.014285714285714285
+            },
+            {
+              "chunk_id": "4af545e37b200e7755bb5df1",
+              "doc_id": "DOC-0065",
+              "rank": 11,
+              "score": 0.014084507042253521
+            },
+            {
+              "chunk_id": "8c8bb479420ec4187498985e",
+              "doc_id": "DOC-0011",
+              "rank": 12,
+              "score": 0.013888888888888888
+            },
+            {
+              "chunk_id": "b1576ccb0254a9696045d3ed",
+              "doc_id": "DOC-0031",
+              "rank": 13,
+              "score": 0.0136986301369863
+            },
+            {
+              "chunk_id": "268446c4429bf1e0ec50d24c",
+              "doc_id": "DOC-0039",
+              "rank": 14,
+              "score": 0.013513513513513514
+            },
+            {
+              "chunk_id": "78fd68e4f682d79c5eb41480",
+              "doc_id": "DOC-0020",
+              "rank": 15,
+              "score": 0.013333333333333334
+            },
+            {
+              "chunk_id": "3ca5cc7772da0b2be9c1a284",
+              "doc_id": "DOC-0061",
+              "rank": 16,
+              "score": 0.013157894736842105
+            },
+            {
+              "chunk_id": "d908fd6f05b8351c9e367321",
+              "doc_id": "DOC-0008",
+              "rank": 17,
+              "score": 0.012987012987012988
+            },
+            {
+              "chunk_id": "ff4ddd7d7c8ef5ae18680b94",
+              "doc_id": "DOC-0147",
+              "rank": 18,
+              "score": 0.01282051282051282
+            },
+            {
+              "chunk_id": "08d8dd56eb33f231f34324a0",
+              "doc_id": "DOC-0007",
+              "rank": 19,
+              "score": 0.012658227848101266
+            },
+            {
+              "chunk_id": "c327b5f14509fbec765d6ede",
+              "doc_id": "DOC-0016",
+              "rank": 20,
+              "score": 0.0125
+            },
+            {
+              "chunk_id": "e74dc5c34c313fd184eec40f",
+              "doc_id": "DOC-0140",
+              "rank": 21,
+              "score": 0.012345679012345678
+            },
+            {
+              "chunk_id": "1846799b249d910af06ebab6",
+              "doc_id": "DOC-0136",
+              "rank": 22,
+              "score": 0.012195121951219513
+            },
+            {
+              "chunk_id": "81e96a4f77676b03dee7116a",
+              "doc_id": "DOC-0028",
+              "rank": 23,
+              "score": 0.012048192771084338
+            },
+            {
+              "chunk_id": "023e9de4be46fb9054950f73",
+              "doc_id": "DOC-0024",
+              "rank": 24,
+              "score": 0.011904761904761904
+            },
+            {
+              "chunk_id": "b967194f44b3aac0db009e06",
+              "doc_id": "DOC-0015",
+              "rank": 25,
+              "score": 0.011764705882352941
+            },
+            {
+              "chunk_id": "90c56f0ff2250dad721ecd80",
+              "doc_id": "DOC-0010",
+              "rank": 26,
+              "score": 0.011627906976744186
+            },
+            {
+              "chunk_id": "2e67890edf23cd2b636a5256",
+              "doc_id": "DOC-0086",
+              "rank": 27,
+              "score": 0.011494252873563218
+            },
+            {
+              "chunk_id": "0e8a0d4f9d5ae119334c097d",
+              "doc_id": "DOC-0110",
+              "rank": 28,
+              "score": 0.011363636363636364
+            },
+            {
+              "chunk_id": "c62cc2183829070ff7262331",
+              "doc_id": "DOC-0043",
+              "rank": 29,
+              "score": 0.011235955056179775
+            },
+            {
+              "chunk_id": "6b83c0466aa953dd82006aae",
+              "doc_id": "DOC-0060",
+              "rank": 30,
+              "score": 0.011111111111111112
+            },
+            {
+              "chunk_id": "d78be5e9b09d1ee5b70dc305",
+              "doc_id": "DOC-0035",
+              "rank": 31,
+              "score": 0.01098901098901099
+            },
+            {
+              "chunk_id": "3740f08067dfcff2f220f5f5",
+              "doc_id": "DOC-0050",
+              "rank": 32,
+              "score": 0.010869565217391304
+            },
+            {
+              "chunk_id": "7832593609405b0f7d623fb6",
+              "doc_id": "DOC-0071",
+              "rank": 33,
+              "score": 0.010752688172043012
+            },
+            {
+              "chunk_id": "a718b0c4e55e006e5c0ca1c6",
+              "doc_id": "DOC-0069",
+              "rank": 34,
+              "score": 0.010638297872340425
+            },
+            {
+              "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+              "doc_id": "DOC-0058",
+              "rank": 35,
+              "score": 0.010526315789473684
+            },
+            {
+              "chunk_id": "d76e1bf25824c9203df9b6e1",
+              "doc_id": "DOC-0012",
+              "rank": 36,
+              "score": 0.010416666666666666
+            },
+            {
+              "chunk_id": "6fb7265dfe15f2d939fecd13",
+              "doc_id": "DOC-0138",
+              "rank": 37,
+              "score": 0.010309278350515464
+            },
+            {
+              "chunk_id": "75aac290f1e7b432aa99e65d",
+              "doc_id": "DOC-0144",
+              "rank": 38,
+              "score": 0.01020408163265306
+            },
+            {
+              "chunk_id": "49296c7bbf2cabded10ed747",
+              "doc_id": "DOC-0054",
+              "rank": 39,
+              "score": 0.010101010101010102
+            },
+            {
+              "chunk_id": "371dbd52198b93257d7c21fd",
+              "doc_id": "DOC-0076",
+              "rank": 40,
+              "score": 0.01
+            },
+            {
+              "chunk_id": "7b8c9117e8fa3cfafb73abf5",
+              "doc_id": "DOC-0090",
+              "rank": 41,
+              "score": 0.009900990099009901
+            },
+            {
+              "chunk_id": "ba5f0f32e166368aedc683b6",
+              "doc_id": "DOC-0041",
+              "rank": 42,
+              "score": 0.00980392156862745
+            },
+            {
+              "chunk_id": "42cbc85b3ebc0fab2e103a32",
+              "doc_id": "DOC-0104",
+              "rank": 43,
+              "score": 0.009708737864077669
+            },
+            {
+              "chunk_id": "a3dfffcd6e92838c81c6c525",
+              "doc_id": "DOC-0026",
+              "rank": 44,
+              "score": 0.009615384615384616
+            },
+            {
+              "chunk_id": "123808e33f8d2a1dd955572e",
+              "doc_id": "DOC-0119",
+              "rank": 45,
+              "score": 0.009523809523809525
+            },
+            {
+              "chunk_id": "980d72e06567fafa66b4384c",
+              "doc_id": "DOC-0114",
+              "rank": 46,
+              "score": 0.009433962264150943
+            },
+            {
+              "chunk_id": "94ff52fef68a4e9d27fe00d8",
+              "doc_id": "DOC-0091",
+              "rank": 47,
+              "score": 0.009345794392523364
+            },
+            {
+              "chunk_id": "61bae330870dea88a1f66da3",
+              "doc_id": "DOC-0025",
+              "rank": 48,
+              "score": 0.009259259259259259
+            },
+            {
+              "chunk_id": "c9d75fe13852c7adcc63a7e7",
+              "doc_id": "DOC-0149",
+              "rank": 49,
+              "score": 0.009174311926605505
+            },
+            {
+              "chunk_id": "2560ffa5426c12f5f4fe1275",
+              "doc_id": "DOC-0067",
+              "rank": 50,
+              "score": 0.00909090909090909
+            },
+            {
+              "chunk_id": "11d3c030f1eb3cba3e0826a2",
+              "doc_id": "DOC-0066",
+              "rank": 51,
+              "score": 0.009009009009009009
+            },
+            {
+              "chunk_id": "43101afede1e0d8bf3ced31d",
+              "doc_id": "DOC-0046",
+              "rank": 52,
+              "score": 0.008928571428571428
+            },
+            {
+              "chunk_id": "b7c8fc5b5c564bc3c9ba709d",
+              "doc_id": "DOC-0106",
+              "rank": 53,
+              "score": 0.008849557522123894
+            },
+            {
+              "chunk_id": "4ffa05f6b7528c0549354375",
+              "doc_id": "DOC-0145",
+              "rank": 54,
+              "score": 0.008771929824561403
+            },
+            {
+              "chunk_id": "4baa9a08702b5caf14d5fb4b",
+              "doc_id": "DOC-0120",
+              "rank": 55,
+              "score": 0.008695652173913044
+            },
+            {
+              "chunk_id": "1bdbc33f72f02d6b67c833ae",
+              "doc_id": "DOC-0080",
+              "rank": 56,
+              "score": 0.008620689655172414
+            },
+            {
+              "chunk_id": "3664ad0e26520a3e1f078d5d",
+              "doc_id": "DOC-0099",
+              "rank": 57,
+              "score": 0.008547008547008548
+            },
+            {
+              "chunk_id": "aec55849ceaf397dc0308db5",
+              "doc_id": "DOC-0111",
+              "rank": 58,
+              "score": 0.00847457627118644
+            },
+            {
+              "chunk_id": "d6b5116b56e6b085039f6650",
+              "doc_id": "DOC-0045",
+              "rank": 59,
+              "score": 0.008403361344537815
+            },
+            {
+              "chunk_id": "b34999d4fde8aae406be3c9e",
+              "doc_id": "DOC-0142",
+              "rank": 60,
+              "score": 0.008333333333333333
+            },
+            {
+              "chunk_id": "ad7f824324cff994ecd0f6c1",
+              "doc_id": "DOC-0143",
+              "rank": 61,
+              "score": 0.008264462809917356
+            },
+            {
+              "chunk_id": "04914d61e9949f0e9d805b44",
+              "doc_id": "DOC-0073",
+              "rank": 62,
+              "score": 0.00819672131147541
+            },
+            {
+              "chunk_id": "704832e2bb86de1d94e58466",
+              "doc_id": "DOC-0117",
+              "rank": 63,
+              "score": 0.008130081300813009
+            },
+            {
+              "chunk_id": "080e7d0c9238901814d10d05",
+              "doc_id": "DOC-0040",
+              "rank": 64,
+              "score": 0.008064516129032258
+            },
+            {
+              "chunk_id": "34073b1694d80094c41f9383",
+              "doc_id": "DOC-0094",
+              "rank": 65,
+              "score": 0.008
+            },
+            {
+              "chunk_id": "91dc6797efbe166636926ce2",
+              "doc_id": "DOC-0141",
+              "rank": 66,
+              "score": 0.007936507936507936
+            },
+            {
+              "chunk_id": "9bce8c59cef936d3cfa89388",
+              "doc_id": "DOC-0044",
+              "rank": 67,
+              "score": 0.007874015748031496
+            },
+            {
+              "chunk_id": "580e111e23632b8c64ea09cd",
+              "doc_id": "DOC-0021",
+              "rank": 68,
+              "score": 0.0078125
+            },
+            {
+              "chunk_id": "3e9ffb2293ec51e20bb4850f",
+              "doc_id": "DOC-0084",
+              "rank": 69,
+              "score": 0.007751937984496124
+            },
+            {
+              "chunk_id": "4211560897a75d45deaf61cd",
+              "doc_id": "DOC-0101",
+              "rank": 70,
+              "score": 0.007692307692307693
+            },
+            {
+              "chunk_id": "d2bd15fed5d66e76f0585820",
+              "doc_id": "DOC-0062",
+              "rank": 71,
+              "score": 0.007633587786259542
+            },
+            {
+              "chunk_id": "0dc1b171ced287a65e45896c",
+              "doc_id": "DOC-0097",
+              "rank": 72,
+              "score": 0.007575757575757576
+            },
+            {
+              "chunk_id": "fdbd7511393553750bd1a7ca",
+              "doc_id": "DOC-0022",
+              "rank": 73,
+              "score": 0.007518796992481203
+            },
+            {
+              "chunk_id": "0c0279810a88a52a8d7bee15",
+              "doc_id": "DOC-0103",
+              "rank": 74,
+              "score": 0.007462686567164179
+            },
+            {
+              "chunk_id": "3c979a30ba09ddb22e41c363",
+              "doc_id": "DOC-0137",
+              "rank": 75,
+              "score": 0.007407407407407408
+            },
+            {
+              "chunk_id": "ec9e4dc05f5d2d0dbefd81cc",
+              "doc_id": "DOC-0068",
+              "rank": 76,
+              "score": 0.007352941176470588
+            },
+            {
+              "chunk_id": "58c24c76ee779c0731521099",
+              "doc_id": "DOC-0146",
+              "rank": 77,
+              "score": 0.0072992700729927005
+            },
+            {
+              "chunk_id": "026fa73e1d167053885740ce",
+              "doc_id": "DOC-0032",
+              "rank": 78,
+              "score": 0.007246376811594203
+            },
+            {
+              "chunk_id": "11fb10c808fec24a220aebe9",
+              "doc_id": "DOC-0116",
+              "rank": 79,
+              "score": 0.007194244604316547
+            },
+            {
+              "chunk_id": "1ba16d9010233877c8e1764c",
+              "doc_id": "DOC-0037",
+              "rank": 80,
+              "score": 0.007142857142857143
+            },
+            {
+              "chunk_id": "f0e0b2b9f24869b9b6e4079f",
+              "doc_id": "DOC-0042",
+              "rank": 81,
+              "score": 0.0070921985815602835
+            },
+            {
+              "chunk_id": "e7a29702d9334ee352b32828",
+              "doc_id": "DOC-0112",
+              "rank": 82,
+              "score": 0.007042253521126761
+            },
+            {
+              "chunk_id": "17c70bee97c8fc954a1a96ce",
+              "doc_id": "DOC-0033",
+              "rank": 83,
+              "score": 0.006993006993006993
+            },
+            {
+              "chunk_id": "dfc8cd6caca23611906d121c",
+              "doc_id": "DOC-0036",
+              "rank": 84,
+              "score": 0.006944444444444444
+            },
+            {
+              "chunk_id": "987fc8ac9652ac9e83197ba1",
+              "doc_id": "DOC-0070",
+              "rank": 85,
+              "score": 0.006896551724137931
+            },
+            {
+              "chunk_id": "68cbe75105b97dd4ab8f7ef2",
+              "doc_id": "DOC-0063",
+              "rank": 86,
+              "score": 0.00684931506849315
+            },
+            {
+              "chunk_id": "f5471f6813514adaaa890bab",
+              "doc_id": "DOC-0072",
+              "rank": 87,
+              "score": 0.006802721088435374
+            },
+            {
+              "chunk_id": "e6a7e3fde72a0a48cf178ab7",
+              "doc_id": "DOC-0018",
+              "rank": 88,
+              "score": 0.006756756756756757
+            },
+            {
+              "chunk_id": "168c738cbf156a76cce4f483",
+              "doc_id": "DOC-0052",
+              "rank": 89,
+              "score": 0.006711409395973154
+            },
+            {
+              "chunk_id": "0a412c3c3ef1b8099c3fae0b",
+              "doc_id": "DOC-0027",
+              "rank": 90,
+              "score": 0.006666666666666667
+            },
+            {
+              "chunk_id": "1b453ab6602ae8105247144a",
+              "doc_id": "DOC-0029",
+              "rank": 91,
+              "score": 0.006622516556291391
+            },
+            {
+              "chunk_id": "9d8b1cbd96600ca7dbe32a5b",
+              "doc_id": "DOC-0038",
+              "rank": 92,
+              "score": 0.006578947368421052
+            },
+            {
+              "chunk_id": "eacd5de65db80f6abae573e7",
+              "doc_id": "DOC-0077",
+              "rank": 93,
+              "score": 0.006535947712418301
+            },
+            {
+              "chunk_id": "7f34d36808d2e92756895a21",
+              "doc_id": "DOC-0034",
+              "rank": 94,
+              "score": 0.006493506493506494
+            },
+            {
+              "chunk_id": "1ddfdca2ccb30105d54cbacf",
+              "doc_id": "DOC-0135",
+              "rank": 95,
+              "score": 0.0064516129032258064
+            },
+            {
+              "chunk_id": "c35c936f70a02d2f5ff1bbc5",
+              "doc_id": "DOC-0075",
+              "rank": 96,
+              "score": 0.00641025641025641
+            },
+            {
+              "chunk_id": "655dcf9166b01869a2f662e3",
+              "doc_id": "DOC-0064",
+              "rank": 97,
+              "score": 0.006369426751592357
+            },
+            {
+              "chunk_id": "e39a9dbf333f929520248e3d",
+              "doc_id": "DOC-0124",
+              "rank": 98,
+              "score": 0.006329113924050633
+            },
+            {
+              "chunk_id": "09f547defad301a072bdb23b",
+              "doc_id": "DOC-0115",
+              "rank": 99,
+              "score": 0.006289308176100629
+            },
+            {
+              "chunk_id": "74dca38f136209cb01a85e18",
+              "doc_id": "DOC-0017",
+              "rank": 100,
+              "score": 0.00625
+            }
+          ],
+          "rerank": [
+            {
+              "chunk_id": "2fb88d60ca94ba92661b09bd",
+              "doc_id": "DOC-0001",
+              "rank": 1,
+              "score": 0.9647918322234283
+            },
+            {
+              "chunk_id": "5b217fa602bc478808660085",
+              "doc_id": "DOC-0005",
+              "rank": 2,
+              "score": 0.8961852844808197
+            },
+            {
+              "chunk_id": "afe69a0eb51ebafc189b64fd",
+              "doc_id": "DOC-0150",
+              "rank": 3,
+              "score": 0.8372935425333077
+            },
+            {
+              "chunk_id": "07558a24dfec359c944e2d63",
+              "doc_id": "DOC-0002",
+              "rank": 4,
+              "score": 0.7831537448297727
+            },
+            {
+              "chunk_id": "3047e4bbe909e85319e83e87",
+              "doc_id": "DOC-0004",
+              "rank": 5,
+              "score": 0.7630125960858415
+            },
+            {
+              "chunk_id": "bc255b5372af6f0b1188df9d",
+              "doc_id": "DOC-0003",
+              "rank": 6,
+              "score": 0.7362576206793119
+            },
+            {
+              "chunk_id": "c36ed936d7fca506a7541004",
+              "doc_id": "DOC-0006",
+              "rank": 7,
+              "score": 0.6817590814899148
+            },
+            {
+              "chunk_id": "78fd68e4f682d79c5eb41480",
+              "doc_id": "DOC-0020",
+              "rank": 8,
+              "score": 0.6520698680497472
+            },
+            {
+              "chunk_id": "1846799b249d910af06ebab6",
+              "doc_id": "DOC-0136",
+              "rank": 9,
+              "score": 0.5577154474474004
+            },
+            {
+              "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+              "doc_id": "DOC-0009",
+              "rank": 10,
+              "score": 0.5348284479954774
+            },
+            {
+              "chunk_id": "b1576ccb0254a9696045d3ed",
+              "doc_id": "DOC-0031",
+              "rank": 11,
+              "score": 0.5325684319523731
+            },
+            {
+              "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+              "doc_id": "DOC-0013",
+              "rank": 12,
+              "score": 0.5180895460078021
+            },
+            {
+              "chunk_id": "023e9de4be46fb9054950f73",
+              "doc_id": "DOC-0024",
+              "rank": 13,
+              "score": 0.5143822487524112
+            },
+            {
+              "chunk_id": "ff4ddd7d7c8ef5ae18680b94",
+              "doc_id": "DOC-0147",
+              "rank": 14,
+              "score": 0.5119690842631083
+            },
+            {
+              "chunk_id": "7832593609405b0f7d623fb6",
+              "doc_id": "DOC-0071",
+              "rank": 15,
+              "score": 0.49351323650461665
+            },
+            {
+              "chunk_id": "0e8a0d4f9d5ae119334c097d",
+              "doc_id": "DOC-0110",
+              "rank": 16,
+              "score": 0.4821454328178621
+            },
+            {
+              "chunk_id": "773a70f24b1c618c9efb4688",
+              "doc_id": "DOC-0014",
+              "rank": 17,
+              "score": 0.47679337481401773
+            },
+            {
+              "chunk_id": "c327b5f14509fbec765d6ede",
+              "doc_id": "DOC-0016",
+              "rank": 18,
+              "score": 0.4695270138599379
+            },
+            {
+              "chunk_id": "d908fd6f05b8351c9e367321",
+              "doc_id": "DOC-0008",
+              "rank": 19,
+              "score": 0.4656583233084568
+            },
+            {
+              "chunk_id": "08d8dd56eb33f231f34324a0",
+              "doc_id": "DOC-0007",
+              "rank": 20,
+              "score": 0.4502212149718866
+            },
+            {
+              "chunk_id": "6b83c0466aa953dd82006aae",
+              "doc_id": "DOC-0060",
+              "rank": 21,
+              "score": 0.4262816266809677
+            },
+            {
+              "chunk_id": "371dbd52198b93257d7c21fd",
+              "doc_id": "DOC-0076",
+              "rank": 22,
+              "score": 0.419240282556673
+            },
+            {
+              "chunk_id": "3e9ffb2293ec51e20bb4850f",
+              "doc_id": "DOC-0084",
+              "rank": 23,
+              "score": 0.41592522181221764
+            },
+            {
+              "chunk_id": "fdbd7511393553750bd1a7ca",
+              "doc_id": "DOC-0022",
+              "rank": 24,
+              "score": 0.414274221367804
+            },
+            {
+              "chunk_id": "75aac290f1e7b432aa99e65d",
+              "doc_id": "DOC-0144",
+              "rank": 25,
+              "score": 0.41160445134617596
+            },
+            {
+              "chunk_id": "d76e1bf25824c9203df9b6e1",
+              "doc_id": "DOC-0012",
+              "rank": 26,
+              "score": 0.40041923574831767
+            },
+            {
+              "chunk_id": "81e96a4f77676b03dee7116a",
+              "doc_id": "DOC-0028",
+              "rank": 27,
+              "score": 0.39937509683009464
+            },
+            {
+              "chunk_id": "4af545e37b200e7755bb5df1",
+              "doc_id": "DOC-0065",
+              "rank": 28,
+              "score": 0.3980313122702639
+            },
+            {
+              "chunk_id": "e6a7e3fde72a0a48cf178ab7",
+              "doc_id": "DOC-0018",
+              "rank": 29,
+              "score": 0.3930823754349603
+            },
+            {
+              "chunk_id": "980d72e06567fafa66b4384c",
+              "doc_id": "DOC-0114",
+              "rank": 30,
+              "score": 0.38734258995865284
+            },
+            {
+              "chunk_id": "2e67890edf23cd2b636a5256",
+              "doc_id": "DOC-0086",
+              "rank": 31,
+              "score": 0.3778753845495063
+            },
+            {
+              "chunk_id": "0a412c3c3ef1b8099c3fae0b",
+              "doc_id": "DOC-0027",
+              "rank": 32,
+              "score": 0.37276687750521387
+            },
+            {
+              "chunk_id": "580e111e23632b8c64ea09cd",
+              "doc_id": "DOC-0021",
+              "rank": 33,
+              "score": 0.3714435468089231
+            },
+            {
+              "chunk_id": "b7c8fc5b5c564bc3c9ba709d",
+              "doc_id": "DOC-0106",
+              "rank": 34,
+              "score": 0.36770591640578754
+            },
+            {
+              "chunk_id": "42cbc85b3ebc0fab2e103a32",
+              "doc_id": "DOC-0104",
+              "rank": 35,
+              "score": 0.3672370337420512
+            },
+            {
+              "chunk_id": "268446c4429bf1e0ec50d24c",
+              "doc_id": "DOC-0039",
+              "rank": 36,
+              "score": 0.36332878417790165
+            },
+            {
+              "chunk_id": "e74dc5c34c313fd184eec40f",
+              "doc_id": "DOC-0140",
+              "rank": 37,
+              "score": 0.356433797144846
+            },
+            {
+              "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+              "doc_id": "DOC-0058",
+              "rank": 38,
+              "score": 0.34504882330001774
+            },
+            {
+              "chunk_id": "d78be5e9b09d1ee5b70dc305",
+              "doc_id": "DOC-0035",
+              "rank": 39,
+              "score": 0.3448207291058585
+            },
+            {
+              "chunk_id": "90c56f0ff2250dad721ecd80",
+              "doc_id": "DOC-0010",
+              "rank": 40,
+              "score": 0.3448187260251299
+            },
+            {
+              "chunk_id": "3ca5cc7772da0b2be9c1a284",
+              "doc_id": "DOC-0061",
+              "rank": 41,
+              "score": 0.3442813223396288
+            },
+            {
+              "chunk_id": "8c8bb479420ec4187498985e",
+              "doc_id": "DOC-0011",
+              "rank": 42,
+              "score": 0.3398144470957758
+            },
+            {
+              "chunk_id": "4baa9a08702b5caf14d5fb4b",
+              "doc_id": "DOC-0120",
+              "rank": 43,
+              "score": 0.33446517471529236
+            },
+            {
+              "chunk_id": "3c979a30ba09ddb22e41c363",
+              "doc_id": "DOC-0137",
+              "rank": 44,
+              "score": 0.33223511541140593
+            },
+            {
+              "chunk_id": "61bae330870dea88a1f66da3",
+              "doc_id": "DOC-0025",
+              "rank": 45,
+              "score": 0.33127429518333706
+            },
+            {
+              "chunk_id": "6fb7265dfe15f2d939fecd13",
+              "doc_id": "DOC-0138",
+              "rank": 46,
+              "score": 0.32549889992109127
+            },
+            {
+              "chunk_id": "704832e2bb86de1d94e58466",
+              "doc_id": "DOC-0117",
+              "rank": 47,
+              "score": 0.32394672067572905
+            },
+            {
+              "chunk_id": "3740f08067dfcff2f220f5f5",
+              "doc_id": "DOC-0050",
+              "rank": 48,
+              "score": 0.3222571816369555
+            },
+            {
+              "chunk_id": "a718b0c4e55e006e5c0ca1c6",
+              "doc_id": "DOC-0069",
+              "rank": 49,
+              "score": 0.3163187334748665
+            },
+            {
+              "chunk_id": "4ffa05f6b7528c0549354375",
+              "doc_id": "DOC-0145",
+              "rank": 50,
+              "score": 0.31507105407299874
+            },
+            {
+              "chunk_id": "04914d61e9949f0e9d805b44",
+              "doc_id": "DOC-0073",
+              "rank": 51,
+              "score": 0.3128672956893961
+            },
+            {
+              "chunk_id": "a3dfffcd6e92838c81c6c525",
+              "doc_id": "DOC-0026",
+              "rank": 52,
+              "score": 0.31116441697903796
+            },
+            {
+              "chunk_id": "c62cc2183829070ff7262331",
+              "doc_id": "DOC-0043",
+              "rank": 53,
+              "score": 0.2995494611701044
+            },
+            {
+              "chunk_id": "68cbe75105b97dd4ab8f7ef2",
+              "doc_id": "DOC-0063",
+              "rank": 54,
+              "score": 0.2983803993923432
+            },
+            {
+              "chunk_id": "49296c7bbf2cabded10ed747",
+              "doc_id": "DOC-0054",
+              "rank": 55,
+              "score": 0.2983105441716196
+            },
+            {
+              "chunk_id": "7b8c9117e8fa3cfafb73abf5",
+              "doc_id": "DOC-0090",
+              "rank": 56,
+              "score": 0.2949307122097138
+            },
+            {
+              "chunk_id": "74dca38f136209cb01a85e18",
+              "doc_id": "DOC-0017",
+              "rank": 57,
+              "score": 0.29237565535715127
+            },
+            {
+              "chunk_id": "1bdbc33f72f02d6b67c833ae",
+              "doc_id": "DOC-0080",
+              "rank": 58,
+              "score": 0.29036123443045425
+            },
+            {
+              "chunk_id": "c9d75fe13852c7adcc63a7e7",
+              "doc_id": "DOC-0149",
+              "rank": 59,
+              "score": 0.2902738306640076
+            },
+            {
+              "chunk_id": "43101afede1e0d8bf3ced31d",
+              "doc_id": "DOC-0046",
+              "rank": 60,
+              "score": 0.28394800965697287
+            },
+            {
+              "chunk_id": "b967194f44b3aac0db009e06",
+              "doc_id": "DOC-0015",
+              "rank": 61,
+              "score": 0.28077445834823733
+            },
+            {
+              "chunk_id": "2560ffa5426c12f5f4fe1275",
+              "doc_id": "DOC-0067",
+              "rank": 62,
+              "score": 0.2799811311674589
+            },
+            {
+              "chunk_id": "aec55849ceaf397dc0308db5",
+              "doc_id": "DOC-0111",
+              "rank": 63,
+              "score": 0.2784029535769659
+            },
+            {
+              "chunk_id": "58c24c76ee779c0731521099",
+              "doc_id": "DOC-0146",
+              "rank": 64,
+              "score": 0.27757992868181747
+            },
+            {
+              "chunk_id": "1ddfdca2ccb30105d54cbacf",
+              "doc_id": "DOC-0135",
+              "rank": 65,
+              "score": 0.276983506006007
+            },
+            {
+              "chunk_id": "0dc1b171ced287a65e45896c",
+              "doc_id": "DOC-0097",
+              "rank": 66,
+              "score": 0.2750047808884508
+            },
+            {
+              "chunk_id": "e7a29702d9334ee352b32828",
+              "doc_id": "DOC-0112",
+              "rank": 67,
+              "score": 0.2698719284087605
+            },
+            {
+              "chunk_id": "11fb10c808fec24a220aebe9",
+              "doc_id": "DOC-0116",
+              "rank": 68,
+              "score": 0.2670411631715977
+            },
+            {
+              "chunk_id": "026fa73e1d167053885740ce",
+              "doc_id": "DOC-0032",
+              "rank": 69,
+              "score": 0.2608209580107633
+            },
+            {
+              "chunk_id": "eacd5de65db80f6abae573e7",
+              "doc_id": "DOC-0077",
+              "rank": 70,
+              "score": 0.25855436106584917
+            },
+            {
+              "chunk_id": "4211560897a75d45deaf61cd",
+              "doc_id": "DOC-0101",
+              "rank": 71,
+              "score": 0.25662810210884857
+            },
+            {
+              "chunk_id": "3664ad0e26520a3e1f078d5d",
+              "doc_id": "DOC-0099",
+              "rank": 72,
+              "score": 0.25294078471248005
+            },
+            {
+              "chunk_id": "987fc8ac9652ac9e83197ba1",
+              "doc_id": "DOC-0070",
+              "rank": 73,
+              "score": 0.25058272916455004
+            },
+            {
+              "chunk_id": "09f547defad301a072bdb23b",
+              "doc_id": "DOC-0115",
+              "rank": 74,
+              "score": 0.2497563350512575
+            },
+            {
+              "chunk_id": "1b453ab6602ae8105247144a",
+              "doc_id": "DOC-0029",
+              "rank": 75,
+              "score": 0.24956718289103685
+            },
+            {
+              "chunk_id": "ba5f0f32e166368aedc683b6",
+              "doc_id": "DOC-0041",
+              "rank": 76,
+              "score": 0.24858512877498062
+            },
+            {
+              "chunk_id": "ec9e4dc05f5d2d0dbefd81cc",
+              "doc_id": "DOC-0068",
+              "rank": 77,
+              "score": 0.2469585509254637
+            },
+            {
+              "chunk_id": "9bce8c59cef936d3cfa89388",
+              "doc_id": "DOC-0044",
+              "rank": 78,
+              "score": 0.2449819715723866
+            },
+            {
+              "chunk_id": "17c70bee97c8fc954a1a96ce",
+              "doc_id": "DOC-0033",
+              "rank": 79,
+              "score": 0.24097820118814878
+            },
+            {
+              "chunk_id": "b34999d4fde8aae406be3c9e",
+              "doc_id": "DOC-0142",
+              "rank": 80,
+              "score": 0.23907394205397225
+            },
+            {
+              "chunk_id": "94ff52fef68a4e9d27fe00d8",
+              "doc_id": "DOC-0091",
+              "rank": 81,
+              "score": 0.23768523564297234
+            },
+            {
+              "chunk_id": "123808e33f8d2a1dd955572e",
+              "doc_id": "DOC-0119",
+              "rank": 82,
+              "score": 0.23501702559330917
+            },
+            {
+              "chunk_id": "91dc6797efbe166636926ce2",
+              "doc_id": "DOC-0141",
+              "rank": 83,
+              "score": 0.23416543676994728
+            },
+            {
+              "chunk_id": "0c0279810a88a52a8d7bee15",
+              "doc_id": "DOC-0103",
+              "rank": 84,
+              "score": 0.2288387657543477
+            },
+            {
+              "chunk_id": "168c738cbf156a76cce4f483",
+              "doc_id": "DOC-0052",
+              "rank": 85,
+              "score": 0.2266395036315733
+            },
+            {
+              "chunk_id": "11d3c030f1eb3cba3e0826a2",
+              "doc_id": "DOC-0066",
+              "rank": 86,
+              "score": 0.22632741023069464
+            },
+            {
+              "chunk_id": "ad7f824324cff994ecd0f6c1",
+              "doc_id": "DOC-0143",
+              "rank": 87,
+              "score": 0.22027735833098383
+            },
+            {
+              "chunk_id": "655dcf9166b01869a2f662e3",
+              "doc_id": "DOC-0064",
+              "rank": 88,
+              "score": 0.22020027604457254
+            },
+            {
+              "chunk_id": "34073b1694d80094c41f9383",
+              "doc_id": "DOC-0094",
+              "rank": 89,
+              "score": 0.2178577241190338
+            },
+            {
+              "chunk_id": "080e7d0c9238901814d10d05",
+              "doc_id": "DOC-0040",
+              "rank": 90,
+              "score": 0.2086137646004641
+            },
+            {
+              "chunk_id": "dfc8cd6caca23611906d121c",
+              "doc_id": "DOC-0036",
+              "rank": 91,
+              "score": 0.2055869404934127
+            },
+            {
+              "chunk_id": "e39a9dbf333f929520248e3d",
+              "doc_id": "DOC-0124",
+              "rank": 92,
+              "score": 0.20333477128815913
+            },
+            {
+              "chunk_id": "7f34d36808d2e92756895a21",
+              "doc_id": "DOC-0034",
+              "rank": 93,
+              "score": 0.20314137895287754
+            },
+            {
+              "chunk_id": "f5471f6813514adaaa890bab",
+              "doc_id": "DOC-0072",
+              "rank": 94,
+              "score": 0.19982589299121378
+            },
+            {
+              "chunk_id": "9d8b1cbd96600ca7dbe32a5b",
+              "doc_id": "DOC-0038",
+              "rank": 95,
+              "score": 0.19748976625657566
+            },
+            {
+              "chunk_id": "f0e0b2b9f24869b9b6e4079f",
+              "doc_id": "DOC-0042",
+              "rank": 96,
+              "score": 0.1922781786494595
+            },
+            {
+              "chunk_id": "d6b5116b56e6b085039f6650",
+              "doc_id": "DOC-0045",
+              "rank": 97,
+              "score": 0.19007707515588979
+            },
+            {
+              "chunk_id": "c35c936f70a02d2f5ff1bbc5",
+              "doc_id": "DOC-0075",
+              "rank": 98,
+              "score": 0.18277101365899767
+            },
+            {
+              "chunk_id": "1ba16d9010233877c8e1764c",
+              "doc_id": "DOC-0037",
+              "rank": 99,
+              "score": 0.17385148250840787
+            },
+            {
+              "chunk_id": "d2bd15fed5d66e76f0585820",
+              "doc_id": "DOC-0062",
+              "rank": 100,
+              "score": 0.1651785416967252
+            }
+          ]
+        },
+        "graph_paths": [],
+        "graph_expansion": null,
+        "warnings": []
+      },
+      "failure_elapsed_ms": null,
+      "stage_coverage": {
+        "dense": 1.0,
+        "fusion": 1.0,
+        "rerank": 1.0
+      }
+    }
+  ],
+  "artifacts": {
+    "config.json": "reports/runs/core-20261109T183355Z-a778d591/config.json",
+    "metrics.json": "reports/runs/core-20261109T183355Z-a778d591/metrics.json",
+    "per_query.jsonl": "reports/runs/core-20261109T183355Z-a778d591/per_query.jsonl",
+    "provider_calls.json": "reports/runs/core-20261109T183355Z-a778d591/provider_calls.json"
+  }
+}

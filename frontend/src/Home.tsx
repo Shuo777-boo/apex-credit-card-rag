@@ -1,0 +1,15 @@
+import { Alert, Button, Card, Empty, Space, Table, Tag } from 'antd';
+import { ArrowRightOutlined, MessageOutlined, ExperimentOutlined, ReloadOutlined } from '@ant-design/icons';
+import { useQuery } from '@tanstack/react-query';
+import { api, errorText } from './api';
+export default function Home(){
+ const ready=useQuery({queryKey:['readiness'],queryFn:({signal})=>api.readiness(signal)});
+ const runs=useQuery({queryKey:['evaluations'],queryFn:({signal})=>api.evaluations(signal)});
+ const caps=useQuery({queryKey:['capabilities'],queryFn:({signal})=>api.capabilities(signal)});
+ return <><section className="home-welcome"><div><div className="eyebrow">APEX KNOWLEDGE WORKSPACE</div><h1>信用卡知识，清晰有据。</h1><p>从政策问答到检索评测，在一个工作空间复核真实结果。</p><Space wrap><Button type="primary" href="#workbench" icon={<MessageOutlined/>}>开始对话</Button><Button href="#evaluations" icon={<ExperimentOutlined/>}>进入评测实验</Button></Space></div><div className="home-symbol" aria-hidden>APEX<span>KNOWLEDGE / EVIDENCE</span></div></section>
+ <div className="home-stats"><Card title="检索服务"><Tag color={ready.data?.status==='ready'&&!ready.error?'success':'warning'}>{ready.isPending?'正在检查':ready.error?'尚未就绪':ready.data?.status}</Tag><p className="muted">{ready.data?.build_id?`活动构建 ${ready.data.build_id}`:'等待真实就绪检查'}</p></Card><Card title="已保存核心实验"><strong className="home-number">{runs.data?.total??'—'}</strong><p className="muted">已完成 {runs.data?.items.filter(r=>r.status==='completed').length??'—'} 组 · 以 API 返回为准</p></Card><Card title="扩展能力"><Space wrap><Tag color={caps.data?.graph.available?'blue':'default'}>Graph {caps.data?caps.data.graph.available?'已接通':'不可用':'待检查'}</Tag><Tag color={caps.data?.judge.available?'purple':'default'}>Judge {caps.data?caps.data.judge.available?'已接通':'不可用':'待检查'}</Tag></Space><p className="muted">自动评审和人工复核分开记录</p></Card></div>
+ {[ready,runs,caps].filter(q=>q.error).map((q,i)=><Alert className="spaced-alert" key={i} type="warning" showIcon message={errorText(q.error)} action={<Button size="small" onClick={()=>q.refetch()}>重试</Button>}/>)}
+ <div className="home-entry-grid"><Card title="对话工作台" extra={<MessageOutlined/>}><p>保留连续会话，查看每轮政策引用、最终文档、各检索阶段排名与实测耗时。</p><Button type="link" href="#workbench">打开工作台 <ArrowRightOutlined/></Button></Card><Card title="评测实验" extra={<ExperimentOutlined/>}><p>创建官方单配置或六组检索实验，跟踪真实任务进度，比较已保存结果与逐题排名。</p><Button type="link" href="#evaluations">管理实验 <ArrowRightOutlined/></Button></Card></div>
+ <Card title="最近核心实验" extra={<Button icon={<ReloadOutlined/>} onClick={()=>runs.refetch()} loading={runs.isFetching}>刷新</Button>}><Table size="small" rowKey="run_id" loading={runs.isPending} dataSource={runs.data?.items.slice(0,5)} pagination={false} scroll={{x:550}} locale={{emptyText:<Empty description="暂无已保存实验"/>}} columns={[{title:'run_id',dataIndex:'run_id',render:(id:string)=><a href={`#evaluations?run=${encodeURIComponent(id)}`}>{id}</a>},{title:'状态',dataIndex:'status',render:(s:string)=><Tag>{s}</Tag>},{title:'创建时间',dataIndex:'created_at',render:(v:string)=>new Date(v).toLocaleString('zh-CN')}]}/></Card><p className="muted">官方英文 30 题、图谱挑战与 LLM Judge 使用独立口径。完整检索延迟及人工复核限制以对应报告为准，系统不计算评审总分。</p></>;
+}
+

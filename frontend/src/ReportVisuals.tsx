@@ -1,0 +1,23 @@
+import { Collapse, Descriptions, Table } from 'antd';
+import Chart from './Chart';
+import AuditViewer from './AuditViewer';
+import { metric } from './api';
+export const numeric=(v:unknown):number|null=>typeof v==='number'&&Number.isFinite(v)?v:null;
+export const display=(v:unknown):string=>v==null?'N/A':typeof v==='boolean'?(v?'是':'否'):String(v);
+export function AdvancedAudit({data}:{data:Record<string,unknown>}){return <Collapse className="evaluation-card" items={[{key:'audit',label:'高级审计 · 原始数据（分页 / 下载）',children:<AuditViewer data={data}/>}]} />}
+const names:Record<string,string>={strategy:'分块策略',mode:'检索模式',build_id:'构建版本',models:'模型',llm:'回答模型',embedding:'向量模型',reranker:'重排模型',dimension:'向量维度',region:'地域',candidate_depth:'召回候选数',rerank_depth:'重排候选数',top_k:'返回文档数',rrf_k:'RRF 常数',window:'窗口字符数',overlap:'重叠字符数',hierarchy_max:'层级块上限',index_stats:'索引统计',index_bytes:'索引字节数',m:'HNSW M',ef_construction:'HNSW 构建深度',query_cache:'查询缓存',concurrency:'并发数',retries:'最大重试数',quantile_method:'分位数算法',latency_scope:'延迟统计边界',failure_quality:'失败质量口径',dataset_hashes:'数据摘要',build_config:'构建配置',code_version:'代码版本',schema_version:'协议版本',started_at:'开始时间',failure_reason:'失败原因',logical_calls:'逻辑调用',http_attempts:'HTTP 尝试',reserved_upper_cny:'预留费用上界（元）',actual_billed_cny:'实际账单（元）',logical_limit:'逻辑调用上限',http_limit:'HTTP 尝试上限',cost_limit_cny:'费用上限（元）',pending_request:'正在执行的请求',sample_id:'样本ID',query_id:'题目ID',reviewer:'人工复核人',reviewed_at:'人工复核时间',category:'复核类别',candidate_categories:'候选风险类别（待人工确认）',normal:'常规核验',irrelevant:'证据不相关',product_confusion:'卡种混淆',year_conflict:'年份冲突风险',review_reason:'复核说明',human_context_scores:'人工证据相关性评分',human_claim_verdicts:'人工主张判断',missed_claims:'遗漏主张',agreement:'与自动判断一致性',notes:'人工备注',status:'记录状态',checklist:'核验清单',supported_and_answered:'证据支持且完整回答',scope:'评审范围',method_version:'方法版本',base_status:'基础批次状态',note:'说明',created_at:'创建时间',updated_at:'更新时间'};
+export function ConfigFacts({data}:{data:Record<string,unknown>}){
+ const entries:{key:string;label:string;children:string}[]=[];
+ const walk=(obj:Record<string,unknown>,prefix='',depth=0)=>Object.entries(obj).forEach(([k,v])=>{const key=prefix?`${prefix} / ${names[k]??k}`:names[k]??k;if(v&&typeof v==='object'&&!Array.isArray(v)&&depth<4)walk(v as Record<string,unknown>,key,depth+1);else if(!v||typeof v!=='object'||Array.isArray(v)&&v.every(x=>typeof x!=='object'))entries.push({key,label:key,children:Array.isArray(v)?v.map(display).join(' / '):display(v)})});walk(data);
+ return <Descriptions size="small" bordered column={{xs:1,sm:2}} items={entries}/>;
+}
+export function Bars({label,categories,series,max,unit=''}:{label:string;categories:string[];series:{name:string;values:(number|null)[]}[];max?:number;unit?:string}){
+ // Keep the category data intact for tooltips; wrap only the axis presentation.
+ const categoryWidth=Math.max(100,series.length*24+32);
+ return <div className="bar-chart-scroll" role="region" aria-label={`${label}，空间不足时可横向滚动查看全部分类`} tabIndex={0}><div style={{minWidth:Math.max(340,categories.length*categoryWidth+90)}}><Chart label={label} option={{tooltip:{trigger:'axis'},legend:{type:'scroll',top:0,left:50,right:20},grid:{left:65,right:25,top:55,bottom:75},xAxis:{type:'category',data:categories,axisLabel:{interval:0,hideOverlap:false,formatter:(value:string)=>value.replace(/\s+|_/g,'\n'),width:88,overflow:'break',fontSize:12,lineHeight:18,margin:12}},yAxis:{type:'value',max,name:unit},series:series.map((s,i)=>({name:s.name,type:'bar',data:s.values,barMaxWidth:32,itemStyle:{color:['#2680ff','#8d80ee','#50bfa5'][i%3],borderRadius:[4,4,0,0]}}))}}/></div></div>;
+}
+export const qualityNames:Record<string,string>={'recall@1':'召回率 Recall@1','recall@3':'召回率 Recall@3','recall@5':'召回率 Recall@5','precision@1':'精确率 Precision@1','precision@3':'精确率 Precision@3','precision@5':'精确率 Precision@5','ndcg@1':'排序质量 nDCG@1','ndcg@3':'排序质量 nDCG@3','ndcg@5':'排序质量 nDCG@5','mrr@20':'首个相关文档 MRR@20'};
+export function QualityMetrics({data}:{data:Record<string,unknown>}){
+ const rows=Object.keys(qualityNames).filter(k=>k in data).map(k=>({key:k,label:qualityNames[k],value:numeric(data[k]),meaning:k.startsWith('recall')?'标注相关文档中有多少被找回':k.startsWith('precision')?'前 K 篇文档中相关文档所占比例':k.startsWith('ndcg')?'相关文档是否排在靠前位置':'首个相关文档排名的倒数，前20未命中为0'}));
+ return <><Bars label="检索质量指标原值" categories={rows.map(r=>r.label)} series={[{name:'指标原值',values:rows.map(r=>r.value)}]} max={1}/><Table size="small" rowKey="key" pagination={false} dataSource={rows} columns={[{title:'指标',dataIndex:'label'},{title:'原值',dataIndex:'value',render:metric},{title:'中文含义',dataIndex:'meaning'}]}/><p className="muted">指标范围 0–1，越高表示此口径下表现越好；N/A 为缺失，不能计作0或满分。</p></>;
+}

@@ -1,0 +1,1216 @@
+{
+  "report_id": "graph-20261109T142652-fd3c9427",
+  "kind": "graph",
+  "schema_version": "bonus-v1",
+  "data": {
+    "status": "completed_pending_human",
+    "metrics": {
+      "hybrid_rerank": {
+        "expected": 6,
+        "completed": 6,
+        "document_coverage": 1.0,
+        "citation_coverage_proxy": 1.0,
+        "mean_retrieval_ms": 411.8308166677404,
+        "manual_answer_completeness": null
+      },
+      "graph_enhanced": {
+        "expected": 6,
+        "completed": 6,
+        "document_coverage": 1.0,
+        "citation_coverage_proxy": 1.0,
+        "mean_retrieval_ms": 373.23268333329906,
+        "manual_answer_completeness": null
+      }
+    },
+    "additional_retrieval_ms": -38.59813333444134,
+    "samples": [
+      {
+        "query_id": "CH-001",
+        "query": "Compare Apex Platinum and Apex Preferred Travel airport lounge access, enrollment or app steps, guest allowance and extra visit costs.",
+        "mode": "hybrid_rerank",
+        "status": "completed",
+        "document_coverage": 1.0,
+        "citation_coverage_proxy": 1.0,
+        "manual_answer_completeness": null,
+        "response": {
+          "request_id": "04c874f5-c2d6-4f79-ad16-3efbfe71e903",
+          "answer": "### Apex Platinum 与 Apex Preferred Travel 机场贵宾室权益对比\n\n**1. Apex Platinum**\n*   **准入方式与步骤**：持卡人享有免费的 Priority Pass Select 会员资格，但**必须**通过福利门户（benefits portal）进行注册 [1]。\n*   **访客限额**：主要持卡人及最多 **2 位** 客人可免费进入全球 1,300 多个机场贵宾室 [1]。\n*   **额外费用**：超出限额的额外客人每次访问收费 **$35** [1]。\n\n**2. Apex Preferred Travel**\n*   **准入方式与步骤**：通过 **Apex Travel App** 获取，每日历年度提供 **2 次** 免费机场贵宾室通行权 [2]。\n*   **访客限额/额外费用**：文档未明确说明免费通行权是否包含客人。额外的通行权可按每人 **$32** 的价格购买 [2]。\n\n**注意**：关于 Apex Preferred Travel 的免费通行权是否涵盖客人以及具体的客人政策，现有证据不足，无法得出确切结论。",
+          "citations": [
+            {
+              "id": 1,
+              "doc_id": "DOC-0046",
+              "chunk_id": "43101afede1e0d8bf3ced31d",
+              "quote": "Apex Platinum cardholders receive complimentary Priority Pass Select membership. Enrollment is required via the benefits portal. Membership grants access to over 1,300 airport lounges worldwide for the primary cardholder and up to 2 guests. Additional guests are charged $35 per visit."
+            },
+            {
+              "id": 2,
+              "doc_id": "DOC-0047",
+              "chunk_id": "443fcb58bfe3eb7811684ccc",
+              "quote": "Cardholders receive 2 complimentary airport lounge passes per calendar year via the Apex Travel App. Additional passes available at $32 per person."
+            }
+          ],
+          "retrieval": {
+            "request_id": "04c874f5-c2d6-4f79-ad16-3efbfe71e903",
+            "build_id": "60d4f863faa777c5c522bc1b",
+            "mode": "hybrid_rerank",
+            "results": [
+              {
+                "doc_id": "DOC-0046",
+                "title": "Apex Platinum - Travel Perk Lounge Access Terms (2024)",
+                "category": "Rewards & Benefits",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2024,
+                "rank": 1,
+                "score": 0.9010540269517522,
+                "evidence": [
+                  {
+                    "chunk_id": "43101afede1e0d8bf3ced31d",
+                    "text": "Apex Platinum cardholders receive complimentary Priority Pass Select membership. Enrollment is required via the benefits portal. Membership grants access to over 1,300 airport lounges worldwide for the primary cardholder and up to 2 guests. Additional guests are charged $35 per visit.",
+                    "parent_id": "DOC-0046:policy",
+                    "start_char": 135,
+                    "end_char": 420
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0047",
+                "title": "Apex Preferred Travel - Lounge Access Terms (2024)",
+                "category": "Rewards & Benefits",
+                "card_tier": "Apex Preferred Travel",
+                "effective_year": 2024,
+                "rank": 2,
+                "score": 0.813749105741187,
+                "evidence": [
+                  {
+                    "chunk_id": "443fcb58bfe3eb7811684ccc",
+                    "text": "Cardholders receive 2 complimentary airport lounge passes per calendar year via the Apex Travel App. Additional passes available at $32 per person.",
+                    "parent_id": "DOC-0047:policy",
+                    "start_char": 143,
+                    "end_char": 290
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0072",
+                "title": "Apex Preferred Travel - Travel Advisory Registration (2025)",
+                "category": "Emergency Services & Card Management",
+                "card_tier": "Apex Preferred Travel",
+                "effective_year": 2025,
+                "rank": 3,
+                "score": 0.5479906755810847,
+                "evidence": [
+                  {
+                    "chunk_id": "f5471f6813514adaaa890bab",
+                    "text": "Cardholders can log up to 5 destination countries in app to prevent false-positive fraud declines while traveling.",
+                    "parent_id": "DOC-0072:policy",
+                    "start_char": 161,
+                    "end_char": 275
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0048",
+                "title": "Apex Everyday Freedom - Lounge Access Exclusions (2024)",
+                "category": "Rewards & Benefits",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 4,
+                "score": 0.5181682443576937,
+                "evidence": [
+                  {
+                    "chunk_id": "5d1b2905d0c78422b73919e9",
+                    "text": "Apex Everyday Freedom cardholders do not receive complimentary lounge access privileges. Single-entry lounge passes can be purchased via app at retail rates.",
+                    "parent_id": "DOC-0048:policy",
+                    "start_char": 143,
+                    "end_char": 300
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0059",
+                "title": "Apex Preferred Travel - Annual Hotel Credit (2025)",
+                "category": "Rewards & Benefits",
+                "card_tier": "Apex Preferred Travel",
+                "effective_year": 2025,
+                "rank": 5,
+                "score": 0.48348324139527016,
+                "evidence": [
+                  {
+                    "chunk_id": "7ce2f77ebfdf458d44542385",
+                    "text": "Includes $50 annual hotel credit applied automatically to bookings completed through the Apex Travel Portal.",
+                    "parent_id": "DOC-0059:policy",
+                    "start_char": 143,
+                    "end_char": 251
+                  }
+                ]
+              }
+            ],
+            "timings_ms": {
+              "embedding": 233.3213000001706,
+              "dense": 60.331200000291574,
+              "sparse": 16.231200001129764,
+              "fusion": 0.07050000021990854,
+              "rerank": 194.98070000008738,
+              "retrieval_total": 510.32840000152646,
+              "recall_fusion": 77.0022999986395,
+              "generation": null,
+              "answer_total": null
+            },
+            "trace": {
+              "dense": [
+                {
+                  "chunk_id": "443fcb58bfe3eb7811684ccc",
+                  "doc_id": "DOC-0047",
+                  "rank": 1,
+                  "score": 0.8060881130590362
+                },
+                {
+                  "chunk_id": "43101afede1e0d8bf3ced31d",
+                  "doc_id": "DOC-0046",
+                  "rank": 2,
+                  "score": 0.8009092330390686
+                },
+                {
+                  "chunk_id": "42cbc85b3ebc0fab2e103a32",
+                  "doc_id": "DOC-0104",
+                  "rank": 3,
+                  "score": 0.7144984219818841
+                },
+                {
+                  "chunk_id": "026fa73e1d167053885740ce",
+                  "doc_id": "DOC-0032",
+                  "rank": 4,
+                  "score": 0.709973931312561
+                },
+                {
+                  "chunk_id": "080e7d0c9238901814d10d05",
+                  "doc_id": "DOC-0040",
+                  "rank": 5,
+                  "score": 0.6884497404098511
+                },
+                {
+                  "chunk_id": "5d1b2905d0c78422b73919e9",
+                  "doc_id": "DOC-0048",
+                  "rank": 6,
+                  "score": 0.6843845436343835
+                },
+                {
+                  "chunk_id": "764bb80125cf56e580491077",
+                  "doc_id": "DOC-0051",
+                  "rank": 7,
+                  "score": 0.6832196712493896
+                },
+                {
+                  "chunk_id": "11d3c030f1eb3cba3e0826a2",
+                  "doc_id": "DOC-0066",
+                  "rank": 8,
+                  "score": 0.680748701095581
+                },
+                {
+                  "chunk_id": "0c0279810a88a52a8d7bee15",
+                  "doc_id": "DOC-0103",
+                  "rank": 9,
+                  "score": 0.6772699567401406
+                },
+                {
+                  "chunk_id": "7ce2f77ebfdf458d44542385",
+                  "doc_id": "DOC-0059",
+                  "rank": 10,
+                  "score": 0.6756819091940498
+                },
+                {
+                  "chunk_id": "765a8c4127d7266a9e5934f5",
+                  "doc_id": "DOC-0098",
+                  "rank": 11,
+                  "score": 0.6728789210319519
+                },
+                {
+                  "chunk_id": "4573417e5458fc322350c928",
+                  "doc_id": "DOC-0049",
+                  "rank": 12,
+                  "score": 0.6685758829116821
+                },
+                {
+                  "chunk_id": "91dc6797efbe166636926ce2",
+                  "doc_id": "DOC-0141",
+                  "rank": 13,
+                  "score": 0.6675785581814395
+                },
+                {
+                  "chunk_id": "5cc7260e095be4670cb98245",
+                  "doc_id": "DOC-0100",
+                  "rank": 14,
+                  "score": 0.6662981113017743
+                },
+                {
+                  "chunk_id": "3664ad0e26520a3e1f078d5d",
+                  "doc_id": "DOC-0099",
+                  "rank": 15,
+                  "score": 0.6652398109436035
+                },
+                {
+                  "chunk_id": "6b83c0466aa953dd82006aae",
+                  "doc_id": "DOC-0060",
+                  "rank": 16,
+                  "score": 0.6644642153062961
+                },
+                {
+                  "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+                  "doc_id": "DOC-0058",
+                  "rank": 17,
+                  "score": 0.6638742289618129
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 18,
+                  "score": 0.6600983548047167
+                },
+                {
+                  "chunk_id": "f5471f6813514adaaa890bab",
+                  "doc_id": "DOC-0072",
+                  "rank": 19,
+                  "score": 0.6589516794056713
+                },
+                {
+                  "chunk_id": "dfc8cd6caca23611906d121c",
+                  "doc_id": "DOC-0036",
+                  "rank": 20,
+                  "score": 0.6559761147456479
+                }
+              ],
+              "sparse": [],
+              "fusion": [
+                {
+                  "chunk_id": "443fcb58bfe3eb7811684ccc",
+                  "doc_id": "DOC-0047",
+                  "rank": 1,
+                  "score": 0.01639344262295082
+                },
+                {
+                  "chunk_id": "43101afede1e0d8bf3ced31d",
+                  "doc_id": "DOC-0046",
+                  "rank": 2,
+                  "score": 0.016129032258064516
+                },
+                {
+                  "chunk_id": "42cbc85b3ebc0fab2e103a32",
+                  "doc_id": "DOC-0104",
+                  "rank": 3,
+                  "score": 0.015873015873015872
+                },
+                {
+                  "chunk_id": "026fa73e1d167053885740ce",
+                  "doc_id": "DOC-0032",
+                  "rank": 4,
+                  "score": 0.015625
+                },
+                {
+                  "chunk_id": "080e7d0c9238901814d10d05",
+                  "doc_id": "DOC-0040",
+                  "rank": 5,
+                  "score": 0.015384615384615385
+                },
+                {
+                  "chunk_id": "5d1b2905d0c78422b73919e9",
+                  "doc_id": "DOC-0048",
+                  "rank": 6,
+                  "score": 0.015151515151515152
+                },
+                {
+                  "chunk_id": "764bb80125cf56e580491077",
+                  "doc_id": "DOC-0051",
+                  "rank": 7,
+                  "score": 0.014925373134328358
+                },
+                {
+                  "chunk_id": "11d3c030f1eb3cba3e0826a2",
+                  "doc_id": "DOC-0066",
+                  "rank": 8,
+                  "score": 0.014705882352941176
+                },
+                {
+                  "chunk_id": "0c0279810a88a52a8d7bee15",
+                  "doc_id": "DOC-0103",
+                  "rank": 9,
+                  "score": 0.014492753623188406
+                },
+                {
+                  "chunk_id": "7ce2f77ebfdf458d44542385",
+                  "doc_id": "DOC-0059",
+                  "rank": 10,
+                  "score": 0.014285714285714285
+                },
+                {
+                  "chunk_id": "765a8c4127d7266a9e5934f5",
+                  "doc_id": "DOC-0098",
+                  "rank": 11,
+                  "score": 0.014084507042253521
+                },
+                {
+                  "chunk_id": "4573417e5458fc322350c928",
+                  "doc_id": "DOC-0049",
+                  "rank": 12,
+                  "score": 0.013888888888888888
+                },
+                {
+                  "chunk_id": "91dc6797efbe166636926ce2",
+                  "doc_id": "DOC-0141",
+                  "rank": 13,
+                  "score": 0.0136986301369863
+                },
+                {
+                  "chunk_id": "5cc7260e095be4670cb98245",
+                  "doc_id": "DOC-0100",
+                  "rank": 14,
+                  "score": 0.013513513513513514
+                },
+                {
+                  "chunk_id": "3664ad0e26520a3e1f078d5d",
+                  "doc_id": "DOC-0099",
+                  "rank": 15,
+                  "score": 0.013333333333333334
+                },
+                {
+                  "chunk_id": "6b83c0466aa953dd82006aae",
+                  "doc_id": "DOC-0060",
+                  "rank": 16,
+                  "score": 0.013157894736842105
+                },
+                {
+                  "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+                  "doc_id": "DOC-0058",
+                  "rank": 17,
+                  "score": 0.012987012987012988
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 18,
+                  "score": 0.01282051282051282
+                },
+                {
+                  "chunk_id": "f5471f6813514adaaa890bab",
+                  "doc_id": "DOC-0072",
+                  "rank": 19,
+                  "score": 0.012658227848101266
+                },
+                {
+                  "chunk_id": "dfc8cd6caca23611906d121c",
+                  "doc_id": "DOC-0036",
+                  "rank": 20,
+                  "score": 0.0125
+                }
+              ],
+              "rerank": [
+                {
+                  "chunk_id": "43101afede1e0d8bf3ced31d",
+                  "doc_id": "DOC-0046",
+                  "rank": 1,
+                  "score": 0.9010540269517522
+                },
+                {
+                  "chunk_id": "443fcb58bfe3eb7811684ccc",
+                  "doc_id": "DOC-0047",
+                  "rank": 2,
+                  "score": 0.813749105741187
+                },
+                {
+                  "chunk_id": "f5471f6813514adaaa890bab",
+                  "doc_id": "DOC-0072",
+                  "rank": 3,
+                  "score": 0.5479906755810847
+                },
+                {
+                  "chunk_id": "5d1b2905d0c78422b73919e9",
+                  "doc_id": "DOC-0048",
+                  "rank": 4,
+                  "score": 0.5181682443576937
+                },
+                {
+                  "chunk_id": "7ce2f77ebfdf458d44542385",
+                  "doc_id": "DOC-0059",
+                  "rank": 5,
+                  "score": 0.48348324139527016
+                },
+                {
+                  "chunk_id": "4573417e5458fc322350c928",
+                  "doc_id": "DOC-0049",
+                  "rank": 6,
+                  "score": 0.4607561408439136
+                },
+                {
+                  "chunk_id": "765a8c4127d7266a9e5934f5",
+                  "doc_id": "DOC-0098",
+                  "rank": 7,
+                  "score": 0.45720910702116957
+                },
+                {
+                  "chunk_id": "5cc7260e095be4670cb98245",
+                  "doc_id": "DOC-0100",
+                  "rank": 8,
+                  "score": 0.4479910508643953
+                },
+                {
+                  "chunk_id": "6b83c0466aa953dd82006aae",
+                  "doc_id": "DOC-0060",
+                  "rank": 9,
+                  "score": 0.4388087803501185
+                },
+                {
+                  "chunk_id": "0c0279810a88a52a8d7bee15",
+                  "doc_id": "DOC-0103",
+                  "rank": 10,
+                  "score": 0.4159579570464681
+                },
+                {
+                  "chunk_id": "026fa73e1d167053885740ce",
+                  "doc_id": "DOC-0032",
+                  "rank": 11,
+                  "score": 0.41127507355593035
+                },
+                {
+                  "chunk_id": "20b7ae7ad1b7b0df1b80f061",
+                  "doc_id": "DOC-0058",
+                  "rank": 12,
+                  "score": 0.40471126598257845
+                },
+                {
+                  "chunk_id": "764bb80125cf56e580491077",
+                  "doc_id": "DOC-0051",
+                  "rank": 13,
+                  "score": 0.39915225649065406
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 14,
+                  "score": 0.3934552288353698
+                },
+                {
+                  "chunk_id": "11d3c030f1eb3cba3e0826a2",
+                  "doc_id": "DOC-0066",
+                  "rank": 15,
+                  "score": 0.39281547394965
+                },
+                {
+                  "chunk_id": "91dc6797efbe166636926ce2",
+                  "doc_id": "DOC-0141",
+                  "rank": 16,
+                  "score": 0.3861870075376179
+                },
+                {
+                  "chunk_id": "42cbc85b3ebc0fab2e103a32",
+                  "doc_id": "DOC-0104",
+                  "rank": 17,
+                  "score": 0.3859816401094199
+                },
+                {
+                  "chunk_id": "080e7d0c9238901814d10d05",
+                  "doc_id": "DOC-0040",
+                  "rank": 18,
+                  "score": 0.37222292134420587
+                },
+                {
+                  "chunk_id": "dfc8cd6caca23611906d121c",
+                  "doc_id": "DOC-0036",
+                  "rank": 19,
+                  "score": 0.35752460801820185
+                },
+                {
+                  "chunk_id": "3664ad0e26520a3e1f078d5d",
+                  "doc_id": "DOC-0099",
+                  "rank": 20,
+                  "score": 0.3365157358803691
+                }
+              ]
+            },
+            "graph_paths": [],
+            "graph_expansion": null,
+            "warnings": []
+          },
+          "timings_ms": {
+            "embedding": 233.3213000001706,
+            "dense": 60.331200000291574,
+            "sparse": 16.231200001129764,
+            "fusion": 0.07050000021990854,
+            "rerank": 194.98070000008738,
+            "retrieval_total": 510.32840000152646,
+            "recall_fusion": 77.0022999986395,
+            "generation": 5924.39800000102,
+            "answer_total": 6435.057100001359
+          },
+          "evidence_insufficient": true,
+          "citation_valid": true,
+          "warnings": [
+            "引用编号检查仅验证编号映射，不代表事实忠实度已经得到证明。"
+          ]
+        },
+        "required_documents": [
+          "DOC-0046",
+          "DOC-0047"
+        ]
+      },
+      {
+        "query_id": "CH-004",
+        "query": "For an Apex Platinum balance transfer, explain the introductory offer and fee conditions, processing time and responsibility for old account payments.",
+        "mode": "graph_enhanced",
+        "status": "completed",
+        "document_coverage": 1.0,
+        "citation_coverage_proxy": 1.0,
+        "manual_answer_completeness": null,
+        "response": {
+          "request_id": "f54b967d-824a-4095-90fa-806427fd34f0",
+          "answer": "### Apex Platinum 余额转账政策说明\n\n**1.  introductory 优惠与费用条件**\n*   **优惠利率**：在开户后 60 天内申请的余额转账，可享受 15 个账单周期的 0% 介绍性年利率 (APR) [2]。\n*   **转账费用**：每笔转账收取 3% 或 10 美元（以较高者为准）的费用 [2]。\n*   **后续利率**：介绍期结束后，标准余额转账 APR 将根据信用状况在 18.24% 至 28.24% 之间浮动 [2]。\n*   **限制条件**：无法在现有的 Apex 账户之间进行转账 [2]。\n\n**2. 处理时间**\n*   标准余额转账请求需要 5 到 7 个工作日进行处理并支付给外部发卡行 [1]。\n*   不提供加急转账服务 [1]。\n\n**3. 旧账户还款责任**\n*   在转账金额出现在 Apex 信用卡账单之前，持卡人仍需负责向外部账户付款 [1]。\n*   若介绍期结束前未还清余额，剩余部分将从过期之日起按日计息 [3]。",
+          "citations": [
+            {
+              "id": 1,
+              "doc_id": "DOC-0005",
+              "chunk_id": "5b217fa602bc478808660085",
+              "quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+            },
+            {
+              "id": 2,
+              "doc_id": "DOC-0001",
+              "chunk_id": "2fb88d60ca94ba92661b09bd",
+              "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+            },
+            {
+              "id": 3,
+              "doc_id": "DOC-0009",
+              "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+              "quote": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first."
+            }
+          ],
+          "retrieval": {
+            "request_id": "f54b967d-824a-4095-90fa-806427fd34f0",
+            "build_id": "60d4f863faa777c5c522bc1b",
+            "mode": "graph_enhanced",
+            "results": [
+              {
+                "doc_id": "DOC-0005",
+                "title": "Apex Platinum - Balance Transfer Processing Timelines (2025)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2025,
+                "rank": 1,
+                "score": 0.7265595534279987,
+                "evidence": [
+                  {
+                    "chunk_id": "5b217fa602bc478808660085",
+                    "text": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement.",
+                    "parent_id": "DOC-0005:policy",
+                    "start_char": 133,
+                    "end_char": 425
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0001",
+                "title": "Apex Platinum - 0% Intro APR Balance Transfer Rules (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2024,
+                "rank": 2,
+                "score": 0.7232195881627794,
+                "evidence": [
+                  {
+                    "chunk_id": "2fb88d60ca94ba92661b09bd",
+                    "text": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts.",
+                    "parent_id": "DOC-0001:policy",
+                    "start_char": 133,
+                    "end_char": 540
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0009",
+                "title": "Apex Platinum - Interest Allocation & Payment Prioritization (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2024,
+                "rank": 3,
+                "score": 0.6310331932414588,
+                "evidence": [
+                  {
+                    "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                    "text": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first.",
+                    "parent_id": "DOC-0009:policy",
+                    "start_char": 133,
+                    "end_char": 409
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0002",
+                "title": "Apex Preferred Travel - Balance Transfer Intro Rates (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Preferred Travel",
+                "effective_year": 2024,
+                "rank": 4,
+                "score": 0.5806296505193386,
+                "evidence": [
+                  {
+                    "chunk_id": "07558a24dfec359c944e2d63",
+                    "text": "Promotional 0% intro APR applies for 12 billing cycles on transfers made within 45 days. A balance transfer fee of 4% or $10 applies. Regular APR ranges from 19.99% to 27.99% variable.",
+                    "parent_id": "DOC-0002:policy",
+                    "start_char": 141,
+                    "end_char": 325
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0003",
+                "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 5,
+                "score": 0.5299293870766837,
+                "evidence": [
+                  {
+                    "chunk_id": "bc255b5372af6f0b1188df9d",
+                    "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable.",
+                    "parent_id": "DOC-0003:policy",
+                    "start_char": 141,
+                    "end_char": 338
+                  }
+                ]
+              }
+            ],
+            "timings_ms": {
+              "embedding": 142.39699999961886,
+              "dense": 6.723500000589411,
+              "sparse": 2.8889999994134996,
+              "fusion": 0.05360000068321824,
+              "rerank": 171.41730000003008,
+              "retrieval_total": 346.21969999898283,
+              "recall_fusion": 9.865500000159955,
+              "generation": null,
+              "answer_total": null
+            },
+            "trace": {
+              "dense": [
+                {
+                  "chunk_id": "2fb88d60ca94ba92661b09bd",
+                  "doc_id": "DOC-0001",
+                  "rank": 1,
+                  "score": 0.7890012264251709
+                },
+                {
+                  "chunk_id": "5b217fa602bc478808660085",
+                  "doc_id": "DOC-0005",
+                  "rank": 2,
+                  "score": 0.7738533481272084
+                },
+                {
+                  "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                  "doc_id": "DOC-0009",
+                  "rank": 3,
+                  "score": 0.7623093355390235
+                },
+                {
+                  "chunk_id": "07558a24dfec359c944e2d63",
+                  "doc_id": "DOC-0002",
+                  "rank": 4,
+                  "score": 0.7099611336015992
+                },
+                {
+                  "chunk_id": "bc255b5372af6f0b1188df9d",
+                  "doc_id": "DOC-0003",
+                  "rank": 5,
+                  "score": 0.7061567656807037
+                },
+                {
+                  "chunk_id": "3047e4bbe909e85319e83e87",
+                  "doc_id": "DOC-0004",
+                  "rank": 6,
+                  "score": 0.7038299474564176
+                },
+                {
+                  "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                  "doc_id": "DOC-0013",
+                  "rank": 7,
+                  "score": 0.703192949295044
+                },
+                {
+                  "chunk_id": "b1576ccb0254a9696045d3ed",
+                  "doc_id": "DOC-0031",
+                  "rank": 8,
+                  "score": 0.6915025894938368
+                },
+                {
+                  "chunk_id": "c36ed936d7fca506a7541004",
+                  "doc_id": "DOC-0006",
+                  "rank": 9,
+                  "score": 0.6912618897493411
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 10,
+                  "score": 0.681617417142704
+                },
+                {
+                  "chunk_id": "268446c4429bf1e0ec50d24c",
+                  "doc_id": "DOC-0039",
+                  "rank": 11,
+                  "score": 0.6684571705409539
+                },
+                {
+                  "chunk_id": "773a70f24b1c618c9efb4688",
+                  "doc_id": "DOC-0014",
+                  "rank": 12,
+                  "score": 0.6647075414657593
+                },
+                {
+                  "chunk_id": "90c56f0ff2250dad721ecd80",
+                  "doc_id": "DOC-0010",
+                  "rank": 13,
+                  "score": 0.6634213328361511
+                },
+                {
+                  "chunk_id": "8c8bb479420ec4187498985e",
+                  "doc_id": "DOC-0011",
+                  "rank": 14,
+                  "score": 0.6555869188554942
+                },
+                {
+                  "chunk_id": "d908fd6f05b8351c9e367321",
+                  "doc_id": "DOC-0008",
+                  "rank": 15,
+                  "score": 0.6526504755020142
+                },
+                {
+                  "chunk_id": "c62cc2183829070ff7262331",
+                  "doc_id": "DOC-0043",
+                  "rank": 16,
+                  "score": 0.6484808116245765
+                },
+                {
+                  "chunk_id": "d76e1bf25824c9203df9b6e1",
+                  "doc_id": "DOC-0012",
+                  "rank": 17,
+                  "score": 0.6461381490395293
+                },
+                {
+                  "chunk_id": "b967194f44b3aac0db009e06",
+                  "doc_id": "DOC-0015",
+                  "rank": 18,
+                  "score": 0.6442580223083496
+                },
+                {
+                  "chunk_id": "d78be5e9b09d1ee5b70dc305",
+                  "doc_id": "DOC-0035",
+                  "rank": 19,
+                  "score": 0.639447488751859
+                },
+                {
+                  "chunk_id": "afe69a0eb51ebafc189b64fd",
+                  "doc_id": "DOC-0150",
+                  "rank": 20,
+                  "score": 0.635383703433497
+                }
+              ],
+              "sparse": [],
+              "fusion": [
+                {
+                  "chunk_id": "2fb88d60ca94ba92661b09bd",
+                  "doc_id": "DOC-0001",
+                  "rank": 1,
+                  "score": 0.01639344262295082
+                },
+                {
+                  "chunk_id": "5b217fa602bc478808660085",
+                  "doc_id": "DOC-0005",
+                  "rank": 2,
+                  "score": 0.016129032258064516
+                },
+                {
+                  "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                  "doc_id": "DOC-0009",
+                  "rank": 3,
+                  "score": 0.015873015873015872
+                },
+                {
+                  "chunk_id": "07558a24dfec359c944e2d63",
+                  "doc_id": "DOC-0002",
+                  "rank": 4,
+                  "score": 0.015625
+                },
+                {
+                  "chunk_id": "bc255b5372af6f0b1188df9d",
+                  "doc_id": "DOC-0003",
+                  "rank": 5,
+                  "score": 0.015384615384615385
+                },
+                {
+                  "chunk_id": "3047e4bbe909e85319e83e87",
+                  "doc_id": "DOC-0004",
+                  "rank": 6,
+                  "score": 0.015151515151515152
+                },
+                {
+                  "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                  "doc_id": "DOC-0013",
+                  "rank": 7,
+                  "score": 0.014925373134328358
+                },
+                {
+                  "chunk_id": "b1576ccb0254a9696045d3ed",
+                  "doc_id": "DOC-0031",
+                  "rank": 8,
+                  "score": 0.014705882352941176
+                },
+                {
+                  "chunk_id": "c36ed936d7fca506a7541004",
+                  "doc_id": "DOC-0006",
+                  "rank": 9,
+                  "score": 0.014492753623188406
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 10,
+                  "score": 0.014285714285714285
+                },
+                {
+                  "chunk_id": "268446c4429bf1e0ec50d24c",
+                  "doc_id": "DOC-0039",
+                  "rank": 11,
+                  "score": 0.014084507042253521
+                },
+                {
+                  "chunk_id": "773a70f24b1c618c9efb4688",
+                  "doc_id": "DOC-0014",
+                  "rank": 12,
+                  "score": 0.013888888888888888
+                },
+                {
+                  "chunk_id": "90c56f0ff2250dad721ecd80",
+                  "doc_id": "DOC-0010",
+                  "rank": 13,
+                  "score": 0.0136986301369863
+                },
+                {
+                  "chunk_id": "8c8bb479420ec4187498985e",
+                  "doc_id": "DOC-0011",
+                  "rank": 14,
+                  "score": 0.013513513513513514
+                },
+                {
+                  "chunk_id": "d908fd6f05b8351c9e367321",
+                  "doc_id": "DOC-0008",
+                  "rank": 15,
+                  "score": 0.013333333333333334
+                },
+                {
+                  "chunk_id": "c62cc2183829070ff7262331",
+                  "doc_id": "DOC-0043",
+                  "rank": 16,
+                  "score": 0.013157894736842105
+                },
+                {
+                  "chunk_id": "d76e1bf25824c9203df9b6e1",
+                  "doc_id": "DOC-0012",
+                  "rank": 17,
+                  "score": 0.012987012987012988
+                },
+                {
+                  "chunk_id": "b967194f44b3aac0db009e06",
+                  "doc_id": "DOC-0015",
+                  "rank": 18,
+                  "score": 0.01282051282051282
+                },
+                {
+                  "chunk_id": "d78be5e9b09d1ee5b70dc305",
+                  "doc_id": "DOC-0035",
+                  "rank": 19,
+                  "score": 0.012658227848101266
+                },
+                {
+                  "chunk_id": "afe69a0eb51ebafc189b64fd",
+                  "doc_id": "DOC-0150",
+                  "rank": 20,
+                  "score": 0.0125
+                }
+              ],
+              "rerank": [
+                {
+                  "chunk_id": "5b217fa602bc478808660085",
+                  "doc_id": "DOC-0005",
+                  "rank": 1,
+                  "score": 0.7265595534279987
+                },
+                {
+                  "chunk_id": "2fb88d60ca94ba92661b09bd",
+                  "doc_id": "DOC-0001",
+                  "rank": 2,
+                  "score": 0.7232195881627794
+                },
+                {
+                  "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                  "doc_id": "DOC-0009",
+                  "rank": 3,
+                  "score": 0.6310331932414588
+                },
+                {
+                  "chunk_id": "07558a24dfec359c944e2d63",
+                  "doc_id": "DOC-0002",
+                  "rank": 4,
+                  "score": 0.5806296505193386
+                },
+                {
+                  "chunk_id": "bc255b5372af6f0b1188df9d",
+                  "doc_id": "DOC-0003",
+                  "rank": 5,
+                  "score": 0.5299293870766837
+                },
+                {
+                  "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                  "doc_id": "DOC-0013",
+                  "rank": 6,
+                  "score": 0.4600212510888009
+                }
+              ]
+            },
+            "graph_paths": [
+              {
+                "nodes": [
+                  {
+                    "id": "policy:DOC-0001",
+                    "type": "Policy",
+                    "label": "Apex Platinum - 0% Intro APR Balance Transfer Rules (2024)",
+                    "doc_id": "DOC-0001",
+                    "card_tier": "Apex Platinum",
+                    "effective_year": 2024
+                  },
+                  {
+                    "id": "product:Apex Platinum",
+                    "type": "CardProduct",
+                    "label": "Apex Platinum"
+                  },
+                  {
+                    "id": "policy:DOC-0013",
+                    "type": "Policy",
+                    "label": "Apex Platinum - Balance Transfer Limits & Caps (2025)",
+                    "doc_id": "DOC-0013",
+                    "card_tier": "Apex Platinum",
+                    "effective_year": 2025
+                  }
+                ],
+                "edges": [
+                  {
+                    "source": "policy:DOC-0001",
+                    "target": "product:Apex Platinum",
+                    "relation": "APPLIES_TO",
+                    "doc_id": "DOC-0001",
+                    "evidence": "Policy Code: BT-001-APEX-2024. Applicable Product: Apex Platinum. Policy Effective Year: 2024. Category: Balance Transfers. Details: Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts.",
+                    "extraction_method": "metadata+verbatim-regex",
+                    "version": "source-rules-v1",
+                    "source_sha256": "c2185ced42db12e3abc1a729d152659c104fd9a8f12edb03d205524623ed9c7d"
+                  },
+                  {
+                    "source": "product:Apex Platinum",
+                    "target": "policy:DOC-0013",
+                    "relation": "HAS_POLICY",
+                    "doc_id": "DOC-0013",
+                    "evidence": "Policy Code: BT-004-APEX-2025. Applicable Product: Apex Platinum. Policy Effective Year: 2025. Category: Balance Transfers. Details: Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited.",
+                    "extraction_method": "metadata+verbatim-regex",
+                    "version": "source-rules-v1",
+                    "source_sha256": "206ecc0bddd812237a2a7e6c80d96aa8a1c9e88529a2d81789b933d48814254e"
+                  }
+                ],
+                "doc_ids": [
+                  "DOC-0001",
+                  "DOC-0013"
+                ],
+                "hops": 2
+              }
+            ],
+            "graph_expansion": {
+              "seed_doc_ids": [
+                "DOC-0001",
+                "DOC-0005",
+                "DOC-0009",
+                "DOC-0002",
+                "DOC-0003"
+              ],
+              "expanded_doc_ids": [
+                "DOC-0013"
+              ],
+              "candidate_doc_ids": [
+                "DOC-0001",
+                "DOC-0005",
+                "DOC-0009",
+                "DOC-0002",
+                "DOC-0003",
+                "DOC-0013"
+              ],
+              "truncated": false,
+              "visited_nodes": 8,
+              "max_hops": 2,
+              "version": "source-rules-v1"
+            },
+            "warnings": []
+          },
+          "timings_ms": {
+            "embedding": 142.39699999961886,
+            "dense": 6.723500000589411,
+            "sparse": 2.8889999994134996,
+            "fusion": 0.05360000068321824,
+            "rerank": 171.41730000003008,
+            "retrieval_total": 346.21969999898283,
+            "recall_fusion": 9.865500000159955,
+            "generation": 5554.905599999984,
+            "answer_total": 5901.231899999402
+          },
+          "evidence_insufficient": false,
+          "citation_valid": true,
+          "warnings": [
+            "引用编号检查仅验证编号映射，不代表事实忠实度已经得到证明。"
+          ]
+        },
+        "required_documents": [
+          "DOC-0001",
+          "DOC-0005"
+        ]
+      }
+    ],
+    "official_metrics": false,
+    "challenge_human_confirmed": false,
+    "note": "Citation coverage is a proxy only. Human review must check every required condition in the answer.",
+    "human_review": [
+      {
+        "query_id": "CH-001",
+        "mode": "hybrid_rerank",
+        "reviewer": null,
+        "reviewed_at": null,
+        "status": "pending_human",
+        "checklist": [
+          "membership and enrollment",
+          "annual passes and purchase channel",
+          "guest/additional-pass costs"
+        ],
+        "supported_and_answered": null,
+        "notes": null
+      },
+      {
+        "query_id": "CH-001",
+        "mode": "graph_enhanced",
+        "reviewer": null,
+        "reviewed_at": null,
+        "status": "pending_human",
+        "checklist": [
+          "membership and enrollment",
+          "annual passes and purchase channel",
+          "guest/additional-pass costs"
+        ],
+        "supported_and_answered": null,
+        "notes": null
+      }
+    ],
+    "provider_cost_summary": {
+      "provider_logical_calls": 36,
+      "http_attempts": 36,
+      "estimated_cost_known_usage": 0.034512,
+      "unknown_cost_call_count": 0,
+      "actual_billed_cost": null,
+      "note": "Known usage estimate excludes unknown failed attempts; reservation cap is separate."
+    },
+    "budget": {
+      "currency": "CNY",
+      "reserved_cost_ceiling": 12.0,
+      "actual_billed_cost": null,
+      "tasks": 12,
+      "max_cost": 20,
+      "records": [
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-001:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:26:52.281236+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-001:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:26:58.728821+08:00"
+        },
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-002:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:06.227032+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-002:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:11.838787+08:00"
+        },
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-003:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:22.346642+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-003:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:30.267063+08:00"
+        },
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-004:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:38.360213+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-004:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:45.269701+08:00"
+        },
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-005:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:51.178627+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-005:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:27:58.837429+08:00"
+        },
+        {
+          "kind": "answer_hybrid_rerank",
+          "sample_id": "CH-006:hybrid_rerank",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:28:05.567269+08:00"
+        },
+        {
+          "kind": "answer_graph_enhanced",
+          "sample_id": "CH-006:graph_enhanced",
+          "reserved_cost_ceiling": 1.0,
+          "actual_billed_cost": null,
+          "at": "2026-11-09T22:28:12.090656+08:00"
+        }
+      ],
+      "note": "Ceilings include embedding/rerank/generation and bounded provider retries; not a bill."
+    }
+  }
+}

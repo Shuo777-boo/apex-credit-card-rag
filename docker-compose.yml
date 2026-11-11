@@ -1,0 +1,78 @@
+name: apex-rag
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: docker/backend.Dockerfile
+  env_file: ${APEX_ENV_FILE:-.env}
+  environment:
+    APEX_PROJECT_ROOT: /app
+    APEX_DATABASE_URL: postgresql://${POSTGRES_USER:-apex}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-apex}
+    APEX_DATA_DIR: /app/data
+    APEX_REPORTS_DIR: /app/reports
+  volumes:
+    - ./configs:/app/configs:ro
+    - ./data:/app/data
+    - ./reports:/app/reports
+  depends_on:
+    postgres:
+      condition: service_healthy
+services:
+  postgres:
+    image: pgvector/pgvector:0.8.0-pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-apex}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-apex}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 3s
+      timeout: 3s
+      retries: 40
+      start_period: 5s
+    restart: unless-stopped
+  backend:
+    <<: *backend
+    profiles: [app]
+    init: true
+    stop_grace_period: 60s
+    # The DB-backed runner owns one process; do not scale without a distributed lease.
+    command: [python, -m, uvicorn, apex_rag.main:app, --host, 0.0.0.0, --port, '8000', --workers, '1']
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-8000}:8000"
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=3)"]
+      interval: 5s
+      timeout: 4s
+      retries: 24
+      start_period: 10s
+    restart: unless-stopped
+  frontend:
+    profiles: [app]
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, wget, -q, --spider, http://127.0.0.1/]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  bootstrap:
+    <<: *backend
+    profiles: [tools]
+    command: [python, scripts/run_cli.py, --timeout, '1800', --, bootstrap, --config, configs/bootstrap.yaml]
+  reproduce:
+    <<: *backend
+    profiles: [tools]
+    command: [python, scripts/reproduce.py, --skip-database-start, --workflow-timeout, '7200', --config, configs/reproduce.yaml]
+volumes:
+  postgres_data:

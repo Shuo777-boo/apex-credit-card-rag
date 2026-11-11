@@ -1,0 +1,4 @@
+mode: hybrid_rerank
+candidate_depth: 100
+rerank_depth: 100
+# Missing build_id resolves active ready build. No query-answer cache.

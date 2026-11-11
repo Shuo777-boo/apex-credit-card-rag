@@ -1,0 +1,662 @@
+[
+  {
+    "model": "text-embedding-v4",
+    "request_id": "8c471f20-8c0f-98a5-821e-194037208342",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 336.7018040007679,
+    "usage": {
+      "total_tokens": 20
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 283.14994299944374
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "759008eb-5079-9e92-ae64-35b7b84b4c30",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 184.7375919987826,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 133.51578099900507
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "b96f09fb-6a3e-94fd-87af-bd66048abcf8",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 227.156319999267,
+    "usage": {
+      "total_tokens": 17
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 178.90316400007578
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "4a607358-15d3-92fd-801a-1050b751b873",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 181.58955499893636,
+    "usage": {
+      "total_tokens": 18
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 128.07999500000733
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "c7b09ae3-01ac-9195-9fd6-0f9bdfda99e7",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 213.5417730005429,
+    "usage": {
+      "total_tokens": 14
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 178.82766500042635
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "1300de63-1223-924a-a4cd-75e7c07eb696",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 193.16558899845404,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 152.33081099904666
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "61e3268f-a696-9dff-8d19-5dc86c133875",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 217.3811390002811,
+    "usage": {
+      "total_tokens": 17
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 169.26251599943498
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "1ad5ef65-5cfe-9063-baac-5d55d26976e7",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 203.193626999564,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 158.11756800030707
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "f5ebb582-6ddd-9e9f-8073-37beacc53760",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 210.84193299975595,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 175.92318399874785
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "7bc14020-e0ea-97a6-b313-030544d8da6a",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 181.72685699937574,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 137.76747700103442
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "5d15da8a-6fd6-9f47-bce8-0b92342419db",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 194.09955099945364,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 152.10043099978066
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "f26feb14-dc2f-98b2-8a45-a816c5283f91",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 257.7564530001837,
+    "usage": {
+      "total_tokens": 16
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 213.3904780002922
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "d5850683-d457-9c6c-aadd-965ebbc4dcdc",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 219.93307000047935,
+    "usage": {
+      "total_tokens": 17
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 185.55608200040297
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "8edc5fb8-ab73-9f5e-ae2a-d5cdc3e63c37",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 173.2894500000839,
+    "usage": {
+      "total_tokens": 14
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 128.64612200064585
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "bb942170-953d-9e68-8714-554d1c9125f1",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 259.7090390008816,
+    "usage": {
+      "total_tokens": 18
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 225.66865899898403
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "ca04d337-0979-95f6-ae91-b9e66e74af93",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 203.334329999052,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 135.57931200011808
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "6a165420-a34f-9bcc-b414-4ec941add0d1",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 184.56985600096232,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 136.5094520006096
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "2b2ded62-50e9-9f8b-a291-623ff0b6583a",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 188.33910700050183,
+    "usage": {
+      "total_tokens": 12
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 132.3108600008709
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "d873d653-2d46-9c8a-bbcb-3f1850b7fda9",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 217.51727500122797,
+    "usage": {
+      "total_tokens": 14
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 156.34440099893254
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "a87a8adb-ef77-91f4-9b93-ddcdc8e9d87b",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 210.08812400032184,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 161.4955259992712
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "5d9006c7-33ee-9cf9-bf29-eeecbea2b6f8",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 202.26565099983418,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 160.4912430011609
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "e308ed73-7a5f-990f-a6ce-5a9670ef1e26",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 215.3736119998939,
+    "usage": {
+      "total_tokens": 13
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 169.6158060003654
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "f01a05f4-22cd-958c-9224-d554639c5e4e",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 183.62803399941185,
+    "usage": {
+      "total_tokens": 14
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 141.58085100098106
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "1fc9bfc6-9428-9f3f-96f1-b0fd21f75496",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 200.21854900005565,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 146.46842699949048
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "27c30023-20e5-9535-baa2-014049ea0d66",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 245.04045100002259,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 185.23659499987843
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "8682d3d1-f6a2-9ddd-8599-03af6070b609",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 221.16741900026682,
+    "usage": {
+      "total_tokens": 16
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 152.82823300003656
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "8dbc7f82-6c0d-9713-937f-12306b219998",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 248.80061899966677,
+    "usage": {
+      "total_tokens": 14
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 190.6629420009267
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "1abf7941-c534-908d-9a84-aeb2fec7ee12",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 231.79704999893147,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 173.43291600082011
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "7c3537e1-33b1-95ac-aa31-27ea527017b0",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 211.50616399972932,
+    "usage": {
+      "total_tokens": 16
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 160.576439999204
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  },
+  {
+    "model": "text-embedding-v4",
+    "request_id": "4be3ead6-e835-956d-ab36-38396bb87d71",
+    "status": "completed",
+    "error_type": null,
+    "http_status": 200,
+    "attempts": 1,
+    "elapsed_ms": 748.6516140015738,
+    "usage": {
+      "total_tokens": 15
+    },
+    "attempt_details": [
+      {
+        "attempt": 1,
+        "http_status": 200,
+        "error_type": null,
+        "elapsed_ms": 661.2380610004038
+      }
+    ],
+    "max_tokens": null,
+    "finish_reason": null
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "recall@1": 0.7611111111111111,
+  "precision@1": 0.8666666666666667,
+  "ndcg@1": 0.8666666666666667,
+  "recall@3": 0.9222222222222223,
+  "precision@3": 0.4,
+  "ndcg@3": 0.894494928086853,
+  "recall@5": 0.9777777777777777,
+  "precision@5": 0.2733333333333333,
+  "ndcg@5": 0.9281794858369443,
+  "mrr@20": 0.9194444444444444,
+  "counts": {
+    "total": 30,
+    "succeeded": 30,
+    "failed": 0
+  },
+  "latency_ms": {
+    "database": {
+      "p50": 2.2591954993913532,
+      "p99": 23.69489500009879,
+      "samples": 30
+    },
+    "retrieval_total": {
+      "p50": 322.10718499936775,
+      "p99": 754.7620196109896,
+      "samples": 30
+    }
+  },
+  "execution": {
+    "planned_questions": 30,
+    "attempted_questions": 30,
+    "partial": false
+  }
+}

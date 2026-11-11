@@ -1,0 +1,563 @@
+
+<!DOCTYPE html><html lang="zh"><head>
+  <meta name="nav-disable" content="flex">
+  
+  <link rel="icon" href="https://img.alicdn.com/imgextra/i2/O1CN01TFs5Qw27uYvfA6gib_!!6000000007857-55-tps-32-32.svg" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://img.alicdn.com/imgextra/i4/O1CN01jlcNT71YBfZJJI7qY_!!6000000003021-2-tps-128-128.png">
+  
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="nav-config" content="footer=default">
+  <meta name="aplus-core" content="aplus.js">
+  <meta name="aplus-ajax" content="chksum">
+  <meta name="aplus-waiting" content="MAN">
+  <meta name="aplus-pvhash" content="1">
+  
+  <meta name="data-spm" content="a2c4g">
+  
+  <script>
+    window.pageStartTime = Date.now();
+  </script>
+
+  
+  <title>
+    通用文本排序模型API使用详情-大模型服务平台百炼(Model Studio)-阿里云帮助中心
+  </title>
+  <link rel="canonical" href="https://help.aliyun.com/zh/model-studio/text-rerank-api">
+  <meta name="keywords" content="SDK使用,前提条件,获取API KEY,TextRank,API模型,DashScope SDK,GTE ReRank">
+  <meta name="description" content="检索系统在“召回”阶段为保证效率，返回的结果可能不够精准。排序模型能对召回的文档进行二次精准排序，确保将与用户查询最相关的结果排在最前，有效提升应用准确率。">
+  <meta name="last-modified" content="2026-11-06T22:21:44+08:00">
+  <meta name="date" content="2024-06-18T08:26:31+08:00">
+  <meta property="og:title" content="排序模型（Rerank）">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://help.aliyun.com/zh/model-studio/text-rerank-api">
+  <meta property="og:image" content="https://img.alicdn.com/imgextra/i1/O1CN012QgtoH1c1Mu70xD3w_!!6000000003540-2-tps-640-640.png">
+  <meta property="og:description" content="检索系统在“召回”阶段为保证效率，返回的结果可能不够精准。排序模型能对召回的文档进行二次精准排序，确保将与用户查询最相关的结果排在最前，有效提升应用准确率。">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://help.aliyun.com/zh/model-studio/text-rerank-api",
+    "publisher": {
+      "@type": "Organization",
+      "name": "阿里云计算",
+      "url": "https://www.aliyun.com/",
+      "logo": "https://img.alicdn.com/imgextra/i1/O1CN01BEqugB1KebzCRyIJl_!!6000000001189-55-tps-48-48.svg"
+    }
+  }
+  </script>
+  
+
+  <link href="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.66/css/index.css" rel="stylesheet">
+  
+
+  <script>
+    window.globalData = {
+      nodeId: "2780056",
+      website: "cn",
+      language: "zh",
+    }
+    window.$ACE_TRACKER_CONFIG = {
+      "enableHistory": true,
+      "enableHash": false
+    }
+  </script>
+<script>
+    window.__ICE_SSR_ENABLED__=true;
+    window.__ICE_APP_DATA__={};
+window.__ICE_PAGE_PROPS__={"docDetailData":{"storeData":{"siteOverride":{"website":"cn","language":"zh"},"alias":"/model-studio/text-rerank-api","nodeId":null,"data":{"lastModifiedTime":1793974904000,"keywords":"SDK使用,前提条件,获取API KEY,TextRank,API模型,DashScope SDK,GTE ReRank","docTitle":"文本排序","language":"zh","seoTitle":"通用文本排序模型API使用详情-大模型服务平台百炼(Model Studio)-阿里云帮助中心","title":"排序模型（Rerank）","content":"<div lang=\"zh\" class=\"icms-help-docs-content\">\n<meta property=\"og:title\" content=\"文本排序\"><div lang=\"zh\" class=\"icms-help-docs-content\"><p data-tag=\"shortdesc\" class=\"shortdesc\">检索系统在“召回”阶段为保证效率，返回的结果可能不够精准。排序模型能对召回的文档进行二次精准排序，确保将与用户查询最相关的结果排在最前，有效提升应用准确率。</p>\n<h2 id=\"模型概览\">模型概览 <span id=\"94a9b9899drvl\"></span></h2>\n<div class=\"note note-important\"><div class=\"note-icon-wrapper\"></div><div class=\"note-content\"><p><strong>重要</strong>gte-rerank<span class=\"help-letter-space\"></span>模型将于<span class=\"help-letter-space\"></span>2026<span class=\"help-letter-space\"></span>年<span class=\"help-letter-space\"></span>05<span class=\"help-letter-space\"></span>月<span class=\"help-letter-space\"></span>30<span class=\"help-letter-space\"></span>日下线，推荐使用<span class=\"help-letter-space\"></span>qwen3-rerank<span class=\"help-letter-space\"></span>模型替代。详情请参见<a href=\"https://www.aliyun.com/notice/118217\">官网公告</a>。</p></div></div>\n<table><colgroup><col style=\"width:16.666667%\"><col style=\"width:16.666667%\"><col style=\"width:16.666667%\"><col style=\"width:16.666667%\"><col style=\"width:16.666667%\"><col style=\"width:16.666667%\"></colgroup><thead><tr><th><p><strong>模型名称</strong></p></th><th><p><strong>最大文档数</strong></p></th><th><p><strong>单条最大输入<span class=\"help-letter-space\"></span>Token</strong></p></th><th><p><strong>请求最大输入<span class=\"help-letter-space\"></span>Token</strong></p></th><th><p><strong>语种支持</strong></p></th><th><p><strong>应用场景</strong></p></th></tr></thead><tbody><tr><td><p>qwen3.7-text-rerank</p></td><td><p>500</p></td><td><p>30,000</p></td><td><p>120,000（建议）</p></td><td><p>中文、英语、西班牙语、法语、葡萄牙语、印尼语、日语、韩语、德语、俄罗斯语等<span class=\"help-letter-space\"></span>201<span class=\"help-letter-space\"></span>种主流语种与方言</p></td><td><ul><li><p>文本语义检索</p></li><li><p>RAG<span class=\"help-letter-space\"></span>应用</p></li></ul></td></tr><tr><td><p>qwen3-vl-rerank</p></td><td><p>文本：100</p><p>图片：40</p><p>视频：4</p></td><td><p>8,000</p></td><td rowspan=\"2\"><p>120,000</p></td><td><p>中、英、日、韩、法、德等<span class=\"help-letter-space\"></span>33<span class=\"help-letter-space\"></span>种主流语言</p></td><td><ul><li><p>图像聚类</p></li><li><p>跨模态搜索</p></li><li><p>图片检索</p></li></ul></td></tr><tr><td><p>qwen3-rerank</p></td><td rowspan=\"2\"><p>500</p></td><td rowspan=\"2\"><p>4,000</p></td><td><p>中文、英语、西班牙语、法语、葡萄牙语、印尼语、日语、韩语、德语、俄罗斯语等<span class=\"help-letter-space\"></span>100+主流语种</p></td><td rowspan=\"2\"><ul><li><p>文本语义检索</p></li><li><p>RAG<span class=\"help-letter-space\"></span>应用</p></li></ul></td></tr><tr><td><p>gte-rerank-v2</p></td><td><p>30,000</p></td><td><p>中、英、日、韩、泰语、西、法、葡、德、印尼语、阿拉伯语等<span class=\"help-letter-space\"></span>50<span class=\"help-letter-space\"></span>余语种</p></td></tr></tbody></table>\n<ul>\n<li><strong>单条最大输入<span class=\"help-letter-space\"></span>Token</strong>：每个<span class=\"help-letter-space\"></span>Query<span class=\"help-letter-space\"></span>或<span class=\"help-letter-space\"></span>Document<span class=\"help-letter-space\"></span>的最大<span class=\"help-letter-space\"></span>Token<span class=\"help-letter-space\"></span>数量。单条 Query 或 Document 的输入超过该限制时，API 会返回 HTTP 400 错误，不会截断输入内容。</li>\n<li><strong>单次请求最大文档数</strong>：单次请求允许的最大文档数量。对于 qwen3-vl-rerank 模型，该限制会根据文档类型（文本、图片、视频、混合模态）的不同而有所差异。</li>\n<li><strong>请求最大输入<span class=\"help-letter-space\"></span>Token</strong>：计算公式为 <code>Query Tokens × Document 数量 + Document Tokens 总和</code>，该值不得超过请求最大输入<span class=\"help-letter-space\"></span>Token。</li>\n</ul>\n<h3 id=\"输入格式限制\">输入格式限制： <span id=\"f1751ee952ly4\"></span></h3>\n<table><colgroup><col style=\"width:33.33%\"><col style=\"width:33.33%\"><col style=\"width:33.33%\"></colgroup><thead><tr><th><p><strong>模型</strong></p></th><th><p><strong>图片</strong></p></th><th><p><strong>视频</strong></p></th></tr></thead><tbody><tr><td><p>qwen3-vl-rerank</p></td><td><p>JPEG, PNG, WEBP, BMP, TIFF, ICO, DIB, ICNS, SGI（支持<span class=\"help-letter-space\"></span>URL<span class=\"help-letter-space\"></span>或<span class=\"help-letter-space\"></span>Base64）</p></td><td><p>MP4, AVI, MOV（仅支持<span class=\"help-letter-space\"></span>URL）</p></td></tr></tbody></table>\n<h2 id=\"前提条件\">前提条件 <span id=\"o6ecl\"></span></h2>\n<p>您需要已<a href=\"/zh/model-studio/get-api-key\">获取 API Key</a><span class=\"help-letter-space\"></span>并<a href=\"/zh/model-studio/configure-api-key-through-environment-variables\">配置<span class=\"help-letter-space\"></span>API Key<span class=\"help-letter-space\"></span>到环境变量<span class=\"help-letter-space\"></span>DASHSCOPE_API_KEY</a>。如果通过<span class=\"help-letter-space\"></span>SDK<span class=\"help-letter-space\"></span>调用，还需要<a href=\"/zh/model-studio/install-sdk\">安装<span class=\"help-letter-space\"></span>DashScope SDK</a>。</p>\n<h2 id=\"http调用\">HTTP<span class=\"help-letter-space\"></span>调用 <span id=\"1c5471b844yvg\"></span></h2>\n<p>调用时请将<code>{WorkspaceId}</code>替换为真实的<a href=\"/zh/model-studio/regions#h2_migrate_domain\">业务空间<span class=\"help-letter-space\"></span>ID</a>。</p>\n<blockquote>\n<p>本节介绍 DashScope HTTP 接口。<code>qwen3-rerank</code>和<code>qwen3.7-text-rerank</code>还支持 OpenAI 兼容接口，参见<span class=\"help-letter-space\"></span><a href=\"#openai-compatible-rerank\">OpenAI 兼容接口</a>。</p>\n</blockquote>\n<table bordertype=\"no-border\" style=\"display:table;table-layout:fixed;width:100%\"><colgroup><col style=\"width:50%\"><col style=\"width:50%\"></colgroup><tbody><tr><td><h3>请求 <span id=\"5043fa882c26r\"></span></h3><h4>请求头（Headers） <span id=\"2319e756381fd\"></span></h4><p><strong>Content-Type</strong><code>string</code><strong>（必选）</strong></p><p>请求内容类型。此参数必须设置为<code>application/json</code>。</p><p><strong>Authorization</strong><code>string</code><strong>（必选）</strong></p><p>请求身份认证。接口使用阿里云百炼<span class=\"help-letter-space\"></span>API Key<span class=\"help-letter-space\"></span>进行身份认证。示例值：Bearer sk-xxxx。</p><h4>请求体（Request Body） <span id=\"66a778d4fbfub\"></span></h4><p><strong>model</strong><code>string</code><strong>（必选）</strong></p><p>模型名称。支持的模型：qwen3.7-text-rerank、qwen3-rerank、gte-rerank-v2、qwen3-vl-rerank。</p><p><strong>input</strong><code>object</code><strong>（必选）</strong></p><p>输入内容。</p><blockquote>\n<p><code>query</code> 和 <code>documents</code> 嵌套在 <code>input</code> 对象中。</p>\n</blockquote><section class=\"collapse expanded\" id=\"accordion-属性\"><p>属性</p><div><p><strong>query</strong><code>string | object</code><strong>（必选）</strong></p><p>查询内容。最大长度不能超过<span class=\"help-letter-space\"></span>4,000<span class=\"help-letter-space\"></span>个<span class=\"help-letter-space\"></span>Token。</p><p>当使用<code>qwen3-vl-rerank</code>模型时，<code>query</code>支持以下两种格式：</p><ul>\n<li>\n<p>字符串格式：直接传入文本字符串，例如<code>\"query\": \"什么是文本排序模型\"</code>。</p>\n</li>\n<li>\n<p>对象格式：传入字典指定模态类型和值，格式为<code>{\"模态类型\": \"输入内容\"}</code>。支持<code>text</code>和<code>image</code>两种模态类型。</p>\n<ul>\n<li>文本查询：<code>\"query\": {\"text\": \"什么是文本排序模型\"}</code></li>\n<li>图片查询：<code>\"query\": {\"image\": \"图片<span class=\"help-letter-space\"></span>URL<span class=\"help-letter-space\"></span>或<span class=\"help-letter-space\"></span>Base64\"}</code></li>\n</ul>\n</li>\n</ul><p><strong>documents</strong><code>array</code><strong>（必选）</strong></p><p>待排序的候选文档列表。每个元素是一个字符串。</p><p>当使用<code>qwen3-vl-rerank</code>模型时，每个元素是一个字典或者字符串，用于指定内容的类型和值。格式为{\"模态类型\": \"输入字符串或图像、视频<span class=\"help-letter-space\"></span>url\"}。支持<code>text</code>,&nbsp;<code>image</code>,&nbsp;<code>video</code>三种模态类型。</p><ul>\n<li>文本：key<span class=\"help-letter-space\"></span>为<code>text</code>。value<span class=\"help-letter-space\"></span>为字符串形式。也可不通过<span class=\"help-letter-space\"></span>dict<span class=\"help-letter-space\"></span>直接传入字符串。</li>\n<li>图片：key<span class=\"help-letter-space\"></span>为<code>image</code>。value<span class=\"help-letter-space\"></span>可以是公开可访问的<span class=\"help-letter-space\"></span>URL，或<span class=\"help-letter-space\"></span>Base64<span class=\"help-letter-space\"></span>编码的<span class=\"help-letter-space\"></span>Data URI。Base64<span class=\"help-letter-space\"></span>格式为 <code>data:image/{format};base64,{data}</code>，其中 <code>{format}</code> 是图片格式（如 <code>jpeg</code>、<code>png</code>），<code>{data}</code> 是<span class=\"help-letter-space\"></span>Base64<span class=\"help-letter-space\"></span>编码字符串。</li>\n<li>视频：key<span class=\"help-letter-space\"></span>为<code>video</code>，value<span class=\"help-letter-space\"></span>必须是公开可访问的<span class=\"help-letter-space\"></span>URL。</li>\n</ul></div></section><p><strong>parameters</strong><code>object</code><strong>（可选）</strong></p><p>可选参数。</p><blockquote>\n<p><code>top_n</code> 和 <code>instruct</code> 嵌套在 <code>parameters</code> 对象中。</p>\n</blockquote><section class=\"collapse expanded\" id=\"accordion-属性-2\"><p>属性</p><div><p><strong>top_n</strong><code>int</code><strong>（可选）</strong></p><p>返回排序后的<span class=\"help-letter-space\"></span>top_n<span class=\"help-letter-space\"></span>个文档。默认返回全部文档。如果指定的值大于文档总数，将返回全部文档。</p><p><strong>return_documents</strong><code>bool</code><strong>（可选）</strong></p><p>是否在排序结果中返回文档原文。默认值<code>false</code>，以减少网络传输开销。支持的模型：<code>gte-rerank-v2</code>、<code>qwen3-vl-rerank</code>、<code>qwen3-rerank</code>。</p><p><strong>instruct</strong> <code>string</code> <strong>可选</strong></p><p>添加自定义排序任务类型说明，仅在使用 <code>qwen3.7-text-rerank</code>、<code>qwen3-rerank</code> 及<code>qwen3-vl-rerank</code>模型时生效。通过该参数可以指导模型采用不同的排序策略，例如：</p><ul>\n<li>\n<p><strong>问答检索任务（默认）</strong>：<code>\"Given a web search query, retrieve relevant passages that answer the query.\"</code></p>\n<ul>\n<li>侧重点：寻找问题的答案。模型会优先评估文档是否解答了<span class=\"help-letter-space\"></span>Query<span class=\"help-letter-space\"></span>中的问题。</li>\n<li>示例：对于<span class=\"help-letter-space\"></span>Query“如何预防感冒？”，文档“勤洗手是预防感冒的有效方法”会获得高分；而文档“感冒是一种常见疾病”虽然主题相关，但因未提供答案，得分会显著更低。</li>\n</ul>\n</li>\n<li>\n<p><strong>语义相似度排序任务</strong>：<code>\"Retrieve semantically similar text.\"</code></p>\n<ul>\n<li>侧重点：判断语义的等价性。模型会评估<span class=\"help-letter-space\"></span>Query<span class=\"help-letter-space\"></span>和文档的核心含义是否一致，而不管具体措辞或句式。</li>\n<li>示例：在<span class=\"help-letter-space\"></span>FAQ<span class=\"help-letter-space\"></span>场景中，用户<span class=\"help-letter-space\"></span>Query“如何修改密码？”与候选问题“忘记密码怎么办？”在语义上高度相似，应获得高分。模型会关注两者是否指向同一个用户意图。</li>\n</ul>\n</li>\n</ul><p>建议使用英文撰写。如不指定该参数，将默认按问答检索任务进行排序。更多任务指令可参考<a href=\"https://github.com/QwenLM/Qwen3-Embedding/blob/main/evaluation/task_prompts.json\">模型仓库</a>中的示例。</p><p><strong>fps</strong> <code>float</code> <strong>可选</strong></p><p>仅<code>qwen3-vl-rerank</code>模型支持此参数。控制视频的帧数，比例越小，实际抽取的帧数越少，范围为 [0,1]。默认值为<span class=\"help-letter-space\"></span>1.0。</p></div></section></td><td><section data-tag=\"tabbed-content-box\" outputclass=\"tabbed-content-box\" id=\"sec-tabs\" class=\"tabbed-content-box section\"><section id=\"qwen3-7-text-rerank\" class=\"section\"><h4 id=\"qwen3-7-text-rerank-h4\">qwen3.7-text-rerank</h4><pre data-tag=\"codeblock\" id=\"code-block\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"model\": \"qwen3.7-text-rerank\",\n    \"input\": {\n        \"query\": \"什么是文本排序模型\",\n        \"documents\": [\n            \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\",\n            \"量子计算是计算科学的一个前沿领域\",\n            \"预训练语言模型的发展给文本排序模型带来了新的进展\"\n        ]\n    },\n    \"parameters\": {\n        \"top_n\": 2,\n        \"instruct\": \"Given a web search query, retrieve relevant passages that answer the query.\"\n    }\n}'\n</code></pre></section><section id=\"qwen3-rerank\" class=\"section\"><h4 id=\"qwen3-rerank-h4\">qwen3-rerank</h4><pre data-tag=\"codeblock\" id=\"code-block-2\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --request POST \\\n  --url https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank \\\n  --header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  --header \"Content-Type: application/json\" \\\n  --data '{\n        \"model\": \"qwen3-rerank\",\n        \"input\": {\n            \"documents\": [\n                \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\",\n                \"量子计算是计算科学的一个前沿领域\",\n                \"预训练语言模型的发展给文本排序模型带来了新的进展\"\n            ],\n            \"query\": \"什么是文本排序模型\"\n        },\n        \"parameters\": {\n            \"top_n\": 2,\n            \"instruct\": \"Given a web search query, retrieve relevant passages that answer the query.\"\n        }\n}'\n</code></pre></section><section id=\"qwen3-vl-rerank\" class=\"section\"><h4 id=\"qwen3-vl-rerank-h4\">qwen3-vl-rerank</h4><p>文本查询</p><pre data-tag=\"codeblock\" id=\"code-block-3\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"model\": \"qwen3-vl-rerank\",\n    \"input\":{\n         \"query\": {\"text\": \"什么是文本排序模型\"},\n         \"documents\": [\n            {\"text\": \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\"},\n            {\"image\": \"https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg\"},\n            {\"video\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4\"}\n         ]\n    },\n    \"parameters\": {\n        \"return_documents\": true,\n        \"top_n\": 2,\n        \"fps\": 1.0\n    }\n}'\n</code></pre><p>图片查询</p><pre data-tag=\"codeblock\" id=\"code-block-4\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"model\": \"qwen3-vl-rerank\",\n    \"input\":{\n         \"query\": {\"image\": \"https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg\"},\n         \"documents\": [\n            {\"text\": \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\"},\n            {\"image\": \"https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg\"},\n            {\"video\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4\"}\n         ]\n    },\n    \"parameters\": {\n        \"return_documents\": true,\n        \"top_n\": 2,\n        \"fps\": 1.0\n    }\n}'\n</code></pre></section><section id=\"gte-rerank-v2\" class=\"section\"><h4 id=\"gte-rerank-v2-h4\">gte-rerank-v2</h4><pre data-tag=\"codeblock\" id=\"code-block-5\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \\\n--header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n--header 'Content-Type: application/json' \\\n--data '{\n    \"model\": \"gte-rerank-v2\",\n    \"input\":{\n         \"query\": \"什么是文本排序模型\",\n         \"documents\": [\n         \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\",\n         \"量子计算是计算科学的一个前沿领域\",\n         \"预训练语言模型的发展给文本排序模型带来了新的进展\"\n         ]\n    },\n    \"parameters\": {\n        \"return_documents\": true,\n        \"top_n\": 2\n    }\n}'\n</code></pre></section><section id=\"dashscope-cli\" class=\"section\"><h4 id=\"dashscope-cli-h4\">dashscope CLI</h4><p>通过 dashscope 命令行调用。</p><pre data-tag=\"codeblock\" id=\"code-block-6\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>export DASHSCOPE_API_KEY=\"your-api-key\"\n# 将 {WorkspaceId} 替换为业务空间<span class=\"help-letter-space\"></span>ID，cn-beijing 替换为对应地域（新加坡: ap-southeast-1, 美东: us-east-1）\nexport DASHSCOPE_HTTP_BASE_URL=\"https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1\"\ndashscope rerank create -m gte-rerank-v2 -q \"机器学习\" -d \"机器学习是<span class=\"help-letter-space\"></span>AI<span class=\"help-letter-space\"></span>分支\" -d \"今天天气真好\"\n</code></pre><div class=\"note note-important\"><div class=\"note-icon-wrapper\"></div><div class=\"note-content\"><p><strong>重要</strong>SDK Expert 交互式助手可按自然语言完成同样的开发与排障，见 </p><a href=\"/zh/model-studio/dashscope-sdk-expert\">DashScope SDK Expert</a>。</div></div><p>完整地域表见 <a href=\"/zh/model-studio/base-url\">Base URL 总览</a>。</p></section></section></td></tr></tbody></table>\n<table bordertype=\"no-border\" style=\"display:table;table-layout:fixed;width:100%\"><colgroup><col style=\"width:50%\"><col style=\"width:50%\"></colgroup><tbody><tr><td><h3>响应 <span id=\"b14ec019d4k6f\"></span></h3><p><strong>request_id</strong><code>string</code></p><p>请求唯一标识。可用于请求明细溯源和问题排查。</p><p><strong>output</strong><code>object</code></p><p>任务输出信息。</p><section class=\"collapse expanded\" id=\"accordion-属性-3\"><p>属性</p><div><p><strong>results</strong><code>array</code></p><p>排序结果列表。按 <code>relevance_score</code> 从高到低排列。</p><section class=\"collapse expanded\" id=\"accordion-属性-4\"><p>属性</p><div><p><strong>document</strong><code>dict</code></p><p>文档原文对象。仅在请求参数 <code>return_documents</code> 为 <code>true</code> 时返回。结构为 <code>{\"text\": \"文档原文\"}</code>。</p><p><strong>index</strong><code>int</code></p><p>表示该结果对应于输入 <code>documents</code> 列表中的原始索引位置。</p><p><strong>relevance_score</strong><code>double</code></p><p>该文档与查询的语义相关性得分，取值范围为 0.0 到 1.0。分数越高，相关性越强。</p><div class=\"note note-note\"><div class=\"note-icon-wrapper\"></div><div class=\"note-content\"><p><strong>说明</strong>此分数为当前请求中的相对分数，主要用于对本次请求内的文档排序，不可作为跨请求比较的绝对值。</p></div></div></div></section></div></section><p><strong>usage</strong><code>object</code></p><p>输出信息统计。</p><section class=\"collapse expanded\" id=\"accordion-属性-5\"><p>属性</p><div><p><strong>prompt_tokens</strong><code>int</code></p><p>仅 <code>qwen3.7-text-rerank</code> 返回。表示本次请求输入内容的 Token 总数。</p><p><strong>total_tokens</strong><code>int</code></p><p>本次请求消耗的 Token 总数，用于计量计费和审计。</p></div></section><p><strong>code</strong><code>string</code></p><p>请求失败的错误码。请求成功时不会返回此参数，详情请参见<a href=\"/zh/model-studio/error-code\">错误码</a>。</p><p><strong>message</strong><code>string</code></p><p>请求失败的详细信息。请求成功时不会返回此参数，详情请参见<a href=\"/zh/model-studio/error-code\">错误码</a>。</p></td><td><section data-tag=\"tabbed-content-box\" outputclass=\"tabbed-content-box\" id=\"sec-tabs-2\" class=\"tabbed-content-box section\"><section id=\"成功响应\" class=\"section\"><h4 id=\"成功响应-h4\">成功响应</h4><div outputclass=\"tabbed-codeblock\" data-tag=\"fig\" id=\"fig-code-group\" class=\"tabbed-codeblock-box\"><div class=\"tab-box\"></div><input id=\"fig-code-group-qwen3-7-text-rerank-tab\" type=\"radio\" name=\"check-fig-code-group\" checked=\"\"><label for=\"fig-code-group-qwen3-7-text-rerank-tab\">qwen3.7-text-rerank</label><div class=\"codeblock-item\"><pre data-tag=\"codeblock\" id=\"code-code-group-qwen3-7-text-rerank\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n    \"output\": {\n        \"results\": [\n            {\n                \"index\": 0,\n                \"relevance_score\": 0.9334521178273196\n            },\n            {\n                \"index\": 2,\n                \"relevance_score\": 0.34100082626411193\n            }\n        ]\n    },\n    \"usage\": {\n        \"prompt_tokens\": 79,\n        \"total_tokens\": 79\n    },\n    \"request_id\": \"85ba5752-1900-47d2-8896-23f99b13f6e1\"\n}\n</code></pre></div><input id=\"fig-code-group-qwen3-rerank-tab\" type=\"radio\" name=\"check-fig-code-group\"><label for=\"fig-code-group-qwen3-rerank-tab\">qwen3-rerank</label><div class=\"codeblock-item\"><pre data-tag=\"codeblock\" id=\"code-code-group-qwen3-rerank\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n    \"output\": {\n        \"results\": [\n            {\n                \"index\": 0,\n                \"relevance_score\": 0.9334521178273196\n            },\n            {\n                \"index\": 2,\n                \"relevance_score\": 0.34100082626411193\n            }\n        ]\n    },\n    \"request_id\": \"85ba5752-1900-47d2-8896-23f99b13f6e1\",\n    \"usage\": {\n        \"total_tokens\": 79\n    }\n}\n</code></pre></div><input id=\"fig-code-group-qwen3-vl-rerank-gte-rerank-v2-tab\" type=\"radio\" name=\"check-fig-code-group\"><label for=\"fig-code-group-qwen3-vl-rerank-gte-rerank-v2-tab\">qwen3-vl-rerank / gte-rerank-v2</label><div class=\"codeblock-item\"><pre data-tag=\"codeblock\" id=\"code-code-group-qwen3-vl-rerank-gte-rerank-v2\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n    \"output\": {\n        \"results\": [\n            {\n                \"document\": {\n                    \"text\": \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\"\n                },\n                \"index\": 0,\n                \"relevance_score\": 0.9334521178273196\n            },\n            {\n                \"document\": {\n                    \"text\": \"预训练语言模型的发展给文本排序模型带来了新的进展\"\n                },\n                \"index\": 2,\n                \"relevance_score\": 0.34100082626411193\n            }\n        ]\n    },\n    \"usage\": {\n        \"total_tokens\": 79\n    },\n    \"request_id\": \"85ba5752-1900-47d2-8896-23f99b13f6e1\"\n}\n</code></pre></div></div></section><section id=\"失败响应\" class=\"section\"><h4 id=\"失败响应-h4\">失败响应</h4><p>在访问请求出错的情况下，输出的结果中会通过<code>code</code>和<code>message</code>指明出错原因。</p><pre data-tag=\"codeblock\" id=\"code-block-7\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n    \"code\":\"InvalidApiKey\",\n    \"message\":\"Invalid API-key provided.\",\n    \"request_id\":\"fb53c4ec-1c12-4fc4-a580-cdb7c3261fc1\"\n}\n</code></pre></section></section></td></tr></tbody></table>\n<h2 id=\"openai-兼容接口\">OpenAI 兼容接口 <span id=\"openai-compatible-rerank\"></span></h2>\n<p><code>qwen3-rerank</code>和<code>qwen3.7-text-rerank</code>支持通过 OpenAI 兼容接口调用；<code>gte-rerank-v2</code>和<code>qwen3-vl-rerank</code>不支持，调用时会返回<code>model_not_supported</code>错误。</p>\n<p>请求地址：<code>POST https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-api/v1/reranks</code></p>\n<p>与 DashScope HTTP 接口的差异：</p>\n<ul>\n<li>请求体为扁平结构，<code>query</code>、<code>documents</code>、<code>top_n</code>、<code>instruct</code>、<code>return_documents</code>与<code>model</code>同级，不嵌套在<code>input</code>和<code>parameters</code>中。</li>\n<li>排序结果位于响应的<code>results</code>数组中，每项包含<code>index</code>（文档在请求中的序号）和<code>relevance_score</code>（相关性得分）；<code>return_documents</code>为<code>true</code>时额外返回<code>document.text</code>。</li>\n</ul>\n<h3 id=\"请求示例\">请求示例 <span id=\"openai-compatible-rerank-request\"></span></h3>\n<pre data-tag=\"codeblock\" id=\"code-block-8\" outputclass=\"language-bash\" code-type=\"xCode\" class=\"pre codeblock language-bash\"><code>curl --request POST \\\n  --url https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-api/v1/reranks \\\n  --header \"Authorization: Bearer $DASHSCOPE_API_KEY\" \\\n  --header \"Content-Type: application/json\" \\\n  --data '{\n    \"model\": \"qwen3-rerank\",\n    \"query\": \"什么是重排序模型\",\n    \"documents\": [\n      \"重排序模型广泛应用于搜索引擎和推荐系统\",\n      \"量子计算是计算科学的前沿领域\"\n    ],\n    \"top_n\": 2,\n    \"return_documents\": true\n}'\n</code></pre>\n<h3 id=\"响应示例\">响应示例 <span id=\"openai-compatible-rerank-response\"></span></h3>\n<pre data-tag=\"codeblock\" id=\"code-block-9\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n  \"object\": \"list\",\n  \"results\": [\n    {\n      \"document\": {\n        \"text\": \"重排序模型广泛应用于搜索引擎和推荐系统\"\n      },\n      \"index\": 0,\n      \"relevance_score\": 0.8019987834170111\n    },\n    {\n      \"document\": {\n        \"text\": \"量子计算是计算科学的前沿领域\"\n      },\n      \"index\": 1,\n      \"relevance_score\": 0.33869324986016763\n    }\n  ],\n  \"model\": \"qwen3-rerank\",\n  \"id\": \"1a295f99-89ff-901f-a57f-9a38a6d963fa\",\n  \"usage\": {\n    \"total_tokens\": 59\n  }\n}\n</code></pre>\n<p>Python 和 Node.js 调用示例请参见<a href=\"/zh/model-studio/rerank\">重排序</a>。</p>\n<h2 id=\"sdk调用\">SDK<span class=\"help-letter-space\"></span>调用 <span id=\"EKM4W\"></span></h2>\n<h3 id=\"调用示例\">调用示例 <span id=\"9858bdb0cf7xi\"></span></h3>\n<p>以下示例展示了调用文档排序模型<span class=\"help-letter-space\"></span>API<span class=\"help-letter-space\"></span>的代码示例。</p>\n<blockquote>\n<p>SDK 的参数命名与<span class=\"help-letter-space\"></span>HTTP<span class=\"help-letter-space\"></span>接口基本一致，参数结构进行了一定封装。比如 HTTP 使用嵌套的 <code>input</code> 和 <code>parameters</code> 结构，但<span class=\"help-letter-space\"></span>SDK 使用扁平参数。请在开发时注意区分。</p>\n</blockquote>\n<pre data-tag=\"codeblock\" id=\"code-block-10\" outputclass=\"language-python\" code-type=\"xCode\" class=\"pre codeblock language-python\"><code>import os\nimport dashscope\n# 以下为华北2（北京）地域的配置，调用时请将{WorkspaceId}替换为真实的业务空间ID，各地域的region取值不同。\nclient = dashscope.Client(\n    # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key=\"sk-xxx\",\n    # 各地域的API Key不同。获取API Key：https://help.aliyun.com/zh/model-studio/get-api-key\n    api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n    workspace=\"{WorkspaceId}\",\n    region=\"cn-beijing\",\n)\n\ndef text_rerank():\n    resp = client.rerank.create(\n        model=\"qwen3.7-text-rerank\",\n        query=\"什么是文本排序模型\",\n        documents=[\n            \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\",\n            \"量子计算是计算科学的一个前沿领域\",\n            \"预训练语言模型的发展给文本排序模型带来了新的进展\"\n        ],\n        top_n=10,\n        instruct=\"Given a web search query, retrieve relevant passages that answer the query.\"\n    )\n    print(resp)\n\nif __name__ == '__main__':\n    text_rerank()\n</code></pre>\n<p>以下示例展示了使用<code>qwen3-vl-rerank</code>模型进行多模态排序（以图片作为查询）的代码示例。</p>\n<pre data-tag=\"codeblock\" id=\"code-block-11\" outputclass=\"language-python\" code-type=\"xCode\" class=\"pre codeblock language-python\"><code>import os\nimport dashscope\nimport json\n# 以下为华北2（北京）地域的配置，调用时请将{WorkspaceId}替换为真实的业务空间ID，各地域的region取值不同。\nclient = dashscope.Client(\n    # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key=\"sk-xxx\",\n    # 各地域的API Key不同。获取API Key：https://help.aliyun.com/zh/model-studio/get-api-key\n    api_key=os.getenv(\"DASHSCOPE_API_KEY\"),\n    workspace=\"{WorkspaceId}\",\n    region=\"cn-beijing\",\n)\n\ndef vl_rerank():\n    resp = client.rerank.create(\n        model=\"qwen3-vl-rerank\",\n        query={\"image\": \"https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg\"},\n        documents=[\n            {\"text\": \"文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序\"},\n            {\"image\": \"https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg\"},\n            {\"video\": \"https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4\"}\n        ],\n        top_n=2,\n        return_documents=True\n    )\n    print(json.dumps(resp.model_dump(), ensure_ascii=False, indent=4))\n\nif __name__ == '__main__':\n    vl_rerank()\n</code></pre>\n<h3 id=\"输出示例\">输出示例 <span id=\"abfe95f4ab4tt\"></span></h3>\n<div class=\"note note-note\"><div class=\"note-icon-wrapper\"></div><div class=\"note-content\"><p><strong>说明</strong>SDK 2.0 返回结构化响应对象，排序结果通过 <code>resp.results</code> 访问（<code>resp.results[i].index</code> / <code>.relevance_score</code> / <code>.document</code>）；请求失败时抛出 <code>DashScopeError</code> 异常。</p></div></div>\n<pre data-tag=\"codeblock\" id=\"code-block-12\" outputclass=\"language-json\" code-type=\"xCode\" class=\"pre codeblock language-json\"><code>{\n    \"request_id\": \"4b0805c0-6b36-490d-8bc1-4365f4c89905\",\n    \"output\": {\n        \"results\": [\n            {\n                \"index\": 0,\n                \"relevance_score\": 0.9334521178273196\n            },\n            {\n                \"index\": 2,\n                \"relevance_score\": 0.34100082626411193\n            }\n        ]\n    },\n    \"usage\": {\n        \"prompt_tokens\": 79,\n        \"total_tokens\": 79\n    }\n}\n</code></pre>\n<h2 id=\"错误码\">错误码 <span id=\"OajFO\"></span></h2>\n<p>如果模型调用失败并返回报错信息，请参见<a href=\"/zh/model-studio/error-code\">错误码</a>进行解决。</p>\n<h2 id=\"限流\">限流 <span id=\"8229db579efdw\"></span></h2>\n<p>模型限流触发条件请参考<a href=\"/zh/model-studio/rate-limit\">限流</a>。</p></div>\n</div>","path":"https://help.aliyun.com/zh/model-studio/text-rerank-api","productNodeVO":{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"大模型服务平台百炼","id":2400256,"title":"大模型服务平台百炼","url":"/zh/model-studio/"},"alias":"/model-studio/text-rerank-api","showType":1,"taskStatus":"NO_TASK_AVAILABLE","website":"cn","level":7,"developerUrl":"https://developer.aliyun.com/modelstudio/","nodeType":1,"version":49,"url":"/zh/model-studio/text-rerank-api","tags":[{"value":"1","key":"accept","desc":"已承接"},{"value":false,"key":"autoTranslation","desc":"非自动翻译"},{"value":2780056,"key":"nodeId","desc":"文档ID"}],"userVO":{},"recommendDocs":[],"directoryPath":{"children":[{"children":[{"children":[{"emptyNode":false,"level":7,"validDocument":true,"headNavEnable":false,"docTitle":"排序模型（Rerank）","id":2780056,"title":"排序模型（Rerank）","url":"/zh/model-studio/text-rerank-api"}],"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"排序模型（Rerank）","id":3041028,"title":"排序模型（Rerank）","url":"/zh/model-studio/rerank-model/"}],"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"向量与排序","id":2712451,"title":"向量与排序","url":"/zh/model-studio/vector-and-sort/"}],"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"大模型服务平台百炼","id":2400256,"title":"大模型服务平台百炼","url":"/zh/model-studio/"},"productUrl":"https://www.aliyun.com/product/bailian","nodeId":2780056,"desc":"检索系统在“召回”阶段为保证效率，返回的结果可能不够精准。排序模型能对召回的文档进行二次精准排序，确保将与用户查询最相关的结果排在最前，有效提升应用准确率。"},"breadcrumb":[{"emptyNode":false,"level":3,"validDocument":true,"headNavEnable":false,"docTitle":"大模型服务平台百炼","id":2400256,"title":"大模型服务平台百炼","url":"/zh/model-studio/"},{"emptyNode":false,"level":5,"validDocument":true,"headNavEnable":false,"docTitle":"向量与排序","id":2712451,"title":"向量与排序","url":"/zh/model-studio/vector-and-sort/"},{"emptyNode":false,"level":6,"validDocument":true,"headNavEnable":false,"docTitle":"排序模型（Rerank）","id":3041028,"title":"排序模型（Rerank）","url":"/zh/model-studio/rerank-model/"},{"emptyNode":false,"level":7,"validDocument":true,"headNavEnable":false,"docTitle":"排序模型（Rerank）","id":2780056,"title":"排序模型（Rerank）","url":"/zh/model-studio/text-rerank-api"}],"isMachineTranslation":false,"isNotFound":false,"helpResponseCode":200,"redirectUrl":"","helpDocVersion":1,"reloadFlag":true}}};
+  </script><link href="https://website.alyasset.com/npm.combo/@ali/~~hmod-ace-2023-box/0.1.0/index.css,hmod-aliyun-com-global-nav-search/0.8.5/index.css,hmod-aliyun-com-global-nav/0.3.18/index.css" rel="stylesheet"/>
+<link href="https://website.alyasset.com/npm.combo/@ali/~~hmod-ace-2023-box/0.1.0/index.css,hmod-ace-2024-global-footer/0.2.2/index.css" rel="stylesheet"/>
+</head>
+
+<body><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=&aplus&yunid=&&trid=2150424217942948195632108e88da&asid=AQAAAAAjxPJqmuhmLAAAAACSBgsBiF6Xdw==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+  <script>
+    var _performance_domStart = window.performance && window.performance.now();
+  </script>
+  <header><div id="fc20859b6bbeba764e09598aa335d240"><div class="_18a32969382a277c44015217fbc5cb5a_box"><div class="_3bd147f6948a20d6c528ac898ad4ba47_pc de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family" data-ai-assistant-text-selection-tooltip="disabled"><header class="_702422913dd5754f065139ec2d2def80_container   "><button class="_17fcaf1a4ee37405e5ad5fbad24204b4_container _17fcaf1a4ee37405e5ad5fbad24204b4_loading" aria-label="打开菜单" data-spm="d_dashboard_trigger" data-tracker-exp="true"><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_burger "><span class="_17fcaf1a4ee37405e5ad5fbad24204b4_middle"></span></span></button><a href="https://www.aliyun.com/" class="_3f46140aade30bc61f3012933357c477_logo _702422913dd5754f065139ec2d2def80_logo" data-tracker-content="LOGO" data-spm="d_logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4608 1024" fill="#ff6a00" width="80"><path d="M3266.56 773.12h327.68v-102.4h-327.68v-102.4H3584V35.84H2846.72v532.48h317.44v102.4h-327.68v102.4h327.68v112.64h-353.28v102.4h814.08v-102.4h-353.28v-112.64zM3276.8 138.24h215.04v112.64H3276.8V138.24z m0 215.04h215.04V460.8H3276.8V353.28zM3174.4 460.8h-215.04V353.28H3174.4V460.8z m0-209.92h-215.04V138.24H3174.4v112.64zM537.6 445.44H1075.2v122.88H537.6z"></path><path d="M1341.44 5.12h-353.28L1075.2 128l256 81.92c46.08 15.36 76.8 61.44 76.8 107.52v389.12c0 46.08-30.72 92.16-76.8 107.52l-256 81.92-87.04 122.88h353.28c148.48 0 266.24-117.76 266.24-266.24V276.48c0-148.48-117.76-271.36-266.24-271.36zM276.48 814.08c-46.08-15.36-76.8-61.44-76.8-107.52V317.44c0-46.08 30.72-92.16 76.8-107.52l256-81.92L619.52 5.12H266.24C117.76 5.12 0 128 0 276.48v471.04c0 148.48 117.76 266.24 266.24 266.24h353.28l-87.04-122.88-256-76.8zM2493.44 250.88h-261.12v537.6h261.12V250.88z m-107.52 430.08h-56.32V353.28h56.32v327.68zM1848.32 988.16h102.4V138.24h107.52L1996.8 419.84v102.4h61.44v225.28c0 15.36-10.24 25.6-25.6 25.6h-25.6v102.4h51.2c56.32 0 102.4-46.08 102.4-102.4v-358.4H2099.2l61.44-281.6v-102.4h-312.32v957.44z"></path><path d="M2206.72 138.24H2560v660.48c0 46.08-35.84 87.04-87.04 87.04h-76.8v102.4h107.52c87.04 0 163.84-71.68 163.84-163.84V138.24h35.84v-102.4h-496.64v102.4zM3763.2 40.96h737.28v102.4H3763.2zM4541.44 527.36v-102.4H3727.36v102.4h204.8l-163.84 358.4v102.4h691.2c30.72 0 51.2-25.6 51.2-51.2 0-10.24 0-15.36-5.12-20.48l-87.04-194.56h-112.64l76.8 163.84h-496.64l163.84-358.4h491.52z"></path></svg></a><div class="e76910c82efe8556eb8a6ce6019c5d00_container"><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-left"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_left"></i></button><div class="e76910c82efe8556eb8a6ce6019c5d00_menu-warp"><nav class="_0b0e00051b37611378e027e6ac3a695a_menus"><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.qianwenai.com/" data-spm="d_menu_0">大模型</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/product/list" data-spm="d_menu_1">产品</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/solution/tech-solution/" data-spm="d_menu_2">解决方案</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/benefit" data-spm="d_menu_3">权益</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/price" data-spm="d_menu_4">定价</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://market.aliyun.com/" data-spm="d_menu_5">AI 应用市场</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://partner.aliyun.com/management/v2" data-spm="d_menu_6">伙伴</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/service" data-spm="d_menu_7">服务</a><a class="_2cdcedb5935313401458d214540870bc_menu" href="https://www.aliyun.com/about" data-spm="d_menu_8">了解阿里云</a></nav></div><button class="e76910c82efe8556eb8a6ce6019c5d00_controller" data-spm="dscroll-right"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-button_right"></i></button></div><div class="_702422913dd5754f065139ec2d2def80_search-wrap " style="--left-width:0px;--right-width:0px"><div class="global-nav-search _626567c051250ffe2f303af907d3fc83_global-nav-search"><div class="global-search-container _626567c051250ffe2f303af907d3fc83_global-nav-search-desktop-container"><div class="ff4f4a96a12f52ffbdd0d6adbdb6a2b0_position-desktop-search-container"><div><div class="f6fd7e4d3293f0634b9ac54848c275b7_default-search-panel  f6fd7e4d3293f0634b9ac54848c275b7_hidden-default-search-panel"></div><div class="_3b4f5487091623b0b6852e2b46d2729e_search-recommend-panel  _3b4f5487091623b0b6852e2b46d2729e_hidden-search-recommend-panel"><button class="_4b65cdd64479a2fabe582b8c0789821e_search-no-content " type="button">查看 &quot;&quot; 全部搜索结果</button></div></div></div></div><div class="_626567c051250ffe2f303af907d3fc83_global-nav-search-mobile-container"><a class="_626567c051250ffe2f303af907d3fc83_search-button" href="https://www.aliyun.com/search?from=h5-global-nav-search"><span role="img" class="_9a1d73bbcd1a80626a31035a12410804_icon _626567c051250ffe2f303af907d3fc83_search-button-icon"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="search"><g><g><path fill-opacity="1" fill-rule="evenodd" d="M14,4C15.3558,4,16.653399999999998,4.262105,17.8926,4.786314C19.089100000000002,5.29242,20.1486,6.00666,21.071,6.92905C21.9933,7.85144,22.7076,8.91087,23.2137,10.10735C23.7379,11.34664,24,12.64419,24,14C24,15.3558,23.7379,16.653399999999998,23.2137,17.892699999999998C22.8382,18.7803,22.3482,19.5925,21.7436,20.3293L27.7072,26.2928L26.293,27.7071L20.3294,21.7435C19.592599999999997,22.3481,18.7803,22.8382,17.8926,23.2137C16.653399999999998,23.7379,15.3558,24,14,24C12.64419,24,11.34664,23.7379,10.10735,23.2137C8.91087,22.7076,7.85144,21.9933,6.92905,21.0709C6.00666,20.1486,5.29242,19.089100000000002,4.786314,17.8926C4.262105,16.653399999999998,4,15.3558,4,14C4,12.64419,4.262105,11.34664,4.786314,10.10735C5.29242,8.91087,6.00666,7.85144,6.92905,6.92905C7.85144,6.00666,8.91087,5.29242,10.10735,4.786314C11.34664,4.262105,12.64419,4,14,4ZM14,6C11.79102,6,9.905439999999999,6.78109,8.34326,8.34326C6.78109,9.905439999999999,6,11.79102,6,14C6,16.209,6.78109,18.0946,8.34326,19.6567C9.905439999999999,21.2189,11.79102,22,14,22C16.209,22,18.0946,21.2189,19.6567,19.6567C21.2189,18.0946,22,16.209,22,14C22,11.79102,21.2189,9.905439999999999,19.6567,8.34326C18.0946,6.78109,16.209,6,14,6Z"></path></g></g></svg></span></a></div></div></div><div class="_174801eef2caf75aeaee91c72b19c09a_container"><a class="global-nav-ai-assistant _174801eef2caf75aeaee91c72b19c09a_item _2d3ef330b3f8055912d355b9a255bfcf_btn" href="https://www.aliyun.com/ai-assistant?displayMode=side" data-spm="dai_assistant" target="_blank"><div class="LogoStyled-aliyun-ai-assistant-rc-8096__sc-1qusfpt-0 cpJKij"><div class="ai-assistant-brand-logo-icon" style="background:no-repeat center/100%  url(https://img.alicdn.com/imgextra/i4/O1CN012X1Rxl1clAgB5waMK_!!6000000003640-2-tps-52-52.png)"><img src="https://img.alicdn.com/imgextra/i2/O1CN01bYc1m81RrcSAyOjMu_!!6000000002165-54-tps-60-60.apng" loading="lazy"/></div><div class="ai-assistant-brand-logo-tooltip "><div class="ai-assistant-logo-tooltip-content">AI 助理</div></div></div></a><button class="_174801eef2caf75aeaee91c72b19c09a_item c017bf0be22012eb313124a5a5408d0f_button"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-intl"></i></button><button class="_174801eef2caf75aeaee91c72b19c09a_item"><i class="ee52067fb65534cb06d3b35f654f5441_icon ddd10ed9ffa4788f54781e516c4c6560-contact f9c0581c7b0803efa9027b0f2d228294_icon"></i></button><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://help.aliyun.com/" target="_blank" data-spm="d_quick_access_3">文档</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://beian.aliyun.com/" target="_blank" data-spm="d_quick_access_4">备案</a><a class="_174801eef2caf75aeaee91c72b19c09a_item" href="https://home.console.aliyun.com/home/dashboard/ProductAndService" target="_blank" data-spm="d_quick_access_5" rel="nofollow">控制台</a><span class="f8312ad103723788906e97b238dccd8c_loading _174801eef2caf75aeaee91c72b19c09a_item"></span></div></header></div><div class="_3bd147f6948a20d6c528ac898ad4ba47_mobile de5ef2fee09ebcb2b1dcaf0c982523bc_theme _277ebb348812c9712fac6b680ad5e513_reset _277ebb348812c9712fac6b680ad5e513_aliyun-font-family"></div><div class="_18a32969382a277c44015217fbc5cb5a_box"></div></div></div></header>
+
+  <div id="app"><div class="MainLayout--mainContainer--FzmzeDI" id="docs-container"><div class="MainLayout--helpBodyHead--fFcCOhC"><div class="HelpBodyHead--helpBodyHeadBox--VWOHGv0 help-body-head" data-spm="help-sub-nav"><div class="HelpBodyHead--helpBodyHead--YgG0_RH help-body-head-content"><div class="HelpBodyHead--helpHeadDocName--eZC8orQ"><a href="/en" data-spm="d_logo">官方文档</a></div><div class="help-tablist"></div><div class="HelpBodyHead--bodyHeadRight--mgSoj67"></div></div><div class="HelpBodyHead--productList--YJ9ism5" style="display:none"><div class="ProductList--allProducts--Z87vhzs"><div class="ProductList--allProductsHead--l2aMmm6"><div class="ProductList--allProductsSearchWrapper--PgTrGTl"><div class="ProductList--allProductsSearch--edTNjmr"><span role="img" class="Icon--icon--jErARdR ProductList--searchIcon--NrFYKki"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="输入文档关键字查找"></div></div></div><div class="ProductList--allProductsBody--jNYsZlh"></div></div></div></div></div><div class="PcLayout--docsContainer--pwbB9bE"><div class="PcLayout--mobileHelpBodyHead--g_YCRMg"><div class="HelpBodyHead--mobileHeadBlank--_hX8BWJ"></div></div><div class="PcLayout--aliyunAppLayout--_QE36ni"><nav class="aliyun-docs-menu" id="aliyun-docs-menu"><div class="Menu--helpMenuBox--WZ7MX3B" id="help-menu-box" style="width:300px"><div class="Menu--helpMenuInnerBox--kxSXymh aliyun-docs-toc-content" style="width:300px"><div class="Menu--helpMenuDrag--fs9WrRe help-menu-drag-box"></div><div class="Menu--helpMenu--reWzeMt"><div class="help-menu-subproduct"></div><div class="MenuSearch--collapseActionBar--m98Zp_n"><div class="MenuSearch--searchContainer--yxqXL6w"><div class="MenuSearch--searchInputWrapper--xJnk941"><span role="img" class="Icon--icon--jErARdR MenuSearch--searchIcon--YWpGKq9"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="document-search"><g fill-rule="evenodd" stroke-width="1"><path d="M19,3 L27,11 L27,29 L5,29 L5,3 L19,3 Z M18,5 L7,5 L7,27 L25,27 L25,12 L18,12 L18,5 Z M20,6.82842636 L20,10 L23.1715736,10 L20,6.82842636 Z"></path><path d="M15.5,13.5 C16.8806419,13.5 18.0591358,13.9881726 19.0354815,14.9645178 C20.0118272,15.9408637 20.5,17.1193577 20.5,18.5 C20.5,19.5346034 20.2258676,20.4556918 19.6776028,21.2632651 L22.1636839,23.7493687 L20.749464,25.1635761 L18.2634125,22.6775026 C17.4558048,23.2258342 16.5346673,23.5 15.5,23.5 C14.1193581,23.5 12.9408642,23.0118272 11.9645183,22.0354815 C10.9881728,21.0591364 10.5,19.8806426 10.5,18.5 C10.5,17.1193576 10.9881728,15.9408636 11.9645183,14.9645181 C12.9408638,13.9881727 14.1193577,13.5 15.5,13.5 Z M15.5,15.5 C14.6716423,15.5 13.9645529,15.7929106 13.3787317,16.3787317 C12.7929106,16.9645527 12.5,17.6716421 12.5,18.5 C12.5,19.3283571 12.7929105,20.0354462 13.3787315,20.6212673 C13.964553,21.2070891 14.6716425,21.5 15.5,21.5 C16.3283577,21.5 17.0354471,21.2070891 17.6212683,20.6212673 C18.2070894,20.0354462 18.5,19.3283571 18.5,18.5 C18.5,17.6716421 18.2070894,16.9645526 17.6212683,16.3787315 C17.0354471,15.7929105 16.3283577,15.5 15.5,15.5 Z"></path></g></svg></span><input placeholder="在目录中筛选" class="MenuSearch--searchInput--vYXA7NN"></div></div></div><div class="help-menu-scroll-container Menu--menuContent--f6GC88t" data-spm="help-menu-undefined"><ul id="common-menu-container">
+ <li id="1000000055782" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/token-plan-user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">Token Plan</span>
+</a>
+</li>
+ <li id="2400262" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/model-user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">模型</span>
+</a>
+</li>
+ <li id="2840916" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/application-user-guide/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">Agent</span>
+</a>
+</li>
+ <li id="2400264" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/model-api-reference/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">模型 API</span>
+</a>
+</li>
+ <li id="2863247" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/applicantion-api-reference/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">Agent API</span>
+</a>
+</li>
+ <li id="1000000054440" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/cli/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">CLI</span>
+</a>
+</li>
+ <li id="1000000055770" class="Menu--level1--UN3zYr3">
+<a href="/zh/model-studio/product-updates/">
+<i class="iconfont icon-close-arrow"></i>
+<span class="Menu--menuItemText--a6B4ZGH">产品动态</span>
+</a>
+</li>
+</ul></div></div></div></div></nav><main class="aliyun-docs-view" id="aliyun-docs-view"><div class="ProductDetail--contentWrapper--iCunrBZ"><section class="aliyun-docs-content" style="height:auto"><header class="aliyun-docs-view-header"><div class="Header--topBar--LXfTLL5"><div class="BreadCrumb--breadcrumb--cbt4qaF">
+<a href="/">首页</a>
+ <span class="BreadCrumb--arrow--FD7AzzB">
+<i class="help-iconfont help-icon-right-arrow"></i>
+</span>
+ <a href="/zh/model-studio/">大模型服务平台百炼</a>
+ <span class="BreadCrumb--arrow--FD7AzzB">
+<i class="help-iconfont help-icon-right-arrow"></i>
+</span>
+ <a href="/zh/model-studio/model-api-reference/">模型 API</a>
+ <span class="BreadCrumb--arrow--FD7AzzB">
+<i class="help-iconfont help-icon-right-arrow"></i>
+</span>
+ <a href="/zh/model-studio/vector-and-sort/">向量与排序</a>
+ <span class="BreadCrumb--arrow--FD7AzzB">
+<i class="help-iconfont help-icon-right-arrow"></i>
+</span>
+ <a href="/zh/model-studio/rerank-model/">排序模型（Rerank）</a>
+ <span class="BreadCrumb--arrow--FD7AzzB">
+<i class="help-iconfont help-icon-right-arrow"></i>
+</span>
+ <span>排序模型（Rerank）</span>
+</div></div><div class="Header--title--iTk2tUo"><h1>文本排序</h1><div class="Header--actionBar--dvzFYrk"><div class="Header--left--x8TGxDL"><span class="Header--updateTime--YXGPhcZ">更新时间：</span></div><div class="Header--right--l4TSW1E"><span class="Header--copyButtonWrapper--LDbniON"><span class="CopyAsMarkdown--copyButton--SVGoWIG"><span role="img" class="Icon--icon--jErARdR"><svg width="1em" height="1em" viewBox="0 0 32 32" focusable="false" color="currentColor" fill="currentColor" class="" data-icon="copy"><g fill-rule="evenodd" stroke-width="1"><polygon fill-rule="nonzero" points="8 6.80000019 8 4 28 4 28 24 25 24 25 22 26 22 26 6 10 6 10 6.80000019"></polygon><path d="M24,8 L24,28 L4,28 L4,8 L24,8 Z M22,10 L6,10 L6,26 L22,26 L22,10 Z"></path></g></svg></span>复制 MD 格式</span></span><div class="Header--linkButton--LpCRs1O"><div class="OuterUrl--outUrl--ZFzJIhk"><a href="https://www.aliyun.com/product/bailian" target="_blank" rel="noreferrer">产品详情</a></div></div><div class="Contact--contactButton--TBwTX5R"><span class="Contact--favoritesBtn--J8mRVBp" title="收藏本文档" data-spm-click="gostr=/aliyun;locaid=collect"><i class="help-iconfont help-icon-like"></i></span><a href="/my_favorites.html">我的收藏</a></div></div></div></div></header><div class="pc-markdown-container unionContainer" id="pc-markdown-container"><div class="markdown-body"><div lang="zh" class="icms-help-docs-content">
+<meta property="og:title" content="文本排序"><div lang="zh" class="icms-help-docs-content"><p data-tag="shortdesc" class="shortdesc">检索系统在“召回”阶段为保证效率，返回的结果可能不够精准。排序模型能对召回的文档进行二次精准排序，确保将与用户查询最相关的结果排在最前，有效提升应用准确率。</p>
+<h2 id="模型概览">模型概览 <span id="94a9b9899drvl"></span></h2>
+<div class="note note-important"><div class="note-icon-wrapper"></div><div class="note-content"><p><strong>重要</strong>gte-rerank<span class="help-letter-space"></span>模型将于<span class="help-letter-space"></span>2026<span class="help-letter-space"></span>年<span class="help-letter-space"></span>05<span class="help-letter-space"></span>月<span class="help-letter-space"></span>30<span class="help-letter-space"></span>日下线，推荐使用<span class="help-letter-space"></span>qwen3-rerank<span class="help-letter-space"></span>模型替代。详情请参见<a href="https://www.aliyun.com/notice/118217">官网公告</a>。</p></div></div>
+<table><colgroup><col style="width:16.666667%"><col style="width:16.666667%"><col style="width:16.666667%"><col style="width:16.666667%"><col style="width:16.666667%"><col style="width:16.666667%"></colgroup><thead><tr><th><p><strong>模型名称</strong></p></th><th><p><strong>最大文档数</strong></p></th><th><p><strong>单条最大输入<span class="help-letter-space"></span>Token</strong></p></th><th><p><strong>请求最大输入<span class="help-letter-space"></span>Token</strong></p></th><th><p><strong>语种支持</strong></p></th><th><p><strong>应用场景</strong></p></th></tr></thead><tbody><tr><td><p>qwen3.7-text-rerank</p></td><td><p>500</p></td><td><p>30,000</p></td><td><p>120,000（建议）</p></td><td><p>中文、英语、西班牙语、法语、葡萄牙语、印尼语、日语、韩语、德语、俄罗斯语等<span class="help-letter-space"></span>201<span class="help-letter-space"></span>种主流语种与方言</p></td><td><ul><li><p>文本语义检索</p></li><li><p>RAG<span class="help-letter-space"></span>应用</p></li></ul></td></tr><tr><td><p>qwen3-vl-rerank</p></td><td><p>文本：100</p><p>图片：40</p><p>视频：4</p></td><td><p>8,000</p></td><td rowspan="2"><p>120,000</p></td><td><p>中、英、日、韩、法、德等<span class="help-letter-space"></span>33<span class="help-letter-space"></span>种主流语言</p></td><td><ul><li><p>图像聚类</p></li><li><p>跨模态搜索</p></li><li><p>图片检索</p></li></ul></td></tr><tr><td><p>qwen3-rerank</p></td><td rowspan="2"><p>500</p></td><td rowspan="2"><p>4,000</p></td><td><p>中文、英语、西班牙语、法语、葡萄牙语、印尼语、日语、韩语、德语、俄罗斯语等<span class="help-letter-space"></span>100+主流语种</p></td><td rowspan="2"><ul><li><p>文本语义检索</p></li><li><p>RAG<span class="help-letter-space"></span>应用</p></li></ul></td></tr><tr><td><p>gte-rerank-v2</p></td><td><p>30,000</p></td><td><p>中、英、日、韩、泰语、西、法、葡、德、印尼语、阿拉伯语等<span class="help-letter-space"></span>50<span class="help-letter-space"></span>余语种</p></td></tr></tbody></table>
+<ul>
+<li><strong>单条最大输入<span class="help-letter-space"></span>Token</strong>：每个<span class="help-letter-space"></span>Query<span class="help-letter-space"></span>或<span class="help-letter-space"></span>Document<span class="help-letter-space"></span>的最大<span class="help-letter-space"></span>Token<span class="help-letter-space"></span>数量。单条 Query 或 Document 的输入超过该限制时，API 会返回 HTTP 400 错误，不会截断输入内容。</li>
+<li><strong>单次请求最大文档数</strong>：单次请求允许的最大文档数量。对于 qwen3-vl-rerank 模型，该限制会根据文档类型（文本、图片、视频、混合模态）的不同而有所差异。</li>
+<li><strong>请求最大输入<span class="help-letter-space"></span>Token</strong>：计算公式为 <code>Query Tokens × Document 数量 + Document Tokens 总和</code>，该值不得超过请求最大输入<span class="help-letter-space"></span>Token。</li>
+</ul>
+<h3 id="输入格式限制">输入格式限制： <span id="f1751ee952ly4"></span></h3>
+<table><colgroup><col style="width:33.33%"><col style="width:33.33%"><col style="width:33.33%"></colgroup><thead><tr><th><p><strong>模型</strong></p></th><th><p><strong>图片</strong></p></th><th><p><strong>视频</strong></p></th></tr></thead><tbody><tr><td><p>qwen3-vl-rerank</p></td><td><p>JPEG, PNG, WEBP, BMP, TIFF, ICO, DIB, ICNS, SGI（支持<span class="help-letter-space"></span>URL<span class="help-letter-space"></span>或<span class="help-letter-space"></span>Base64）</p></td><td><p>MP4, AVI, MOV（仅支持<span class="help-letter-space"></span>URL）</p></td></tr></tbody></table>
+<h2 id="前提条件">前提条件 <span id="o6ecl"></span></h2>
+<p>您需要已<a href="/zh/model-studio/get-api-key">获取 API Key</a><span class="help-letter-space"></span>并<a href="/zh/model-studio/configure-api-key-through-environment-variables">配置<span class="help-letter-space"></span>API Key<span class="help-letter-space"></span>到环境变量<span class="help-letter-space"></span>DASHSCOPE_API_KEY</a>。如果通过<span class="help-letter-space"></span>SDK<span class="help-letter-space"></span>调用，还需要<a href="/zh/model-studio/install-sdk">安装<span class="help-letter-space"></span>DashScope SDK</a>。</p>
+<h2 id="http调用">HTTP<span class="help-letter-space"></span>调用 <span id="1c5471b844yvg"></span></h2>
+<p>调用时请将<code>{WorkspaceId}</code>替换为真实的<a href="/zh/model-studio/regions#h2_migrate_domain">业务空间<span class="help-letter-space"></span>ID</a>。</p>
+<blockquote>
+<p>本节介绍 DashScope HTTP 接口。<code>qwen3-rerank</code>和<code>qwen3.7-text-rerank</code>还支持 OpenAI 兼容接口，参见<span class="help-letter-space"></span><a href="#openai-compatible-rerank">OpenAI 兼容接口</a>。</p>
+</blockquote>
+<table bordertype="no-border" style="display:table;table-layout:fixed;width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td><h3>请求 <span id="5043fa882c26r"></span></h3><h4>请求头（Headers） <span id="2319e756381fd"></span></h4><p><strong>Content-Type</strong><code>string</code><strong>（必选）</strong></p><p>请求内容类型。此参数必须设置为<code>application/json</code>。</p><p><strong>Authorization</strong><code>string</code><strong>（必选）</strong></p><p>请求身份认证。接口使用阿里云百炼<span class="help-letter-space"></span>API Key<span class="help-letter-space"></span>进行身份认证。示例值：Bearer sk-xxxx。</p><h4>请求体（Request Body） <span id="66a778d4fbfub"></span></h4><p><strong>model</strong><code>string</code><strong>（必选）</strong></p><p>模型名称。支持的模型：qwen3.7-text-rerank、qwen3-rerank、gte-rerank-v2、qwen3-vl-rerank。</p><p><strong>input</strong><code>object</code><strong>（必选）</strong></p><p>输入内容。</p><blockquote>
+<p><code>query</code> 和 <code>documents</code> 嵌套在 <code>input</code> 对象中。</p>
+</blockquote><section class="collapse expanded" id="accordion-属性"><p>属性</p><div><p><strong>query</strong><code>string | object</code><strong>（必选）</strong></p><p>查询内容。最大长度不能超过<span class="help-letter-space"></span>4,000<span class="help-letter-space"></span>个<span class="help-letter-space"></span>Token。</p><p>当使用<code>qwen3-vl-rerank</code>模型时，<code>query</code>支持以下两种格式：</p><ul>
+<li>
+<p>字符串格式：直接传入文本字符串，例如<code>"query": "什么是文本排序模型"</code>。</p>
+</li>
+<li>
+<p>对象格式：传入字典指定模态类型和值，格式为<code>{"模态类型": "输入内容"}</code>。支持<code>text</code>和<code>image</code>两种模态类型。</p>
+<ul>
+<li>文本查询：<code>"query": {"text": "什么是文本排序模型"}</code></li>
+<li>图片查询：<code>"query": {"image": "图片<span class="help-letter-space"></span>URL<span class="help-letter-space"></span>或<span class="help-letter-space"></span>Base64"}</code></li>
+</ul>
+</li>
+</ul><p><strong>documents</strong><code>array</code><strong>（必选）</strong></p><p>待排序的候选文档列表。每个元素是一个字符串。</p><p>当使用<code>qwen3-vl-rerank</code>模型时，每个元素是一个字典或者字符串，用于指定内容的类型和值。格式为{"模态类型": "输入字符串或图像、视频<span class="help-letter-space"></span>url"}。支持<code>text</code>,&nbsp;<code>image</code>,&nbsp;<code>video</code>三种模态类型。</p><ul>
+<li>文本：key<span class="help-letter-space"></span>为<code>text</code>。value<span class="help-letter-space"></span>为字符串形式。也可不通过<span class="help-letter-space"></span>dict<span class="help-letter-space"></span>直接传入字符串。</li>
+<li>图片：key<span class="help-letter-space"></span>为<code>image</code>。value<span class="help-letter-space"></span>可以是公开可访问的<span class="help-letter-space"></span>URL，或<span class="help-letter-space"></span>Base64<span class="help-letter-space"></span>编码的<span class="help-letter-space"></span>Data URI。Base64<span class="help-letter-space"></span>格式为 <code>data:image/{format};base64,{data}</code>，其中 <code>{format}</code> 是图片格式（如 <code>jpeg</code>、<code>png</code>），<code>{data}</code> 是<span class="help-letter-space"></span>Base64<span class="help-letter-space"></span>编码字符串。</li>
+<li>视频：key<span class="help-letter-space"></span>为<code>video</code>，value<span class="help-letter-space"></span>必须是公开可访问的<span class="help-letter-space"></span>URL。</li>
+</ul></div></section><p><strong>parameters</strong><code>object</code><strong>（可选）</strong></p><p>可选参数。</p><blockquote>
+<p><code>top_n</code> 和 <code>instruct</code> 嵌套在 <code>parameters</code> 对象中。</p>
+</blockquote><section class="collapse expanded" id="accordion-属性-2"><p>属性</p><div><p><strong>top_n</strong><code>int</code><strong>（可选）</strong></p><p>返回排序后的<span class="help-letter-space"></span>top_n<span class="help-letter-space"></span>个文档。默认返回全部文档。如果指定的值大于文档总数，将返回全部文档。</p><p><strong>return_documents</strong><code>bool</code><strong>（可选）</strong></p><p>是否在排序结果中返回文档原文。默认值<code>false</code>，以减少网络传输开销。支持的模型：<code>gte-rerank-v2</code>、<code>qwen3-vl-rerank</code>、<code>qwen3-rerank</code>。</p><p><strong>instruct</strong> <code>string</code> <strong>可选</strong></p><p>添加自定义排序任务类型说明，仅在使用 <code>qwen3.7-text-rerank</code>、<code>qwen3-rerank</code> 及<code>qwen3-vl-rerank</code>模型时生效。通过该参数可以指导模型采用不同的排序策略，例如：</p><ul>
+<li>
+<p><strong>问答检索任务（默认）</strong>：<code>"Given a web search query, retrieve relevant passages that answer the query."</code></p>
+<ul>
+<li>侧重点：寻找问题的答案。模型会优先评估文档是否解答了<span class="help-letter-space"></span>Query<span class="help-letter-space"></span>中的问题。</li>
+<li>示例：对于<span class="help-letter-space"></span>Query“如何预防感冒？”，文档“勤洗手是预防感冒的有效方法”会获得高分；而文档“感冒是一种常见疾病”虽然主题相关，但因未提供答案，得分会显著更低。</li>
+</ul>
+</li>
+<li>
+<p><strong>语义相似度排序任务</strong>：<code>"Retrieve semantically similar text."</code></p>
+<ul>
+<li>侧重点：判断语义的等价性。模型会评估<span class="help-letter-space"></span>Query<span class="help-letter-space"></span>和文档的核心含义是否一致，而不管具体措辞或句式。</li>
+<li>示例：在<span class="help-letter-space"></span>FAQ<span class="help-letter-space"></span>场景中，用户<span class="help-letter-space"></span>Query“如何修改密码？”与候选问题“忘记密码怎么办？”在语义上高度相似，应获得高分。模型会关注两者是否指向同一个用户意图。</li>
+</ul>
+</li>
+</ul><p>建议使用英文撰写。如不指定该参数，将默认按问答检索任务进行排序。更多任务指令可参考<a href="https://github.com/QwenLM/Qwen3-Embedding/blob/main/evaluation/task_prompts.json">模型仓库</a>中的示例。</p><p><strong>fps</strong> <code>float</code> <strong>可选</strong></p><p>仅<code>qwen3-vl-rerank</code>模型支持此参数。控制视频的帧数，比例越小，实际抽取的帧数越少，范围为 [0,1]。默认值为<span class="help-letter-space"></span>1.0。</p></div></section></td><td><section data-tag="tabbed-content-box" outputclass="tabbed-content-box" id="sec-tabs" class="tabbed-content-box section"><section id="qwen3-7-text-rerank" class="section"><h4 id="qwen3-7-text-rerank-h4">qwen3.7-text-rerank</h4><pre data-tag="codeblock" id="code-block" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \
+--header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "qwen3.7-text-rerank",
+    "input": {
+        "query": "什么是文本排序模型",
+        "documents": [
+            "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序",
+            "量子计算是计算科学的一个前沿领域",
+            "预训练语言模型的发展给文本排序模型带来了新的进展"
+        ]
+    },
+    "parameters": {
+        "top_n": 2,
+        "instruct": "Given a web search query, retrieve relevant passages that answer the query."
+    }
+}'
+</code></pre></section><section id="qwen3-rerank" class="section"><h4 id="qwen3-rerank-h4">qwen3-rerank</h4><pre data-tag="codeblock" id="code-block-2" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --request POST \
+  --url https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank \
+  --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+        "model": "qwen3-rerank",
+        "input": {
+            "documents": [
+                "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序",
+                "量子计算是计算科学的一个前沿领域",
+                "预训练语言模型的发展给文本排序模型带来了新的进展"
+            ],
+            "query": "什么是文本排序模型"
+        },
+        "parameters": {
+            "top_n": 2,
+            "instruct": "Given a web search query, retrieve relevant passages that answer the query."
+        }
+}'
+</code></pre></section><section id="qwen3-vl-rerank" class="section"><h4 id="qwen3-vl-rerank-h4">qwen3-vl-rerank</h4><p>文本查询</p><pre data-tag="codeblock" id="code-block-3" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \
+--header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "qwen3-vl-rerank",
+    "input":{
+         "query": {"text": "什么是文本排序模型"},
+         "documents": [
+            {"text": "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序"},
+            {"image": "https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg"},
+            {"video": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4"}
+         ]
+    },
+    "parameters": {
+        "return_documents": true,
+        "top_n": 2,
+        "fps": 1.0
+    }
+}'
+</code></pre><p>图片查询</p><pre data-tag="codeblock" id="code-block-4" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \
+--header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "qwen3-vl-rerank",
+    "input":{
+         "query": {"image": "https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg"},
+         "documents": [
+            {"text": "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序"},
+            {"image": "https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg"},
+            {"video": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4"}
+         ]
+    },
+    "parameters": {
+        "return_documents": true,
+        "top_n": 2,
+        "fps": 1.0
+    }
+}'
+</code></pre></section><section id="gte-rerank-v2" class="section"><h4 id="gte-rerank-v2-h4">gte-rerank-v2</h4><pre data-tag="codeblock" id="code-block-5" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --location 'https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank' \
+--header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "gte-rerank-v2",
+    "input":{
+         "query": "什么是文本排序模型",
+         "documents": [
+         "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序",
+         "量子计算是计算科学的一个前沿领域",
+         "预训练语言模型的发展给文本排序模型带来了新的进展"
+         ]
+    },
+    "parameters": {
+        "return_documents": true,
+        "top_n": 2
+    }
+}'
+</code></pre></section><section id="dashscope-cli" class="section"><h4 id="dashscope-cli-h4">dashscope CLI</h4><p>通过 dashscope 命令行调用。</p><pre data-tag="codeblock" id="code-block-6" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>export DASHSCOPE_API_KEY="your-api-key"
+# 将 {WorkspaceId} 替换为业务空间<span class="help-letter-space"></span>ID，cn-beijing 替换为对应地域（新加坡: ap-southeast-1, 美东: us-east-1）
+export DASHSCOPE_HTTP_BASE_URL="https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/api/v1"
+dashscope rerank create -m gte-rerank-v2 -q "机器学习" -d "机器学习是<span class="help-letter-space"></span>AI<span class="help-letter-space"></span>分支" -d "今天天气真好"
+</code></pre><div class="note note-important"><div class="note-icon-wrapper"></div><div class="note-content"><p><strong>重要</strong>SDK Expert 交互式助手可按自然语言完成同样的开发与排障，见 </p><a href="/zh/model-studio/dashscope-sdk-expert">DashScope SDK Expert</a>。</div></div><p>完整地域表见 <a href="/zh/model-studio/base-url">Base URL 总览</a>。</p></section></section></td></tr></tbody></table>
+<table bordertype="no-border" style="display:table;table-layout:fixed;width:100%"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><td><h3>响应 <span id="b14ec019d4k6f"></span></h3><p><strong>request_id</strong><code>string</code></p><p>请求唯一标识。可用于请求明细溯源和问题排查。</p><p><strong>output</strong><code>object</code></p><p>任务输出信息。</p><section class="collapse expanded" id="accordion-属性-3"><p>属性</p><div><p><strong>results</strong><code>array</code></p><p>排序结果列表。按 <code>relevance_score</code> 从高到低排列。</p><section class="collapse expanded" id="accordion-属性-4"><p>属性</p><div><p><strong>document</strong><code>dict</code></p><p>文档原文对象。仅在请求参数 <code>return_documents</code> 为 <code>true</code> 时返回。结构为 <code>{"text": "文档原文"}</code>。</p><p><strong>index</strong><code>int</code></p><p>表示该结果对应于输入 <code>documents</code> 列表中的原始索引位置。</p><p><strong>relevance_score</strong><code>double</code></p><p>该文档与查询的语义相关性得分，取值范围为 0.0 到 1.0。分数越高，相关性越强。</p><div class="note note-note"><div class="note-icon-wrapper"></div><div class="note-content"><p><strong>说明</strong>此分数为当前请求中的相对分数，主要用于对本次请求内的文档排序，不可作为跨请求比较的绝对值。</p></div></div></div></section></div></section><p><strong>usage</strong><code>object</code></p><p>输出信息统计。</p><section class="collapse expanded" id="accordion-属性-5"><p>属性</p><div><p><strong>prompt_tokens</strong><code>int</code></p><p>仅 <code>qwen3.7-text-rerank</code> 返回。表示本次请求输入内容的 Token 总数。</p><p><strong>total_tokens</strong><code>int</code></p><p>本次请求消耗的 Token 总数，用于计量计费和审计。</p></div></section><p><strong>code</strong><code>string</code></p><p>请求失败的错误码。请求成功时不会返回此参数，详情请参见<a href="/zh/model-studio/error-code">错误码</a>。</p><p><strong>message</strong><code>string</code></p><p>请求失败的详细信息。请求成功时不会返回此参数，详情请参见<a href="/zh/model-studio/error-code">错误码</a>。</p></td><td><section data-tag="tabbed-content-box" outputclass="tabbed-content-box" id="sec-tabs-2" class="tabbed-content-box section"><section id="成功响应" class="section"><h4 id="成功响应-h4">成功响应</h4><div outputclass="tabbed-codeblock" data-tag="fig" id="fig-code-group" class="tabbed-codeblock-box"><div class="tab-box"></div><input id="fig-code-group-qwen3-7-text-rerank-tab" type="radio" name="check-fig-code-group" checked=""><label for="fig-code-group-qwen3-7-text-rerank-tab">qwen3.7-text-rerank</label><div class="codeblock-item"><pre data-tag="codeblock" id="code-code-group-qwen3-7-text-rerank" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+    "output": {
+        "results": [
+            {
+                "index": 0,
+                "relevance_score": 0.9334521178273196
+            },
+            {
+                "index": 2,
+                "relevance_score": 0.34100082626411193
+            }
+        ]
+    },
+    "usage": {
+        "prompt_tokens": 79,
+        "total_tokens": 79
+    },
+    "request_id": "85ba5752-1900-47d2-8896-23f99b13f6e1"
+}
+</code></pre></div><input id="fig-code-group-qwen3-rerank-tab" type="radio" name="check-fig-code-group"><label for="fig-code-group-qwen3-rerank-tab">qwen3-rerank</label><div class="codeblock-item"><pre data-tag="codeblock" id="code-code-group-qwen3-rerank" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+    "output": {
+        "results": [
+            {
+                "index": 0,
+                "relevance_score": 0.9334521178273196
+            },
+            {
+                "index": 2,
+                "relevance_score": 0.34100082626411193
+            }
+        ]
+    },
+    "request_id": "85ba5752-1900-47d2-8896-23f99b13f6e1",
+    "usage": {
+        "total_tokens": 79
+    }
+}
+</code></pre></div><input id="fig-code-group-qwen3-vl-rerank-gte-rerank-v2-tab" type="radio" name="check-fig-code-group"><label for="fig-code-group-qwen3-vl-rerank-gte-rerank-v2-tab">qwen3-vl-rerank / gte-rerank-v2</label><div class="codeblock-item"><pre data-tag="codeblock" id="code-code-group-qwen3-vl-rerank-gte-rerank-v2" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+    "output": {
+        "results": [
+            {
+                "document": {
+                    "text": "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序"
+                },
+                "index": 0,
+                "relevance_score": 0.9334521178273196
+            },
+            {
+                "document": {
+                    "text": "预训练语言模型的发展给文本排序模型带来了新的进展"
+                },
+                "index": 2,
+                "relevance_score": 0.34100082626411193
+            }
+        ]
+    },
+    "usage": {
+        "total_tokens": 79
+    },
+    "request_id": "85ba5752-1900-47d2-8896-23f99b13f6e1"
+}
+</code></pre></div></div></section><section id="失败响应" class="section"><h4 id="失败响应-h4">失败响应</h4><p>在访问请求出错的情况下，输出的结果中会通过<code>code</code>和<code>message</code>指明出错原因。</p><pre data-tag="codeblock" id="code-block-7" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+    "code":"InvalidApiKey",
+    "message":"Invalid API-key provided.",
+    "request_id":"fb53c4ec-1c12-4fc4-a580-cdb7c3261fc1"
+}
+</code></pre></section></section></td></tr></tbody></table>
+<h2 id="openai-兼容接口">OpenAI 兼容接口 <span id="openai-compatible-rerank"></span></h2>
+<p><code>qwen3-rerank</code>和<code>qwen3.7-text-rerank</code>支持通过 OpenAI 兼容接口调用；<code>gte-rerank-v2</code>和<code>qwen3-vl-rerank</code>不支持，调用时会返回<code>model_not_supported</code>错误。</p>
+<p>请求地址：<code>POST https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-api/v1/reranks</code></p>
+<p>与 DashScope HTTP 接口的差异：</p>
+<ul>
+<li>请求体为扁平结构，<code>query</code>、<code>documents</code>、<code>top_n</code>、<code>instruct</code>、<code>return_documents</code>与<code>model</code>同级，不嵌套在<code>input</code>和<code>parameters</code>中。</li>
+<li>排序结果位于响应的<code>results</code>数组中，每项包含<code>index</code>（文档在请求中的序号）和<code>relevance_score</code>（相关性得分）；<code>return_documents</code>为<code>true</code>时额外返回<code>document.text</code>。</li>
+</ul>
+<h3 id="请求示例">请求示例 <span id="openai-compatible-rerank-request"></span></h3>
+<pre data-tag="codeblock" id="code-block-8" outputclass="language-bash" code-type="xCode" class="pre codeblock language-bash"><code>curl --request POST \
+  --url https://{WorkspaceId}.cn-beijing.maas.aliyuncs.com/compatible-api/v1/reranks \
+  --header "Authorization: Bearer $DASHSCOPE_API_KEY" \
+  --header "Content-Type: application/json" \
+  --data '{
+    "model": "qwen3-rerank",
+    "query": "什么是重排序模型",
+    "documents": [
+      "重排序模型广泛应用于搜索引擎和推荐系统",
+      "量子计算是计算科学的前沿领域"
+    ],
+    "top_n": 2,
+    "return_documents": true
+}'
+</code></pre>
+<h3 id="响应示例">响应示例 <span id="openai-compatible-rerank-response"></span></h3>
+<pre data-tag="codeblock" id="code-block-9" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+  "object": "list",
+  "results": [
+    {
+      "document": {
+        "text": "重排序模型广泛应用于搜索引擎和推荐系统"
+      },
+      "index": 0,
+      "relevance_score": 0.8019987834170111
+    },
+    {
+      "document": {
+        "text": "量子计算是计算科学的前沿领域"
+      },
+      "index": 1,
+      "relevance_score": 0.33869324986016763
+    }
+  ],
+  "model": "qwen3-rerank",
+  "id": "1a295f99-89ff-901f-a57f-9a38a6d963fa",
+  "usage": {
+    "total_tokens": 59
+  }
+}
+</code></pre>
+<p>Python 和 Node.js 调用示例请参见<a href="/zh/model-studio/rerank">重排序</a>。</p>
+<h2 id="sdk调用">SDK<span class="help-letter-space"></span>调用 <span id="EKM4W"></span></h2>
+<h3 id="调用示例">调用示例 <span id="9858bdb0cf7xi"></span></h3>
+<p>以下示例展示了调用文档排序模型<span class="help-letter-space"></span>API<span class="help-letter-space"></span>的代码示例。</p>
+<blockquote>
+<p>SDK 的参数命名与<span class="help-letter-space"></span>HTTP<span class="help-letter-space"></span>接口基本一致，参数结构进行了一定封装。比如 HTTP 使用嵌套的 <code>input</code> 和 <code>parameters</code> 结构，但<span class="help-letter-space"></span>SDK 使用扁平参数。请在开发时注意区分。</p>
+</blockquote>
+<pre data-tag="codeblock" id="code-block-10" outputclass="language-python" code-type="xCode" class="pre codeblock language-python"><code>import os
+import dashscope
+# 以下为华北2（北京）地域的配置，调用时请将{WorkspaceId}替换为真实的业务空间ID，各地域的region取值不同。
+client = dashscope.Client(
+    # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key="sk-xxx",
+    # 各地域的API Key不同。获取API Key：https://help.aliyun.com/zh/model-studio/get-api-key
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    workspace="{WorkspaceId}",
+    region="cn-beijing",
+)
+
+def text_rerank():
+    resp = client.rerank.create(
+        model="qwen3.7-text-rerank",
+        query="什么是文本排序模型",
+        documents=[
+            "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序",
+            "量子计算是计算科学的一个前沿领域",
+            "预训练语言模型的发展给文本排序模型带来了新的进展"
+        ],
+        top_n=10,
+        instruct="Given a web search query, retrieve relevant passages that answer the query."
+    )
+    print(resp)
+
+if __name__ == '__main__':
+    text_rerank()
+</code></pre>
+<p>以下示例展示了使用<code>qwen3-vl-rerank</code>模型进行多模态排序（以图片作为查询）的代码示例。</p>
+<pre data-tag="codeblock" id="code-block-11" outputclass="language-python" code-type="xCode" class="pre codeblock language-python"><code>import os
+import dashscope
+import json
+# 以下为华北2（北京）地域的配置，调用时请将{WorkspaceId}替换为真实的业务空间ID，各地域的region取值不同。
+client = dashscope.Client(
+    # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key="sk-xxx",
+    # 各地域的API Key不同。获取API Key：https://help.aliyun.com/zh/model-studio/get-api-key
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
+    workspace="{WorkspaceId}",
+    region="cn-beijing",
+)
+
+def vl_rerank():
+    resp = client.rerank.create(
+        model="qwen3-vl-rerank",
+        query={"image": "https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg"},
+        documents=[
+            {"text": "文本排序模型广泛用于搜索引擎和推荐系统中，它们根据文本相关性对候选文本进行排序"},
+            {"image": "https://img.alicdn.com/imgextra/i3/O1CN01rdstgY1uiZWt8gqSL_!!6000000006071-0-tps-1970-356.jpg"},
+            {"video": "https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh-CN/20250107/lbcemt/new+video.mp4"}
+        ],
+        top_n=2,
+        return_documents=True
+    )
+    print(json.dumps(resp.model_dump(), ensure_ascii=False, indent=4))
+
+if __name__ == '__main__':
+    vl_rerank()
+</code></pre>
+<h3 id="输出示例">输出示例 <span id="abfe95f4ab4tt"></span></h3>
+<div class="note note-note"><div class="note-icon-wrapper"></div><div class="note-content"><p><strong>说明</strong>SDK 2.0 返回结构化响应对象，排序结果通过 <code>resp.results</code> 访问（<code>resp.results[i].index</code> / <code>.relevance_score</code> / <code>.document</code>）；请求失败时抛出 <code>DashScopeError</code> 异常。</p></div></div>
+<pre data-tag="codeblock" id="code-block-12" outputclass="language-json" code-type="xCode" class="pre codeblock language-json"><code>{
+    "request_id": "4b0805c0-6b36-490d-8bc1-4365f4c89905",
+    "output": {
+        "results": [
+            {
+                "index": 0,
+                "relevance_score": 0.9334521178273196
+            },
+            {
+                "index": 2,
+                "relevance_score": 0.34100082626411193
+            }
+        ]
+    },
+    "usage": {
+        "prompt_tokens": 79,
+        "total_tokens": 79
+    }
+}
+</code></pre>
+<h2 id="错误码">错误码 <span id="OajFO"></span></h2>
+<p>如果模型调用失败并返回报错信息，请参见<a href="/zh/model-studio/error-code">错误码</a>进行解决。</p>
+<h2 id="限流">限流 <span id="8229db579efdw"></span></h2>
+<p>模型限流触发条件请参考<a href="/zh/model-studio/rate-limit">限流</a>。</p></div>
+</div></div><div class="aliyun-docs-pagination"><div class="NextPage--container--cfVcdEE"><span class="NextPage--paginationLeft--WTOmehr"><a href="/zh/model-studio/rerank-model/" data-spm-click="gostr=/aliyun;locaid=preDoc"><i class="iconfont icon-prev-arrow"></i>上一篇：排序模型（Rerank）</a></span><span class="NextPage--paginationRight--TgS6P1r"><a href="/zh/model-studio/qwen-mt-translation-models/" data-spm-click="gostr=/aliyun;locaid=nextDoc">下一篇：翻译模型<i class="iconfont icon-next-arrow"></i></a></span></div></div></div><div class="RecommendDoc--container--M1qVQax"></div><div class="FeedbackButton--feedbackContainer--njtB22l aliyun-docs-feedback" id="help-doc-feedback"><div class="FeedbackButton--feedbackHelpTip--JxaBwdy">该文章对您有帮助吗？</div><div class="FeedbackButton--feedbackButtonContainer--ujiXFNJ"><div class="FeedbackButton--feedbackButtonBox--GmY1Nor"><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty"></i></button><button class="FeedbackButton--iconButton--fx4Xcop"><i class="help-iconfont help-icon-tag-empty" style="display:inline-block;transform:rotateX(-180deg)"></i></button><button class="FeedbackButton--clickButton--YxH6n96"><i class="help-iconfont help-icon-bianji"></i>反馈</button></div></div></div></section><div class="aliyun-docs-side" id="aliyun-docs-side"><div id="aliyun-docs-side-content" class="aliyun-docs-side-content ProductDetail--rightBox--GGLE5sH"><ul class="Outline--synopsisBox--zm_HamD" id="outline-container"></ul></div><div id="aliyun-docs-side-blank" class="aliyun-docs-side-blank"></div></div></div></main></div></div><div id="aliyun-docs-selection-div"></div></div></div>
+  <footer><div id="09efae43c83314b2c746aedf72504145"><div class="_18a32969382a277c44015217fbc5cb5a_box"><footer class="_49ada0cd752f65901c49f2eed0d6c3d5_container" aria-label="PC 端页尾"><div class="_49ada0cd752f65901c49f2eed0d6c3d5_inner"><div class="_296d5000d6fdcaff9d0bfd209c64fbbc_services"><nav class="_296d5000d6fdcaff9d0bfd209c64fbbc_homepage-footer-main-services" aria-label="页脚导航"><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">为什么选择阿里云</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/about/what-is-cloud-computing" target="_blank">什么是云计算</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://infrastructure.aliyun.com/" target="_blank">全球基础设施</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/leading-technology" target="_blank">技术领先</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/reliability" target="_blank">稳定可靠</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/why-us/security-compliance" target="_blank">安全合规</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/analyst-reports" target="_blank">分析师报告</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">大模型</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.qianwenai.com/" target="_blank">大模型服务平台</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/tongyi" target="_blank">千问大模型</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.qianwenai.com/models" target="_blank">模型市场</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">产品和定价</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/list" target="_blank">全部产品</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/product/news/" target="_blank">产品动态</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/detail" target="_blank">产品定价</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cpq/list" target="_blank">配置报价器</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/price/cost-management" target="_blank">云上成本管理</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">技术内容</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/tech-solution" target="_blank">技术解决方案</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://help.aliyun.com/" target="_blank">帮助文档</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://developer.aliyun.com/" target="_blank">开发者社区</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://tianchi.aliyun.com/" target="_blank">天池大赛</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://edu.aliyun.com/" target="_blank">阿里云认证</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">权益</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://free.aliyun.com/" target="_blank">免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/solution/free" target="_blank">解决方案免费试用</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://university.aliyun.com/" target="_blank">高校计划</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://dashi.aliyun.com/?ambRef=shouYeDaoHang2&amp;pageCode=yunparterIndex" target="_blank">推荐返现计划</a></section><section class="a52e48969cced2d562e47543eeb73ebb_ali-main-services"><h3 class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-title">服务</h3><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service" target="_blank">基础服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/supportplans" target="_blank">企业增值服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/service/devopsimpl/devopsimpl_cloudmigration_public_cn" target="_blank">迁云服务</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://www.aliyun.com/notice/" target="_blank">官网公告</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://status.aliyun.com/" target="_blank">健康看板</a><a class="a52e48969cced2d562e47543eeb73ebb_ali-main-services-link" href="https://security.aliyun.com/trust-center" target="_blank">信任中心</a></section></nav><article class="_7b44142961778903dda8af3f769cd06c_focus"><h3 class="_7b44142961778903dda8af3f769cd06c_ali-main-services-title">关注阿里云</h3><p class="_7b44142961778903dda8af3f769cd06c_ali-main-services-desc">关注阿里云公众号或下载阿里云APP，关注云资讯，随时随地运维管控云服务</p><img alt="阿里云APP" src="https://img.alicdn.com/imgextra/i4/O1CN01XLesV31fkf7pYNATb_!!6000000004045-2-tps-400-400.png" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><img alt="阿里云微信" src="https://img.alicdn.com/tfs/TB1AOdINW6qK1RjSZFmXXX0PFXa-258-258.jpg" class="_7b44142961778903dda8af3f769cd06c_ali-official-code" loading="lazy"/><p class="_7b44142961778903dda8af3f769cd06c_consult-text">联系我们：4008013260</p></article></div><div class="_4598709a854bea355ceb6ef9f23f10d4_about-link-wrap"><a href="https://help.aliyun.com/product/67275.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">法律声明</a><a href="https://terms.alicdn.com/legal-agreement/terms/platform_service/20220906101446934/20220906101446934.html" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">Cookies 政策</a><a href="https://aliyun.jubao.alibaba.com/?site=10_JTYWGW_XS_CNAQMCMH" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">廉正举报</a><a href="https://report.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">安全举报</a><a href="https://www.aliyun.com/contact" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">联系我们</a><a href="https://careers.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-about-link" target="_blank">加入我们</a></div><section class="_4598709a854bea355ceb6ef9f23f10d4_friend-link-wrap"><h3 hidden="">友情链接</h3><a href="https://www.alibabagroup.com/cn/global/home" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴集团</a><a href="https://www.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝网</a><a href="https://www.qianwenai.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">千问AI平台</a><a href="https://qwenwork.cn/?utm_source=aliyun_web&amp;utm_content=home_bottom" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">千问办公</a><a href="https://www.tmall.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">天猫</a><a href="https://www.aliexpress.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">全球速卖通</a><a href="https://www.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里巴巴国际交易市场</a><a href="https://www.1688.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">1688</a><a href="https://www.alimama.com/index.htm" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里妈妈</a><a href="https://www.fliggy.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">飞猪</a><a href="https://www.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云计算</a><a href="https://wanwang.aliyun.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">万网</a><a href="https://mobile.amap.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">高德</a><a href="https://www.uc.cn/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">UC</a><a href="https://www.umeng.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">友盟</a><a href="https://www.youku.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">优酷</a><a href="https://www.dingtalk.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">钉钉</a><a href="https://www.alipay.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">支付宝</a><a href="https://damo.alibaba.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">达摩院</a><a href="https://world.taobao.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">淘宝海外</a><a href="https://www.aliyundrive.com/" class="_4598709a854bea355ceb6ef9f23f10d4_ali-friend-link" target="_blank">阿里云盘</a></section><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-copyright-text">© 2009-现在 Aliyun.com 版权所有 增值电信业务经营许可证： <a href="http://beian.miit.gov.cn/" target="_blank">浙B2-20080101</a> 域名注册服务机构许可： <a href="https://domain.miit.gov.cn/域名注册服务机构/互联网域名/阿里云计算有限公司 " target="_blank">浙D3-20210002</a></p><p class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-wrap"><a href="https://zzlz.gsxt.gov.cn/businessCheck/verifKey.do?showType=p&amp;serial=91330106673959654P-SAIC_SHOW_10000091330106673959654P1782269316568&amp;signData=MEUCIQDTH78jfQrqhsr99oZZLEZ9bvrSnyF%20tsaiBM1kAscJ1AIgWUzC8x%20mPem4t8XfwhDOOOIaNULiW8MBaKLkRHa0eWw%3D" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//gw.alicdn.com/tfs/TB1GxwdSXXXXXa.aXXXXXXXXXXX-65-70.gif" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="" loading="lazy"/></a><a href="http://www.beian.gov.cn/portal/registerSystemInfo" target="_blank" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link"><img src="//img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-img" alt="浙公网安备 33010602009975号" loading="lazy"/><span class="_4598709a854bea355ceb6ef9f23f10d4_ali-report-link-text">浙公网安备 33010602009975号</span></a></p></div></footer><footer class="_4b41e3343c851a7a8833c9165b249eb2_container" aria-label="移动端页尾"></footer></div></div></footer>
+
+
+
+<script>
+  var _performance_domEnd = window.performance && window.performance.now();
+</script>
+
+
+  <script>
+    window.ALIYUN_PERF && window.ALIYUN_PERF.getPCP().then(rst => {
+      var data = {
+        product: 'help.aliyun.com',
+        ua: navigator.userAgent,
+        device: 'pc',
+        page: 'index',
+        lang: 'zh',
+        cna: '',
+        url: window.location.href,
+        action: 'pcp',
+        userParams1: rst || 0,
+      };
+      let queryStr = Object.keys(data).map(key => data[key] &&
+        `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&');
+      fetch('https://help-new.cn-wulanchabu.log.aliyuncs.com/logstores/web-tracking/track?APIVersion=0.6.0&' +
+        queryStr);
+    });
+  </script>
+  
+
+  <script crossorigin="" src="https://g.alicdn.com/code/lib/??react/16.8.6/umd/react.production.min.js,react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+  <script src="https://g.alicdn.com/code/lib/lodash.js/4.17.21/lodash.min.js" crossorigin="anonymous"></script>
+  <script>
+  window.resourceBaseUrl="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.66/"
+</script>
+<script defer="" src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.66/js/index.js"></script>
+<script defer src="https://g.alicdn.com/aliyun-help/help-portal-fe/0.12.66/js/vendor.js"></script>
+  
+  <script async="" src="https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js?tenantName=help-new-aliyun-com"></script>
+  <script async="" src="https://g.alicdn.com/aliyun/perf/js/index.js"></script>
+  <script src="//cloud-assets.alicdn.com/website.js" crossorigin=""></script>
+  
+
+<script src="https://website.alyasset.com/npm.combo/@ali/biu-loader/0.1.9/~~index.js,plugins/global-react.js,plugins/ace-module.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-preact/0.0.1/index.js,hmod-preact-hooks/0.0.1/index.js,hmod-preact-compat/0.0.1/index.js,hmod-preact-bridge/0.1.4/index.js"></script>
+<script src="https://website.alyasset.com/code.combo/aliyun-com/~~lowcode-env-inject/0.1.5/aliyun.prod.pc.zh-CN.js,lowcode-engine/0.1.137/renderer/build/js/index.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-ace-2023-box/0.1.0/index.js,hmod-aliyun-com-floating-toolbar/0.2.4/index.js,hmod-aliyun-com-global-nav-search/0.8.5/index.js,hmod-aliyun-com-global-nav-search/0.8.5/locales/zh-CN.js,hmod-aliyun-com-global-nav/0.3.18/index.js,hmod-aliyun-com-global-nav/0.3.18/locales/zh-CN.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/fc20859b6bbeba764e09598aa335d240.js"></script>
+<script src="https://website.alyasset.com/npm.combo/@ali/~~hmod-ace-2023-box/0.1.0/index.js,hmod-ace-2024-global-footer/0.2.2/index.js,hmod-ace-2024-global-footer/0.2.2/locales/zh-CN.js,hmod-lowcode-normal-page/0.1.0/index.js"></script>
+<script src="https://website.alyasset.com/lowcode/entry/prod/09efae43c83314b2c746aedf72504145.js"></script>
+</body></html>

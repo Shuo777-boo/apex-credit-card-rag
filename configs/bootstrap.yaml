@@ -1,0 +1,10 @@
+# Necessary data preparation only: never evaluations, benchmark or Judge.
+strategies: [policy_hierarchy]
+activate_strategy: policy_hierarchy
+chunking:
+  window: 300
+  overlap: 60
+  hierarchy_max: 600
+hnsw:
+  m: 16
+  ef_construction: 64

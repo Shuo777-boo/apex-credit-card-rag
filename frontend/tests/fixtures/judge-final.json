@@ -1,0 +1,2044 @@
+{
+  "report_id": "judge-20261109T173046-0e2f4df9",
+  "kind": "judge",
+  "schema_version": "bonus-v1",
+  "data": {
+    "status": "completed_pending_human",
+    "metrics": {
+      "dense": {
+        "context_relevance": {
+          "mean": 0.4266666666666667,
+          "scored": 30,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9373809523809523,
+          "scored": 30,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 30,
+        "failed_or_missing": 0,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 27,
+          "partial": 3,
+          "no": 0
+        },
+        "citation_count": 70,
+        "valid_citation_count": 70
+      },
+      "hybrid_rerank": {
+        "context_relevance": {
+          "mean": 0.47333333333333333,
+          "scored": 30,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9256985767855334,
+          "scored": 30,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 30,
+        "failed_or_missing": 0,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 27,
+          "partial": 3,
+          "no": 0
+        },
+        "citation_count": 79,
+        "valid_citation_count": 79
+      }
+    },
+    "human_review_completed": 0,
+    "human_review_required": 10,
+    "self_evaluation_bias": "Same Qwen self-evaluation and claim-omission risk; failed-only extra attempts create selection and attempt differences. Human0/10.",
+    "raw_samples": 60,
+    "budget": {
+      "currency": "CNY",
+      "reserved_cost_ceiling": 0.8,
+      "actual_billed_cost": null,
+      "tasks": 2,
+      "max_cost": 1.6,
+      "records": [
+        {
+          "kind": "inventory_context_1",
+          "sample_id": "Q-028:dense",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:30:46.532661+08:00"
+        },
+        {
+          "kind": "assessment_context_1",
+          "sample_id": "Q-028:dense",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:30:57.782089+08:00"
+        }
+      ],
+      "note": "Ceilings include embedding/rerank/generation and bounded provider retries; not a bill."
+    },
+    "controlled_diagnostics": [
+      {
+        "sample_id": "CONTROLLED:DOC-0001",
+        "mode": "controlled",
+        "controlled": true,
+        "status": "completed",
+        "method_version": "qwen-judge-v2.2-anchors",
+        "context_relevance": 1.0,
+        "faithfulness": 0.0,
+        "stage": "assessment",
+        "inventory_hash": "7ba9889098d993d676c5ed2a2b52caa65941447fb1ffc1cb17fc4a946caf890c",
+        "latency_ms": 8658.77289999844,
+        "verdict": {
+          "context_relevance": [
+            {
+              "evidence_id": "DOC-0001:source",
+              "score": 2,
+              "reason": "The evidence document explicitly details the policy for 'Apex Platinum' regarding 'Balance Transfers' and specifies the number of introductory billing cycles (15), which directly addresses the question."
+            }
+          ],
+          "claims": [
+            {
+              "claim_id": "C0001",
+              "claim": "Apex Platinum provides 99 introductory billing cycles.",
+              "answer_span_id": "A0001",
+              "answer_quote": "Apex Platinum provides 99 introductory billing cycles.",
+              "answer_start": 0,
+              "answer_end": 54,
+              "verdict": "contradicted",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001:source"
+              ],
+              "support_quote": " Details: Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001:source",
+                  "span_id": "E01S0005",
+                  "start": 123,
+                  "end": 275,
+                  "quote": " Details: Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation."
+                }
+              ],
+              "reason": "The claim states there are 99 introductory billing cycles. The evidence span E01S0005 explicitly states: 'Promotional 0% intro APR applies for 15 billing cycles', which directly contradicts the figure of 99."
+            }
+          ],
+          "answers_question": "yes",
+          "answers_question_reason": "The answer provides a specific number (99) in response to the 'how many' question, even though the number is factually incorrect based on the provided evidence.",
+          "refusal": false,
+          "no_claims_reason": null,
+          "method_version": "qwen-judge-v2.2-anchors",
+          "unit_audit": [
+            {
+              "unit_id": "A0001",
+              "claims": [
+                "Apex Platinum provides 99 introductory billing cycles."
+              ],
+              "nonfactual_reason": null
+            }
+          ],
+          "coverage": "Every original unit accounted for; semantic atomic completeness still model-dependent."
+        },
+        "claim_count": 1,
+        "citation_validity": {
+          "count": 0,
+          "valid": 0,
+          "rate": null,
+          "meaning": "Identifier and exact-quote validity; not entailment."
+        },
+        "phase": "base_reused"
+      },
+      {
+        "sample_id": "CONTROLLED:DOC-0046",
+        "mode": "controlled",
+        "controlled": true,
+        "status": "completed",
+        "method_version": "qwen-judge-v2.2-anchors",
+        "context_relevance": 1.0,
+        "faithfulness": 0.0,
+        "stage": "assessment",
+        "inventory_hash": "8cb8a683bd77ef0ba56e26f09567d01a380a03b5c742e69817116c815f5f6cad",
+        "latency_ms": 7976.717300000018,
+        "verdict": {
+          "context_relevance": [
+            {
+              "evidence_id": "DOC-0046:source",
+              "score": 2,
+              "reason": "The evidence document directly addresses the question by specifying the charge for additional lounge guests on the Apex Platinum product ($35) for the relevant year (2024)."
+            }
+          ],
+          "claims": [
+            {
+              "claim_id": "C0001",
+              "claim": "Additional lounge guests on Apex Platinum are charged $999 per visit.",
+              "answer_span_id": "A0001",
+              "answer_quote": "Additional lounge guests on Apex Platinum are charged $999 per visit.",
+              "answer_start": 0,
+              "answer_end": 69,
+              "verdict": "contradicted",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0046:source"
+              ],
+              "support_quote": " Additional guests are charged $35 per visit.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0046:source",
+                  "span_id": "E01S0008",
+                  "start": 375,
+                  "end": 420,
+                  "quote": " Additional guests are charged $35 per visit."
+                }
+              ],
+              "reason": "The claim states the charge is $999 per visit. The evidence span E01S0008 explicitly states 'Additional guests are charged $35 per visit' for the Apex Platinum product, which directly contradicts the claimed amount."
+            }
+          ],
+          "answers_question": "yes",
+          "answers_question_reason": "The answer provides a specific dollar amount ($999) in response to the question about the charge, although the amount is factually incorrect based on the evidence.",
+          "refusal": false,
+          "no_claims_reason": null,
+          "method_version": "qwen-judge-v2.2-anchors",
+          "unit_audit": [
+            {
+              "unit_id": "A0001",
+              "claims": [
+                "Additional lounge guests on Apex Platinum are charged $999 per visit."
+              ],
+              "nonfactual_reason": null
+            }
+          ],
+          "coverage": "Every original unit accounted for; semantic atomic completeness still model-dependent."
+        },
+        "claim_count": 1,
+        "citation_validity": {
+          "count": 0,
+          "valid": 0,
+          "rate": null,
+          "meaning": "Identifier and exact-quote validity; not entailment."
+        },
+        "phase": "base_reused"
+      },
+      {
+        "sample_id": "CONTROLLED:DOC-0054",
+        "mode": "controlled",
+        "controlled": true,
+        "status": "completed",
+        "method_version": "qwen-judge-v2.2-anchors",
+        "context_relevance": 1.0,
+        "faithfulness": 0.0,
+        "stage": "assessment",
+        "inventory_hash": "495ec5978df1e77979b245d4e2f3ac9d2b36499a19100a788f401b3f810931ab",
+        "latency_ms": 7608.611499999824,
+        "verdict": {
+          "context_relevance": [
+            {
+              "evidence_id": "DOC-0054:source",
+              "score": 2,
+              "reason": "The evidence document explicitly details the Apex Platinum cell phone protection policy for 2024 and contains a specific sentence addressing whether lost phones are covered."
+            }
+          ],
+          "claims": [
+            {
+              "claim_id": "C0001",
+              "claim": "Apex Platinum cell phone protection covers lost phones.",
+              "answer_span_id": "A0001",
+              "answer_quote": "Apex Platinum cell phone protection covers lost phones.",
+              "answer_start": 0,
+              "answer_end": 55,
+              "verdict": "contradicted",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0054:source"
+              ],
+              "support_quote": " Coverage does not include cosmetic damage or lost phones.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0054:source",
+                  "span_id": "E01S0007",
+                  "start": 327,
+                  "end": 385,
+                  "quote": " Coverage does not include cosmetic damage or lost phones."
+                }
+              ],
+              "reason": "The claim states that the protection covers lost phones. However, evidence span E01S0007 explicitly states: 'Coverage does not include cosmetic damage or lost phones.' This directly contradicts the claim."
+            }
+          ],
+          "answers_question": "no",
+          "answers_question_reason": "The answer provided ('Apex Platinum cell phone protection covers lost phones') is factually incorrect based on the supplied evidence, which explicitly excludes lost phones from coverage. Therefore, the answer fails to correctly address the question.",
+          "refusal": false,
+          "no_claims_reason": null,
+          "method_version": "qwen-judge-v2.2-anchors",
+          "unit_audit": [
+            {
+              "unit_id": "A0001",
+              "claims": [
+                "Apex Platinum cell phone protection covers lost phones."
+              ],
+              "nonfactual_reason": null
+            }
+          ],
+          "coverage": "Every original unit accounted for; semantic atomic completeness still model-dependent."
+        },
+        "claim_count": 1,
+        "citation_validity": {
+          "count": 0,
+          "valid": 0,
+          "rate": null,
+          "meaning": "Identifier and exact-quote validity; not entailment."
+        },
+        "phase": "base_reused"
+      }
+    ],
+    "samples": [
+      {
+        "sample_id": "Q-002:dense",
+        "query_id": "Q-002",
+        "question": "What is the balance transfer fee for the Everyday Freedom card?",
+        "mode": "dense",
+        "build_id": "60d4f863faa777c5c522bc1b",
+        "model": "qwen3.5-plus",
+        "prompt_version": "qwen-judge-v1.0",
+        "answer": "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%，最低收费 $5 [2]。\n\n**适用条件与期限：**\n- 该费用适用于在开卡后 60 天内执行的余额转账，此类转账可享受 18 个账单周期的 0%  introductory APR（促销年利率）[2]。\n- 转账授权限额为每笔请求最高 $15,000 或总循环额度的 90%（以较低者为准）[4]。\n- 一旦状态变为“处理中”，转账不可取消 [4]。\n\n**后续利率：**\n- 促销期结束后，剩余余额将转为标准可变余额转账 APR，范围为 17.49% 至 26.49% [2][3]。",
+        "citations": [
+          {
+            "id": 2,
+            "doc_id": "DOC-0003",
+            "chunk_id": "bc255b5372af6f0b1188df9d",
+            "quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+          },
+          {
+            "id": 3,
+            "doc_id": "DOC-0011",
+            "chunk_id": "8c8bb479420ec4187498985e",
+            "quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%). Interest is computed using the average daily balance method."
+          },
+          {
+            "id": 4,
+            "doc_id": "DOC-0014",
+            "chunk_id": "773a70f24b1c618c9efb4688",
+            "quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing."
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "DOC-0037",
+            "doc_id": "DOC-0037",
+            "chunk_ids": [
+              "1ba16d9010233877c8e1764c"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "1ba16d9010233877c8e1764c",
+                "text": "Apex Everyday Freedom cards incur a 3% foreign transaction fee on all purchases made in foreign currencies or processed through non-US acquiring banks."
+              }
+            ],
+            "title": "Apex Everyday Freedom - Foreign Transaction Fee Rules (2024)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "text": "Apex Everyday Freedom cards incur a 3% foreign transaction fee on all purchases made in foreign currencies or processed through non-US acquiring banks."
+          },
+          {
+            "evidence_id": "DOC-0003",
+            "doc_id": "DOC-0003",
+            "chunk_ids": [
+              "bc255b5372af6f0b1188df9d"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "bc255b5372af6f0b1188df9d",
+                "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+              }
+            ],
+            "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+          },
+          {
+            "evidence_id": "DOC-0011",
+            "doc_id": "DOC-0011",
+            "chunk_ids": [
+              "8c8bb479420ec4187498985e"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "8c8bb479420ec4187498985e",
+                "text": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%). Interest is computed using the average daily balance method."
+              }
+            ],
+            "title": "Apex Everyday Freedom - Expiration & Interest Calculation (2024)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "text": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%). Interest is computed using the average daily balance method."
+          },
+          {
+            "evidence_id": "DOC-0014",
+            "doc_id": "DOC-0014",
+            "chunk_ids": [
+              "773a70f24b1c618c9efb4688"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "773a70f24b1c618c9efb4688",
+                "text": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing."
+              }
+            ],
+            "title": "Apex Everyday Freedom - Balance Transfer Cap Guidelines (2025)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2025,
+            "text": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing."
+          },
+          {
+            "evidence_id": "DOC-0033",
+            "doc_id": "DOC-0033",
+            "chunk_ids": [
+              "17c70bee97c8fc954a1a96ce"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "17c70bee97c8fc954a1a96ce",
+                "text": "Apex Everyday Freedom features $0 annual fee. No maintenance or membership fees apply for standard account operation."
+              }
+            ],
+            "title": "Apex Everyday Freedom - No Annual Fee Guarantee (2024)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "text": "Apex Everyday Freedom features $0 annual fee. No maintenance or membership fees apply for standard account operation."
+          }
+        ],
+        "response": {
+          "request_id": "45840dd3-6b48-4e5c-b5a2-260dfcc1d119",
+          "answer": "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%，最低收费 $5 [2]。\n\n**适用条件与期限：**\n- 该费用适用于在开卡后 60 天内执行的余额转账，此类转账可享受 18 个账单周期的 0%  introductory APR（促销年利率）[2]。\n- 转账授权限额为每笔请求最高 $15,000 或总循环额度的 90%（以较低者为准）[4]。\n- 一旦状态变为“处理中”，转账不可取消 [4]。\n\n**后续利率：**\n- 促销期结束后，剩余余额将转为标准可变余额转账 APR，范围为 17.49% 至 26.49% [2][3]。",
+          "citations": [
+            {
+              "id": 2,
+              "doc_id": "DOC-0003",
+              "chunk_id": "bc255b5372af6f0b1188df9d",
+              "quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+            },
+            {
+              "id": 3,
+              "doc_id": "DOC-0011",
+              "chunk_id": "8c8bb479420ec4187498985e",
+              "quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%). Interest is computed using the average daily balance method."
+            },
+            {
+              "id": 4,
+              "doc_id": "DOC-0014",
+              "chunk_id": "773a70f24b1c618c9efb4688",
+              "quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing."
+            }
+          ],
+          "retrieval": {
+            "request_id": "45840dd3-6b48-4e5c-b5a2-260dfcc1d119",
+            "build_id": "60d4f863faa777c5c522bc1b",
+            "mode": "dense",
+            "results": [
+              {
+                "doc_id": "DOC-0037",
+                "title": "Apex Everyday Freedom - Foreign Transaction Fee Rules (2024)",
+                "category": "Fees & Interest (APR)",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 1,
+                "score": 0.717465341091156,
+                "evidence": [
+                  {
+                    "chunk_id": "1ba16d9010233877c8e1764c",
+                    "text": "Apex Everyday Freedom cards incur a 3% foreign transaction fee on all purchases made in foreign currencies or processed through non-US acquiring banks.",
+                    "parent_id": "DOC-0037:policy",
+                    "start_char": 146,
+                    "end_char": 297
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0003",
+                "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 2,
+                "score": 0.7047000283360497,
+                "evidence": [
+                  {
+                    "chunk_id": "bc255b5372af6f0b1188df9d",
+                    "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable.",
+                    "parent_id": "DOC-0003:policy",
+                    "start_char": 141,
+                    "end_char": 338
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0011",
+                "title": "Apex Everyday Freedom - Expiration & Interest Calculation (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 3,
+                "score": 0.6958655896266955,
+                "evidence": [
+                  {
+                    "chunk_id": "8c8bb479420ec4187498985e",
+                    "text": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%). Interest is computed using the average daily balance method.",
+                    "parent_id": "DOC-0011:policy",
+                    "start_char": 141,
+                    "end_char": 319
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0014",
+                "title": "Apex Everyday Freedom - Balance Transfer Cap Guidelines (2025)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2025,
+                "rank": 4,
+                "score": 0.6895679235458374,
+                "evidence": [
+                  {
+                    "chunk_id": "773a70f24b1c618c9efb4688",
+                    "text": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit. Transfers cannot be canceled once status shifts to Processing.",
+                    "parent_id": "DOC-0014:policy",
+                    "start_char": 141,
+                    "end_char": 303
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0033",
+                "title": "Apex Everyday Freedom - No Annual Fee Guarantee (2024)",
+                "category": "Fees & Interest (APR)",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 5,
+                "score": 0.6864365543853213,
+                "evidence": [
+                  {
+                    "chunk_id": "17c70bee97c8fc954a1a96ce",
+                    "text": "Apex Everyday Freedom features $0 annual fee. No maintenance or membership fees apply for standard account operation.",
+                    "parent_id": "DOC-0033:policy",
+                    "start_char": 146,
+                    "end_char": 263
+                  }
+                ]
+              }
+            ],
+            "timings_ms": {
+              "embedding": 144.88799999890034,
+              "dense": 8.612400000856724,
+              "sparse": null,
+              "fusion": null,
+              "rerank": null,
+              "retrieval_total": 157.32869999919785,
+              "recall_fusion": 8.72470000103931,
+              "generation": null,
+              "answer_total": null
+            },
+            "trace": {
+              "dense": [
+                {
+                  "chunk_id": "1ba16d9010233877c8e1764c",
+                  "doc_id": "DOC-0037",
+                  "rank": 1,
+                  "score": 0.717465341091156
+                },
+                {
+                  "chunk_id": "bc255b5372af6f0b1188df9d",
+                  "doc_id": "DOC-0003",
+                  "rank": 2,
+                  "score": 0.7047000283360497
+                },
+                {
+                  "chunk_id": "8c8bb479420ec4187498985e",
+                  "doc_id": "DOC-0011",
+                  "rank": 3,
+                  "score": 0.6958655896266955
+                },
+                {
+                  "chunk_id": "773a70f24b1c618c9efb4688",
+                  "doc_id": "DOC-0014",
+                  "rank": 4,
+                  "score": 0.6895679235458374
+                },
+                {
+                  "chunk_id": "17c70bee97c8fc954a1a96ce",
+                  "doc_id": "DOC-0033",
+                  "rank": 5,
+                  "score": 0.6864365543853213
+                },
+                {
+                  "chunk_id": "9bce8c59cef936d3cfa89388",
+                  "doc_id": "DOC-0044",
+                  "rank": 6,
+                  "score": 0.684887170791626
+                },
+                {
+                  "chunk_id": "c36ed936d7fca506a7541004",
+                  "doc_id": "DOC-0006",
+                  "rank": 7,
+                  "score": 0.672913432679784
+                },
+                {
+                  "chunk_id": "ba5f0f32e166368aedc683b6",
+                  "doc_id": "DOC-0041",
+                  "rank": 8,
+                  "score": 0.6695150136947632
+                },
+                {
+                  "chunk_id": "b34999d4fde8aae406be3c9e",
+                  "doc_id": "DOC-0142",
+                  "rank": 9,
+                  "score": 0.6214621993098028
+                },
+                {
+                  "chunk_id": "2560ffa5426c12f5f4fe1275",
+                  "doc_id": "DOC-0067",
+                  "rank": 10,
+                  "score": 0.6113096707278697
+                },
+                {
+                  "chunk_id": "eacd5de65db80f6abae573e7",
+                  "doc_id": "DOC-0077",
+                  "rank": 11,
+                  "score": 0.6097546997593256
+                },
+                {
+                  "chunk_id": "123808e33f8d2a1dd955572e",
+                  "doc_id": "DOC-0119",
+                  "rank": 12,
+                  "score": 0.6014479757218357
+                },
+                {
+                  "chunk_id": "dbf48c8bc92cd9ac4ed246e0",
+                  "doc_id": "DOC-0105",
+                  "rank": 13,
+                  "score": 0.600670576095581
+                },
+                {
+                  "chunk_id": "a3dfffcd6e92838c81c6c525",
+                  "doc_id": "DOC-0026",
+                  "rank": 14,
+                  "score": 0.5959498223021491
+                },
+                {
+                  "chunk_id": "6fb7265dfe15f2d939fecd13",
+                  "doc_id": "DOC-0138",
+                  "rank": 15,
+                  "score": 0.5939859039800324
+                },
+                {
+                  "chunk_id": "89a3702354c3c1dc9e704076",
+                  "doc_id": "DOC-0108",
+                  "rank": 16,
+                  "score": 0.5939363725261286
+                },
+                {
+                  "chunk_id": "1b453ab6602ae8105247144a",
+                  "doc_id": "DOC-0029",
+                  "rank": 17,
+                  "score": 0.5907311087410991
+                },
+                {
+                  "chunk_id": "5d1b2905d0c78422b73919e9",
+                  "doc_id": "DOC-0048",
+                  "rank": 18,
+                  "score": 0.5889963752629543
+                },
+                {
+                  "chunk_id": "e7a29702d9334ee352b32828",
+                  "doc_id": "DOC-0112",
+                  "rank": 19,
+                  "score": 0.5857118964195251
+                },
+                {
+                  "chunk_id": "c9d75fe13852c7adcc63a7e7",
+                  "doc_id": "DOC-0149",
+                  "rank": 20,
+                  "score": 0.5845390558242798
+                }
+              ],
+              "sparse": [],
+              "fusion": [],
+              "rerank": []
+            },
+            "graph_paths": [],
+            "graph_expansion": null,
+            "warnings": []
+          },
+          "timings_ms": {
+            "embedding": 144.88799999890034,
+            "dense": 8.612400000856724,
+            "sparse": null,
+            "fusion": null,
+            "rerank": null,
+            "retrieval_total": 157.32869999919785,
+            "recall_fusion": 8.72470000103931,
+            "generation": 4872.764699999607,
+            "answer_total": 5030.335499999637
+          },
+          "evidence_insufficient": false,
+          "citation_valid": true,
+          "warnings": [
+            "引用编号检查仅验证编号映射，不代表事实忠实度已经得到证明。"
+          ]
+        },
+        "created_at": "2026-11-09T22:28:35.237261+08:00"
+      },
+      {
+        "sample_id": "Q-001:dense",
+        "query_id": "Q-001",
+        "question": "How many days do I have to request a 0% intro balance transfer on Apex Platinum?",
+        "mode": "dense",
+        "build_id": "60d4f863faa777c5c522bc1b",
+        "model": "qwen3.5-plus",
+        "prompt_version": "qwen-judge-v1.0",
+        "answer": "根据现有证据，您必须在账户开立后的 **60 天** 内请求余额转账，才能享受 Apex Platinum 卡的 0%  introductory APR 优惠 [1]。\n\n**适用条件与费用细节：**\n*   **期限要求**：余额转账请求必须在账户创建后的 60 天内提出 [1]。\n*   **优惠时长**：符合条件的转账可享受 15 个账单周期的 0% 介绍性年利率 [1]。\n*   **转账费用**：每笔转账收取 3% 或 10 美元（取较高者）的费用 [1]。\n*   **限制条件**：不能在现有的 Apex 账户之间进行转账 [1]；累计转账金额不得超过批准信用额度的 95%（减去交易费用）[4]。\n*   **处理时间**：标准余额转账请求需要 5 到 7 个工作日进行处理 [2]。",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "DOC-0001",
+            "chunk_id": "2fb88d60ca94ba92661b09bd",
+            "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+          },
+          {
+            "id": 2,
+            "doc_id": "DOC-0005",
+            "chunk_id": "5b217fa602bc478808660085",
+            "quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+          },
+          {
+            "id": 4,
+            "doc_id": "DOC-0013",
+            "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+            "quote": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited."
+          }
+        ],
+        "evidence": [
+          {
+            "evidence_id": "DOC-0001",
+            "doc_id": "DOC-0001",
+            "chunk_ids": [
+              "2fb88d60ca94ba92661b09bd"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "2fb88d60ca94ba92661b09bd",
+                "text": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+              }
+            ],
+            "title": "Apex Platinum - 0% Intro APR Balance Transfer Rules (2024)",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "text": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+          },
+          {
+            "evidence_id": "DOC-0005",
+            "doc_id": "DOC-0005",
+            "chunk_ids": [
+              "5b217fa602bc478808660085"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "5b217fa602bc478808660085",
+                "text": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+              }
+            ],
+            "title": "Apex Platinum - Balance Transfer Processing Timelines (2025)",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "text": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+          },
+          {
+            "evidence_id": "DOC-0009",
+            "doc_id": "DOC-0009",
+            "chunk_ids": [
+              "0e9b6fb93acd28cb46c1d1cd"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                "text": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first."
+              }
+            ],
+            "title": "Apex Platinum - Interest Allocation & Payment Prioritization (2024)",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2024,
+            "text": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first."
+          },
+          {
+            "evidence_id": "DOC-0013",
+            "doc_id": "DOC-0013",
+            "chunk_ids": [
+              "3eeec293e9e1a1c845bd6ea7"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                "text": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited."
+              }
+            ],
+            "title": "Apex Platinum - Balance Transfer Limits & Caps (2025)",
+            "card_tier": "Apex Platinum",
+            "effective_year": 2025,
+            "text": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited."
+          },
+          {
+            "evidence_id": "DOC-0003",
+            "doc_id": "DOC-0003",
+            "chunk_ids": [
+              "bc255b5372af6f0b1188df9d"
+            ],
+            "chunks": [
+              {
+                "chunk_id": "bc255b5372af6f0b1188df9d",
+                "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+              }
+            ],
+            "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+            "card_tier": "Apex Everyday Freedom",
+            "effective_year": 2024,
+            "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable."
+          }
+        ],
+        "response": {
+          "request_id": "f6963609-aacc-477a-8415-1edfcb91fdaa",
+          "answer": "根据现有证据，您必须在账户开立后的 **60 天** 内请求余额转账，才能享受 Apex Platinum 卡的 0%  introductory APR 优惠 [1]。\n\n**适用条件与费用细节：**\n*   **期限要求**：余额转账请求必须在账户创建后的 60 天内提出 [1]。\n*   **优惠时长**：符合条件的转账可享受 15 个账单周期的 0% 介绍性年利率 [1]。\n*   **转账费用**：每笔转账收取 3% 或 10 美元（取较高者）的费用 [1]。\n*   **限制条件**：不能在现有的 Apex 账户之间进行转账 [1]；累计转账金额不得超过批准信用额度的 95%（减去交易费用）[4]。\n*   **处理时间**：标准余额转账请求需要 5 到 7 个工作日进行处理 [2]。",
+          "citations": [
+            {
+              "id": 1,
+              "doc_id": "DOC-0001",
+              "chunk_id": "2fb88d60ca94ba92661b09bd",
+              "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts."
+            },
+            {
+              "id": 2,
+              "doc_id": "DOC-0005",
+              "chunk_id": "5b217fa602bc478808660085",
+              "quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement."
+            },
+            {
+              "id": 4,
+              "doc_id": "DOC-0013",
+              "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+              "quote": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited."
+            }
+          ],
+          "retrieval": {
+            "request_id": "f6963609-aacc-477a-8415-1edfcb91fdaa",
+            "build_id": "60d4f863faa777c5c522bc1b",
+            "mode": "dense",
+            "results": [
+              {
+                "doc_id": "DOC-0001",
+                "title": "Apex Platinum - 0% Intro APR Balance Transfer Rules (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2024,
+                "rank": 1,
+                "score": 0.8793231916831037,
+                "evidence": [
+                  {
+                    "chunk_id": "2fb88d60ca94ba92661b09bd",
+                    "text": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation. A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer. Standard balance transfer APR ranges from 18.24% to 28.24% variable based on creditworthiness after the intro period ends. Transfers cannot be made between existing Apex accounts.",
+                    "parent_id": "DOC-0001:policy",
+                    "start_char": 133,
+                    "end_char": 540
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0005",
+                "title": "Apex Platinum - Balance Transfer Processing Timelines (2025)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2025,
+                "rank": 2,
+                "score": 0.8433973789215148,
+                "evidence": [
+                  {
+                    "chunk_id": "5b217fa602bc478808660085",
+                    "text": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers. Expedited transfers are not available. Payments to external accounts continue to be the cardholder's responsibility until the transferred amount appears on the Apex credit statement.",
+                    "parent_id": "DOC-0005:policy",
+                    "start_char": 133,
+                    "end_char": 425
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0009",
+                "title": "Apex Platinum - Interest Allocation & Payment Prioritization (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2024,
+                "rank": 3,
+                "score": 0.8144060130594402,
+                "evidence": [
+                  {
+                    "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                    "text": "If a balance transfer amount is not paid off before the introductory period ends, interest accrues daily on the remaining balance from the expiration date onward. Payments above the minimum monthly payment are automatically allocated to the balance with the highest APR first.",
+                    "parent_id": "DOC-0009:policy",
+                    "start_char": 133,
+                    "end_char": 409
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0013",
+                "title": "Apex Platinum - Balance Transfer Limits & Caps (2025)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Platinum",
+                "effective_year": 2025,
+                "rank": 4,
+                "score": 0.7917964582564572,
+                "evidence": [
+                  {
+                    "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                    "text": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees. Transfers to pay Apex loans or affiliated credit products are strictly prohibited.",
+                    "parent_id": "DOC-0013:policy",
+                    "start_char": 133,
+                    "end_char": 328
+                  }
+                ]
+              },
+              {
+                "doc_id": "DOC-0003",
+                "title": "Apex Everyday Freedom - 0% Intro APR Terms (2024)",
+                "category": "Balance Transfers",
+                "card_tier": "Apex Everyday Freedom",
+                "effective_year": 2024,
+                "rank": 5,
+                "score": 0.7762881321391837,
+                "evidence": [
+                  {
+                    "chunk_id": "bc255b5372af6f0b1188df9d",
+                    "text": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening. Balance transfer fee is 3% or $5 minimum. Post-introductory APR is 17.49% to 26.49% variable.",
+                    "parent_id": "DOC-0003:policy",
+                    "start_char": 141,
+                    "end_char": 338
+                  }
+                ]
+              }
+            ],
+            "timings_ms": {
+              "embedding": 258.81309999931545,
+              "dense": 21.227799999905983,
+              "sparse": null,
+              "fusion": null,
+              "rerank": null,
+              "retrieval_total": 284.30289999960223,
+              "recall_fusion": 21.831799998835777,
+              "generation": null,
+              "answer_total": null
+            },
+            "trace": {
+              "dense": [
+                {
+                  "chunk_id": "2fb88d60ca94ba92661b09bd",
+                  "doc_id": "DOC-0001",
+                  "rank": 1,
+                  "score": 0.8793231916831037
+                },
+                {
+                  "chunk_id": "5b217fa602bc478808660085",
+                  "doc_id": "DOC-0005",
+                  "rank": 2,
+                  "score": 0.8433973789215148
+                },
+                {
+                  "chunk_id": "0e9b6fb93acd28cb46c1d1cd",
+                  "doc_id": "DOC-0009",
+                  "rank": 3,
+                  "score": 0.8144060130594402
+                },
+                {
+                  "chunk_id": "3eeec293e9e1a1c845bd6ea7",
+                  "doc_id": "DOC-0013",
+                  "rank": 4,
+                  "score": 0.7917964582564572
+                },
+                {
+                  "chunk_id": "bc255b5372af6f0b1188df9d",
+                  "doc_id": "DOC-0003",
+                  "rank": 5,
+                  "score": 0.7762881321391837
+                },
+                {
+                  "chunk_id": "07558a24dfec359c944e2d63",
+                  "doc_id": "DOC-0002",
+                  "rank": 6,
+                  "score": 0.7651698869264261
+                },
+                {
+                  "chunk_id": "c36ed936d7fca506a7541004",
+                  "doc_id": "DOC-0006",
+                  "rank": 7,
+                  "score": 0.7601687538674187
+                },
+                {
+                  "chunk_id": "afe69a0eb51ebafc189b64fd",
+                  "doc_id": "DOC-0150",
+                  "rank": 8,
+                  "score": 0.7584666609764154
+                },
+                {
+                  "chunk_id": "3047e4bbe909e85319e83e87",
+                  "doc_id": "DOC-0004",
+                  "rank": 9,
+                  "score": 0.7523988113522259
+                },
+                {
+                  "chunk_id": "773a70f24b1c618c9efb4688",
+                  "doc_id": "DOC-0014",
+                  "rank": 10,
+                  "score": 0.7338601509416026
+                },
+                {
+                  "chunk_id": "4af545e37b200e7755bb5df1",
+                  "doc_id": "DOC-0065",
+                  "rank": 11,
+                  "score": 0.7306908690105833
+                },
+                {
+                  "chunk_id": "8c8bb479420ec4187498985e",
+                  "doc_id": "DOC-0011",
+                  "rank": 12,
+                  "score": 0.7282536949808961
+                },
+                {
+                  "chunk_id": "b1576ccb0254a9696045d3ed",
+                  "doc_id": "DOC-0031",
+                  "rank": 13,
+                  "score": 0.7270453301614129
+                },
+                {
+                  "chunk_id": "268446c4429bf1e0ec50d24c",
+                  "doc_id": "DOC-0039",
+                  "rank": 14,
+                  "score": 0.725186271976618
+                },
+                {
+                  "chunk_id": "78fd68e4f682d79c5eb41480",
+                  "doc_id": "DOC-0020",
+                  "rank": 15,
+                  "score": 0.721693797212481
+                },
+                {
+                  "chunk_id": "3ca5cc7772da0b2be9c1a284",
+                  "doc_id": "DOC-0061",
+                  "rank": 16,
+                  "score": 0.7212001417636702
+                },
+                {
+                  "chunk_id": "d908fd6f05b8351c9e367321",
+                  "doc_id": "DOC-0008",
+                  "rank": 17,
+                  "score": 0.7096722895102341
+                },
+                {
+                  "chunk_id": "ff4ddd7d7c8ef5ae18680b94",
+                  "doc_id": "DOC-0147",
+                  "rank": 18,
+                  "score": 0.7081946482426348
+                },
+                {
+                  "chunk_id": "08d8dd56eb33f231f34324a0",
+                  "doc_id": "DOC-0007",
+                  "rank": 19,
+                  "score": 0.7053270270835721
+                },
+                {
+                  "chunk_id": "c327b5f14509fbec765d6ede",
+                  "doc_id": "DOC-0016",
+                  "rank": 20,
+                  "score": 0.7045055207904876
+                }
+              ],
+              "sparse": [],
+              "fusion": [],
+              "rerank": []
+            },
+            "graph_paths": [],
+            "graph_expansion": null,
+            "warnings": []
+          },
+          "timings_ms": {
+            "embedding": 258.81309999931545,
+            "dense": 21.227799999905983,
+            "sparse": null,
+            "fusion": null,
+            "rerank": null,
+            "retrieval_total": 284.30289999960223,
+            "recall_fusion": 21.831799998835777,
+            "generation": 4629.482600001211,
+            "answer_total": 4914.719800000967
+          },
+          "evidence_insufficient": false,
+          "citation_valid": true,
+          "warnings": [
+            "引用编号检查仅验证编号映射，不代表事实忠实度已经得到证明。"
+          ]
+        },
+        "created_at": "2026-11-09T22:28:25.123415+08:00"
+      }
+    ],
+    "verdicts": [
+      {
+        "sample_id": "Q-001:dense",
+        "mode": "dense",
+        "controlled": false,
+        "status": "completed",
+        "method_version": "qwen-judge-v2.2-anchors",
+        "context_relevance": 0.6,
+        "faithfulness": 1.0,
+        "stage": "assessment",
+        "inventory_hash": "71a9254717be94dba0ee5cff7780a4c43bb4c17f8fdb7d748b641af96d1a6c37",
+        "latency_ms": 31231.666499999847,
+        "verdict": {
+          "context_relevance": [
+            {
+              "evidence_id": "DOC-0001",
+              "score": 2,
+              "reason": "Directly supports the 60-day request window, 15 billing cycle duration, 3%/$10 fee, and restriction on transfers between existing Apex accounts for the Apex Platinum card in 2024."
+            },
+            {
+              "evidence_id": "DOC-0005",
+              "score": 2,
+              "reason": "Directly supports the claim regarding the 5 to 7 business day processing time for standard balance transfer requests for Apex Platinum (2025)."
+            },
+            {
+              "evidence_id": "DOC-0009",
+              "score": 0,
+              "reason": "Discusses interest accrual and payment allocation after the intro period; does not contain information about the request window, fees, limits, or processing times relevant to the specific claims."
+            },
+            {
+              "evidence_id": "DOC-0013",
+              "score": 2,
+              "reason": "Directly supports the claim that cumulative balance transfer amounts cannot exceed 95% of the approved credit line minus fees for Apex Platinum (2025)."
+            },
+            {
+              "evidence_id": "DOC-0003",
+              "score": 0,
+              "reason": "Refers to the 'Apex Everyday Freedom' card, not 'Apex Platinum'. The terms (18 cycles, $5 min fee) differ and are irrelevant to the specific product in question."
+            }
+          ],
+          "claims": [
+            {
+              "claim_id": "C0001",
+              "claim": "根据现有证据，必须在账户开立后的 60 天内请求余额转账才能享受 Apex Platinum 卡的 0% introductory APR 优惠。",
+              "answer_span_id": "A0001",
+              "answer_quote": "根据现有证据，您必须在账户开立后的 **60 天** 内请求余额转账，才能享受 Apex Platinum 卡的 0%  introductory APR 优惠 [1]。",
+              "answer_start": 0,
+              "answer_end": 85,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001"
+              ],
+              "support_quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001",
+                  "span_id": "E01S0001",
+                  "start": 0,
+                  "end": 142,
+                  "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation."
+                }
+              ],
+              "reason": "Evidence E01S0001 explicitly states that the promotional 0% intro APR applies to balance transfers requested within 60 days of account creation for the Apex Platinum card."
+            },
+            {
+              "claim_id": "C0002",
+              "claim": "余额转账请求必须在账户创建后的 60 天内提出。",
+              "answer_span_id": "A0005",
+              "answer_quote": "*   **期限要求**：余额转账请求必须在账户创建后的 60 天内提出 [1]。",
+              "answer_start": 102,
+              "answer_end": 143,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001"
+              ],
+              "support_quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001",
+                  "span_id": "E01S0001",
+                  "start": 0,
+                  "end": 142,
+                  "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation."
+                }
+              ],
+              "reason": "Evidence E01S0001 confirms the requirement that balance transfers must be requested within 60 days of account creation."
+            },
+            {
+              "claim_id": "C0003",
+              "claim": "符合条件的转账可享受 15 个账单周期的 0% 介绍性年利率。",
+              "answer_span_id": "A0007",
+              "answer_quote": "*   **优惠时长**：符合条件的转账可享受 15 个账单周期的 0% 介绍性年利率 [1]。",
+              "answer_start": 144,
+              "answer_end": 192,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001"
+              ],
+              "support_quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001",
+                  "span_id": "E01S0001",
+                  "start": 0,
+                  "end": 142,
+                  "quote": "Promotional 0% intro APR applies for 15 billing cycles from account opening on balance transfers requested within 60 days of account creation."
+                }
+              ],
+              "reason": "Evidence E01S0001 states the promotional 0% intro APR applies for 15 billing cycles."
+            },
+            {
+              "claim_id": "C0004",
+              "claim": "每笔余额转账收取 3% 或 10 美元（取较高者）的费用。",
+              "answer_span_id": "A0009",
+              "answer_quote": "*   **转账费用**：每笔转账收取 3% 或 10 美元（取较高者）的费用 [1]。",
+              "answer_start": 193,
+              "answer_end": 237,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001"
+              ],
+              "support_quote": " A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001",
+                  "span_id": "E01S0002",
+                  "start": 142,
+                  "end": 227,
+                  "quote": " A balance transfer fee of 3% or $10 (whichever is greater) applies to each transfer."
+                }
+              ],
+              "reason": "Evidence E01S0002 explicitly states the balance transfer fee is 3% or $10, whichever is greater."
+            },
+            {
+              "claim_id": "C0005",
+              "claim": "不能在现有的 Apex 账户之间进行余额转账。",
+              "answer_span_id": "A0011",
+              "answer_quote": "*   **限制条件**：不能在现有的 Apex 账户之间进行转账 [1]；",
+              "answer_start": 238,
+              "answer_end": 276,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0001"
+              ],
+              "support_quote": " Transfers cannot be made between existing Apex accounts.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0001",
+                  "span_id": "E01S0004",
+                  "start": 350,
+                  "end": 407,
+                  "quote": " Transfers cannot be made between existing Apex accounts."
+                }
+              ],
+              "reason": "Evidence E01S0004 explicitly states that transfers cannot be made between existing Apex accounts."
+            },
+            {
+              "claim_id": "C0006",
+              "claim": "累计转账金额不得超过批准信用额度的 95%（减去交易费用）。",
+              "answer_span_id": "A0012",
+              "answer_quote": "累计转账金额不得超过批准信用额度的 95%（减去交易费用）[4]。",
+              "answer_start": 276,
+              "answer_end": 309,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0013"
+              ],
+              "support_quote": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0013",
+                  "span_id": "E04S0001",
+                  "start": 0,
+                  "end": 112,
+                  "quote": "Total cumulative balance transfer amount cannot exceed 95% of total approved credit line minus transaction fees."
+                }
+              ],
+              "reason": "Evidence E04S0001 explicitly states that the total cumulative balance transfer amount cannot exceed 95% of the total approved credit line minus transaction fees."
+            },
+            {
+              "claim_id": "C0007",
+              "claim": "标准余额转账请求需要 5 到 7 个工作日进行处理。",
+              "answer_span_id": "A0014",
+              "answer_quote": "*   **处理时间**：标准余额转账请求需要 5 到 7 个工作日进行处理 [2]。",
+              "answer_start": 310,
+              "answer_end": 353,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0005"
+              ],
+              "support_quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0005",
+                  "span_id": "E02S0001",
+                  "start": 0,
+                  "end": 109,
+                  "quote": "Standard balance transfer requests take 5 to 7 business days to process and pay out to external card issuers."
+                }
+              ],
+              "reason": "Evidence E02S0001 explicitly states that standard balance transfer requests take 5 to 7 business days to process."
+            }
+          ],
+          "answers_question": "yes",
+          "answers_question_reason": "The answer directly states the 60-day requirement requested by the user and provides additional relevant conditions supported by the evidence.",
+          "refusal": false,
+          "no_claims_reason": null,
+          "method_version": "qwen-judge-v2.2-anchors",
+          "unit_audit": [
+            {
+              "unit_id": "A0001",
+              "claims": [
+                "根据现有证据，必须在账户开立后的 60 天内请求余额转账才能享受 Apex Platinum 卡的 0% introductory APR 优惠。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0002",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0003",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0004",
+              "claims": [],
+              "nonfactual_reason": "Section heading formatting with no independent factual assertion."
+            },
+            {
+              "unit_id": "A0005",
+              "claims": [
+                "余额转账请求必须在账户创建后的 60 天内提出。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0006",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0007",
+              "claims": [
+                "符合条件的转账可享受 15 个账单周期的 0% 介绍性年利率。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0008",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0009",
+              "claims": [
+                "每笔余额转账收取 3% 或 10 美元（取较高者）的费用。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0010",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0011",
+              "claims": [
+                "不能在现有的 Apex 账户之间进行余额转账。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0012",
+              "claims": [
+                "累计转账金额不得超过批准信用额度的 95%（减去交易费用）。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0013",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0014",
+              "claims": [
+                "标准余额转账请求需要 5 到 7 个工作日进行处理。"
+              ],
+              "nonfactual_reason": null
+            }
+          ],
+          "coverage": "Every original unit accounted for; semantic atomic completeness still model-dependent."
+        },
+        "claim_count": 7,
+        "citation_validity": {
+          "count": 3,
+          "valid": 3,
+          "rate": 1.0,
+          "meaning": "Identifier and exact-quote validity; not entailment."
+        },
+        "phase": "base_reused"
+      },
+      {
+        "sample_id": "Q-002:dense",
+        "mode": "dense",
+        "controlled": false,
+        "status": "completed",
+        "method_version": "qwen-judge-v2.2-anchors",
+        "context_relevance": 0.6,
+        "faithfulness": 1.0,
+        "stage": "assessment",
+        "inventory_hash": "0193c90c15f8db24d858a1977c1a11a7af4c78bd77f058e3c987723d945b2b7f",
+        "latency_ms": 37220.97009999925,
+        "verdict": {
+          "context_relevance": [
+            {
+              "evidence_id": "DOC-0037",
+              "score": 0,
+              "reason": "The document discusses foreign transaction fees (3%), not balance transfer fees. The answer incorrectly cites this for balance transfer fees."
+            },
+            {
+              "evidence_id": "DOC-0003",
+              "score": 2,
+              "reason": "Directly supports the balance transfer fee (3% or $5 min), the 60-day window, the 18 billing cycle 0% intro APR, and the post-intro APR range (17.49%-26.49%)."
+            },
+            {
+              "evidence_id": "DOC-0011",
+              "score": 2,
+              "reason": "Directly supports the claim that residual balances transition to standard variable APR (17.49%-26.49%) after the intro period expires."
+            },
+            {
+              "evidence_id": "DOC-0014",
+              "score": 2,
+              "reason": "Directly supports the balance transfer authorization limits ($15,000 or 90% of limit) and the condition that transfers cannot be canceled once processing."
+            },
+            {
+              "evidence_id": "DOC-0033",
+              "score": 0,
+              "reason": "Discusses annual fees ($0), which is irrelevant to the specific question about balance transfer fees and conditions."
+            }
+          ],
+          "claims": [
+            {
+              "claim_id": "C0001",
+              "claim": "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%。",
+              "answer_span_id": "A0001",
+              "answer_quote": "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%，最低收费 $5 [2]。",
+              "answer_start": 0,
+              "answer_end": 53,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0003"
+              ],
+              "support_quote": " Balance transfer fee is 3% or $5 minimum.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0003",
+                  "span_id": "E02S0002",
+                  "start": 103,
+                  "end": 145,
+                  "quote": " Balance transfer fee is 3% or $5 minimum."
+                }
+              ],
+              "reason": "Evidence E02S0002 explicitly states 'Balance transfer fee is 3%'. Although the answer cites DOC-0037 (foreign fee), the fact is supported by DOC-0003."
+            },
+            {
+              "claim_id": "C0002",
+              "claim": "Apex Everyday Freedom 卡的余额转账最低收费为 $5。",
+              "answer_span_id": "A0001",
+              "answer_quote": "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%，最低收费 $5 [2]。",
+              "answer_start": 0,
+              "answer_end": 53,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0003"
+              ],
+              "support_quote": " Balance transfer fee is 3% or $5 minimum.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0003",
+                  "span_id": "E02S0002",
+                  "start": 103,
+                  "end": 145,
+                  "quote": " Balance transfer fee is 3% or $5 minimum."
+                }
+              ],
+              "reason": "Evidence E02S0002 explicitly states '$5 minimum' for the balance transfer fee."
+            },
+            {
+              "claim_id": "C0003",
+              "claim": "该费用适用于在开卡后 60 天内执行的余额转账。",
+              "answer_span_id": "A0005",
+              "answer_quote": "- 该费用适用于在开卡后 60 天内执行的余额转账，此类转账可享受 18 个账单周期的 0%  introductory APR（促销年利率）[2]。",
+              "answer_start": 68,
+              "answer_end": 143,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0003"
+              ],
+              "support_quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0003",
+                  "span_id": "E02S0001",
+                  "start": 0,
+                  "end": 103,
+                  "quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening."
+                }
+              ],
+              "reason": "Evidence E02S0001 confirms the promo applies to transfers 'executed within 60 days of opening'."
+            },
+            {
+              "claim_id": "C0004",
+              "claim": "在开卡后 60 天内执行的此类余额转账可享受 18 个账单周期的 0% introductory APR（促销年利率）。",
+              "answer_span_id": "A0005",
+              "answer_quote": "- 该费用适用于在开卡后 60 天内执行的余额转账，此类转账可享受 18 个账单周期的 0%  introductory APR（促销年利率）[2]。",
+              "answer_start": 68,
+              "answer_end": 143,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0003"
+              ],
+              "support_quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0003",
+                  "span_id": "E02S0001",
+                  "start": 0,
+                  "end": 103,
+                  "quote": "Promotional 0% intro APR for 18 billing cycles on balance transfers executed within 60 days of opening."
+                }
+              ],
+              "reason": "Evidence E02S0001 confirms 'Promotional 0% intro APR for 18 billing cycles' for eligible transfers."
+            },
+            {
+              "claim_id": "C0005",
+              "claim": "余额转账授权限额为每笔请求最高 $15,000。",
+              "answer_span_id": "A0007",
+              "answer_quote": "- 转账授权限额为每笔请求最高 $15,000 或总循环额度的 90%（以较低者为准）[4]。",
+              "answer_start": 144,
+              "answer_end": 191,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0014"
+              ],
+              "support_quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0014",
+                  "span_id": "E04S0001",
+                  "start": 0,
+                  "end": 99,
+                  "quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit."
+                }
+              ],
+              "reason": "Evidence E04S0001 states the limit is 'capped at $15,000 per request'."
+            },
+            {
+              "claim_id": "C0006",
+              "claim": "余额转账授权限额为总循环额度的 90%。",
+              "answer_span_id": "A0007",
+              "answer_quote": "- 转账授权限额为每笔请求最高 $15,000 或总循环额度的 90%（以较低者为准）[4]。",
+              "answer_start": 144,
+              "answer_end": 191,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0014"
+              ],
+              "support_quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0014",
+                  "span_id": "E04S0001",
+                  "start": 0,
+                  "end": 99,
+                  "quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit."
+                }
+              ],
+              "reason": "Evidence E04S0001 states the limit is capped at '90% of total revolving limit'."
+            },
+            {
+              "claim_id": "C0007",
+              "claim": "余额转账的实际授权限额取每笔请求最高 $15,000 或总循环额度的 90% 中的较低者。",
+              "answer_span_id": "A0007",
+              "answer_quote": "- 转账授权限额为每笔请求最高 $15,000 或总循环额度的 90%（以较低者为准）[4]。",
+              "answer_start": 144,
+              "answer_end": 191,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0014"
+              ],
+              "support_quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0014",
+                  "span_id": "E04S0001",
+                  "start": 0,
+                  "end": 99,
+                  "quote": "Balance transfer authorization limit capped at $15,000 per request or 90% of total revolving limit."
+                }
+              ],
+              "reason": "Evidence E04S0001 presents both caps ('$15,000 per request or 90%...'), implying the effective limit is the lower of the two as stated in the claim."
+            },
+            {
+              "claim_id": "C0008",
+              "claim": "一旦余额转账状态变为“处理中”，该转账不可取消。",
+              "answer_span_id": "A0009",
+              "answer_quote": "- 一旦状态变为“处理中”，转账不可取消 [4]。",
+              "answer_start": 192,
+              "answer_end": 217,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0014"
+              ],
+              "support_quote": " Transfers cannot be canceled once status shifts to Processing.",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0014",
+                  "span_id": "E04S0002",
+                  "start": 99,
+                  "end": 162,
+                  "quote": " Transfers cannot be canceled once status shifts to Processing."
+                }
+              ],
+              "reason": "Evidence E04S0002 explicitly states 'Transfers cannot be canceled once status shifts to Processing'."
+            },
+            {
+              "claim_id": "C0009",
+              "claim": "促销期结束后，剩余余额将转为标准可变余额转账 APR。",
+              "answer_span_id": "A0013",
+              "answer_quote": "- 促销期结束后，剩余余额将转为标准可变余额转账 APR，范围为 17.49% 至 26.49% [2][3]。",
+              "answer_start": 229,
+              "answer_end": 285,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0011"
+              ],
+              "support_quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%).",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0011",
+                  "span_id": "E03S0001",
+                  "start": 0,
+                  "end": 117,
+                  "quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%)."
+                }
+              ],
+              "reason": "Evidence E03S0001 states 'Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR'."
+            },
+            {
+              "claim_id": "C0010",
+              "claim": "标准可变余额转账 APR 的范围为 17.49% 至 26.49%。",
+              "answer_span_id": "A0013",
+              "answer_quote": "- 促销期结束后，剩余余额将转为标准可变余额转账 APR，范围为 17.49% 至 26.49% [2][3]。",
+              "answer_start": 229,
+              "answer_end": 285,
+              "verdict": "supported",
+              "claim_matches_answer": true,
+              "evidence_ids": [
+                "DOC-0003",
+                "DOC-0011"
+              ],
+              "support_quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%).",
+              "support_quotes": [
+                {
+                  "evidence_id": "DOC-0011",
+                  "span_id": "E03S0001",
+                  "start": 0,
+                  "end": 117,
+                  "quote": "Upon intro APR expiry, residual balances transition to the standard variable balance transfer APR (17.49% to 26.49%)."
+                },
+                {
+                  "evidence_id": "DOC-0003",
+                  "span_id": "E02S0003",
+                  "start": 145,
+                  "end": 197,
+                  "quote": " Post-introductory APR is 17.49% to 26.49% variable."
+                }
+              ],
+              "reason": "Both E03S0001 and E02S0003 confirm the standard variable APR range is '17.49% to 26.49%'."
+            }
+          ],
+          "answers_question": "yes",
+          "answers_question_reason": "The answer directly provides the balance transfer fee percentage (3%) and minimum amount ($5) along with relevant conditions.",
+          "refusal": false,
+          "no_claims_reason": null,
+          "method_version": "qwen-judge-v2.2-anchors",
+          "unit_audit": [
+            {
+              "unit_id": "A0001",
+              "claims": [
+                "Apex Everyday Freedom 卡的余额转账手续费为转账金额的 3%。",
+                "Apex Everyday Freedom 卡的余额转账最低收费为 $5。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0002",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0003",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0004",
+              "claims": [],
+              "nonfactual_reason": "Markdown heading text ('**适用条件与期限：**') serving as a section label, containing no independent factual assertion."
+            },
+            {
+              "unit_id": "A0005",
+              "claims": [
+                "该费用适用于在开卡后 60 天内执行的余额转账。",
+                "在开卡后 60 天内执行的此类余额转账可享受 18 个账单周期的 0% introductory APR（促销年利率）。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0006",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0007",
+              "claims": [
+                "余额转账授权限额为每笔请求最高 $15,000。",
+                "余额转账授权限额为总循环额度的 90%。",
+                "余额转账的实际授权限额取每笔请求最高 $15,000 或总循环额度的 90% 中的较低者。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0008",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0009",
+              "claims": [
+                "一旦余额转账状态变为“处理中”，该转账不可取消。"
+              ],
+              "nonfactual_reason": null
+            },
+            {
+              "unit_id": "A0010",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0011",
+              "claims": [],
+              "nonfactual_reason": "Pure whitespace/newline character with no factual assertion."
+            },
+            {
+              "unit_id": "A0012",
+              "claims": [],
+              "nonfactual_reason": "Markdown heading text ('**后续利率：**') serving as a section label, containing no independent factual assertion."
+            },
+            {
+              "unit_id": "A0013",
+              "claims": [
+                "促销期结束后，剩余余额将转为标准可变余额转账 APR。",
+                "标准可变余额转账 APR 的范围为 17.49% 至 26.49%。"
+              ],
+              "nonfactual_reason": null
+            }
+          ],
+          "coverage": "Every original unit accounted for; semantic atomic completeness still model-dependent."
+        },
+        "claim_count": 10,
+        "citation_validity": {
+          "count": 3,
+          "valid": 3,
+          "rate": 1.0,
+          "meaning": "Identifier and exact-quote validity; not entailment."
+        },
+        "phase": "base_reused"
+      }
+    ],
+    "human_review": [
+      {
+        "sample_id": "Q-001:dense",
+        "reviewer": null,
+        "reviewed_at": null,
+        "category": null,
+        "candidate_categories": {
+          "normal": "Verify concrete fees, deadlines and qualifiers against the original evidence.",
+          "irrelevant": "Judge must inspect each retrieved document; topical similarity alone may not answer this question.",
+          "product_confusion": "Retrieved evidence spans products: Apex Everyday Freedom, Apex Platinum; verify no cross-product transfer.",
+          "year_conflict": "Evidence has years [2024, 2025]; this is a year-difference risk, not proof of conflicting policy. Human must establish actual conflict or mark coverage absent."
+        },
+        "review_reason": "AI source-based candidates only: human must verify actual category; never relabel an inapplicable sample to satisfy coverage. If a category is absent, record the gap rather than claim coverage.",
+        "human_context_scores": null,
+        "human_claim_verdicts": null,
+        "missed_claims": null,
+        "agreement": null,
+        "notes": null,
+        "status": "pending_human"
+      },
+      {
+        "sample_id": "Q-001:hybrid_rerank",
+        "reviewer": null,
+        "reviewed_at": null,
+        "category": null,
+        "candidate_categories": {
+          "normal": "Verify concrete fees, deadlines and qualifiers against the original evidence.",
+          "irrelevant": "Judge must inspect each retrieved document; topical similarity alone may not answer this question.",
+          "product_confusion": "Retrieved evidence spans products: Apex Business Select, Apex Everyday Freedom, Apex Platinum, Apex Preferred Travel; verify no cross-product transfer.",
+          "year_conflict": "Evidence has years [2024, 2025]; this is a year-difference risk, not proof of conflicting policy. Human must establish actual conflict or mark coverage absent."
+        },
+        "review_reason": "AI source-based candidates only: human must verify actual category; never relabel an inapplicable sample to satisfy coverage. If a category is absent, record the gap rather than claim coverage.",
+        "human_context_scores": null,
+        "human_claim_verdicts": null,
+        "missed_claims": null,
+        "agreement": null,
+        "notes": null,
+        "status": "pending_human"
+      }
+    ],
+    "provider_cost_summary": {
+      "provider_logical_calls": 2,
+      "http_attempts": 2,
+      "estimated_cost_known_usage": 0.016944,
+      "unknown_cost_call_count": 0,
+      "actual_billed_cost": null,
+      "note": "Known usage estimate excludes unknown failed attempts; reservation cap is separate."
+    },
+    "execution_audit": {
+      "generation_failure_records": 0,
+      "judge_validation_failure_records": 0,
+      "repair_policy": null,
+      "initial_execution_summary": null,
+      "note": "Metrics use final validated results; all original failures remain in errors/raw/provider logs. Human review remains required."
+    },
+    "method_version": "qwen-judge-v2.2-anchors+recovery-v1+anchor-recovery-v2",
+    "recovery_policy": "qwen-judge-v2.2-anchor-recovery-v2",
+    "scope": "full_saved_60_with_targeted_recovery",
+    "source_run": "judge-20261109T172459-3deb6fab",
+    "original_results_merged": false,
+    "base_results_reused": true,
+    "base_status": "incomplete",
+    "base_metrics": {
+      "dense": {
+        "context_relevance": {
+          "mean": 0.4321428571428571,
+          "scored": 28,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9650510204081633,
+          "scored": 28,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 28,
+        "failed_or_missing": 2,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 26,
+          "partial": 2,
+          "no": 0
+        },
+        "citation_count": 65,
+        "valid_citation_count": 65,
+        "failed": 2,
+        "missing": 0
+      },
+      "hybrid_rerank": {
+        "context_relevance": {
+          "mean": 0.4793103448275862,
+          "scored": 29,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9388104399348777,
+          "scored": 29,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 29,
+        "failed_or_missing": 1,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 27,
+          "partial": 2,
+          "no": 0
+        },
+        "citation_count": 77,
+        "valid_citation_count": 77,
+        "failed": 1,
+        "missing": 0
+      }
+    },
+    "base_failed_ids": [
+      "Q-009:dense",
+      "Q-028:dense",
+      "Q-015:hybrid_rerank"
+    ],
+    "base_budget_tasks": 134,
+    "base_provider_cost_summary": {
+      "provider_logical_calls": 134,
+      "http_attempts": 134,
+      "estimated_cost_known_usage": 0.9158056,
+      "unknown_cost_call_count": 0,
+      "actual_billed_cost": null,
+      "note": "Known usage estimate excludes unknown failed attempts; reservation cap is separate."
+    },
+    "previous_phase_status": "incomplete",
+    "previous_phase_metrics": {
+      "dense": {
+        "context_relevance": {
+          "mean": 0.42758620689655175,
+          "scored": 29,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9490147783251232,
+          "scored": 29,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 29,
+        "failed_or_missing": 1,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 26,
+          "partial": 3,
+          "no": 0
+        },
+        "citation_count": 67,
+        "valid_citation_count": 67
+      },
+      "hybrid_rerank": {
+        "context_relevance": {
+          "mean": 0.47333333333333333,
+          "scored": 30,
+          "na": 0
+        },
+        "faithfulness": {
+          "mean": 0.9256985767855334,
+          "scored": 30,
+          "na": 0
+        },
+        "expected": 30,
+        "attempted": 30,
+        "completed": 30,
+        "failed_or_missing": 0,
+        "refusal_rate": 0.0,
+        "answers_question": {
+          "yes": 27,
+          "partial": 3,
+          "no": 0
+        },
+        "citation_count": 79,
+        "valid_citation_count": 79
+      }
+    },
+    "previous_phase_provider_cost_summary": {
+      "provider_logical_calls": 4,
+      "http_attempts": 4,
+      "estimated_cost_known_usage": 0.0423184,
+      "unknown_cost_call_count": 0,
+      "actual_billed_cost": null,
+      "note": "Known usage estimate excludes unknown failed attempts; reservation cap is separate."
+    },
+    "previous_phase_budget": {
+      "currency": "CNY",
+      "reserved_cost_ceiling": 1.6,
+      "actual_billed_cost": null,
+      "tasks": 4,
+      "max_cost": 4.8,
+      "records": [
+        {
+          "kind": "assessment_old_1",
+          "sample_id": "Q-009:dense",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:24:59.930955+08:00"
+        },
+        {
+          "kind": "inventory_recovery",
+          "sample_id": "Q-028:dense",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:25:27.512365+08:00"
+        },
+        {
+          "kind": "assessment_old_1",
+          "sample_id": "Q-015:hybrid_rerank",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:25:38.743529+08:00"
+        },
+        {
+          "kind": "assessment_old_2",
+          "sample_id": "Q-015:hybrid_rerank",
+          "reserved_cost_ceiling": 0.4,
+          "actual_billed_cost": null,
+          "at": "2026-11-10T01:26:07.025322+08:00"
+        }
+      ],
+      "note": "Ceilings include embedding/rerank/generation and bounded provider retries; not a bill."
+    },
+    "remaining_failed_ids": [
+      "Q-028:dense"
+    ],
+    "recovery_status_counts": {
+      "completed": 1
+    },
+    "recovery_plan": {
+      "policy": "qwen-judge-v2.2-anchor-recovery-v2",
+      "base_method": "qwen-judge-v2.2-anchors",
+      "previous_run": "judge-20261109T172459-3deb6fab",
+      "original_base_run": "judge-20261109T164136-a0589dcf",
+      "failed_ids": [
+        "Q-028:dense"
+      ],
+      "logical_calls_max": 4,
+      "http_attempts_max": 12,
+      "cost_reservation_max_CNY": 1.6,
+      "input_bound": 110000,
+      "max_output_tokens": 8192,
+      "previous_status": "incomplete",
+      "new_answers_or_retrieval": 0,
+      "note": "Two inventory attempts and two assessment attempts maximum per remaining failed sample. Same rubric; explicit phase/selection differences."
+    },
+    "semantic_completeness_verified": false,
+    "method_note": "Original base57/60 and first recovery59/60 retained; only remaining inventory failure gets exact-unit diagnostic extra attempts. Final metrics use explicit staged recovery, not a uniform attempt policy. Self-evaluation bias/human0/10 remain."
+  }
+}
